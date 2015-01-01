@@ -210,29 +210,37 @@ If the link is in hidden text, expose it."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; bpe.el --- Blog from Org mode to Blogger
 ;;; see https://github.ctayamada/bpe
-(require 'bpe)
-(require 'htmlize nil 'noerror) ; to fontify source code block on your blog.
-(setq bpe:account "shotakaha@gmail.com")
-(setq bpe:blog-name "KumaNote")
-(define-key org-mode-map (kbd "C-c C-p") 'bpe:post-article)
-(define-key org-mode-map (kbd "C-c C-i") 'bpe:insert-template)
-;; For Japanese, default is $LANG environment variable.
-(setq bpe:lang "ja_JP.UTF-8")
+(use-package bpe
+  :disabled t
+  :config
+  (require 'htmlize nil 'noerror) ; to fontify source code block on your blog.
+  (setq bpe:account "shotakaha@gmail.com")
+  (setq bpe:blog-name "KumaNote")
+  (define-key org-mode-map (kbd "C-c C-p") 'bpe:post-article)
+  (define-key org-mode-map (kbd "C-c C-i") 'bpe:insert-template)
+  ;; For Japanese, default is $LANG environment variable.
+  (setq bpe:lang "ja_JP.UTF-8")
+)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; try weblogger.el
 ;;; -> 動かないことが判明
-(require 'weblogger)
+(use-package weblogger
+  :disabled t
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; org-gcal
 ;;; see https://github.com/myuhe/org-gcal.el
-(require 'org-gcal)
-(setq org-gcal-client-id "380736056994-68gg1ekgq85tdr0jdip8ionq7cnv5ggt.apps.googleusercontent.com"
-      org-gcal-client-secret "vkwqCFKOifR31x8WBjb1IfIg"
-      org-gcal-file-alist '(  ;; ("calendar-cal-id" . "filename")
-                            ("shotakaha@gmail.com" . "~/Documents/org/home.org")
-                            ("baiqrr0birr5g3n14pg6hkdf9s@group.calendar.google.com" . "~/Documents/org/work.org")
-                            ))
+(use-package org-gcal
+  :disabled t
+  :config
+  (setq org-gcal-client-id "380736056994-68gg1ekgq85tdr0jdip8ionq7cnv5ggt.apps.googleusercontent.com"
+        org-gcal-client-secret "vkwqCFKOifR31x8WBjb1IfIg"
+        org-gcal-file-alist '(  ;; ("calendar-cal-id" . "filename")
+                              ("shotakaha@gmail.com" . "~/Documents/org/home.org")
+                              ("baiqrr0birr5g3n14pg6hkdf9s@group.calendar.google.com" . "~/Documents/org/work.org")
+                              ))
+)
 

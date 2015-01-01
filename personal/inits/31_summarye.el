@@ -1,3 +1,3 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; summarye.el
-(require 'summarye)
+(use-package summarye)

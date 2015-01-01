@@ -1,7 +1,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; auto-save-buffers-enhanced.el
-(require 'auto-save-buffers-enhanced)
-(auto-save-buffers-enhanced t)
+(use-package auto-save-buffers-enhanced
+  :config
+  (auto-save-buffers-enhanced t)
+)
 
 ;;; If you want to specify the files explicitly using regex.
 ;; (setq auto-save-buffers-enhanced-include-regexps '(".+"))

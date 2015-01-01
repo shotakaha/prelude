@@ -1,22 +1,24 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; guide-key.el
-(require 'guide-key)
+(use-package guide-key
+  :config
 ;;; guilde-keyを発動させるプレフィクスキー
-(setq guide-key/guide-key-sequence
-      '("C-x r" "C-x 4"                 ;global
-        ;; org-modeではC-c C-xも対象にする
-        (org-mode "C-c C-x")
-        ;; outline-minor-modeではC-c @も対象にする
-        (outline-minor-mode "C-c @")))
+  (setq guide-key/guide-key-sequence
+        '("C-x r" "C-x 4"                 ;global
+          ;; org-modeではC-c C-xも対象にする
+          (org-mode "C-c C-x")
+          ;; outline-minor-modeではC-c @も対象にする
+          (outline-minor-mode "C-c @")))
 
 ;;; コマンド名にこれらが含まれている場合はハイライトされる
-(setq guide-key/highlight-command-regexp "rectangle\\|register\\|org-clock")
+  (setq guide-key/highlight-command-regexp "rectangle\\|register\\|org-clock")
 ;;; 1秒後にポップアップされる(デフォルト)
 ;;; つまり1秒以内に操作すればポップアップされずに実行される
-(setq guide-key/idle-delay 1.0)
+  (setq guide-key/idle-delay 1.0)
 ;;; 下部にキー一覧を表示させる(デフォルトはright)
-(setq guide-key/popup-window-position 'bottom)
+  (setq guide-key/popup-window-position 'bottom)
 ;;; 文字の大きさを変更する(正の数で大きく、負の数で小さく)
-(setq guide-key/text-scale-amount -2)
+  (setq guide-key/text-scale-amount -2)
 ;;; 有効にする
-(guide-key-mode 1)
+  (guide-key-mode 1)
+)
