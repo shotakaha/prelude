@@ -13,6 +13,8 @@
 (prelude-require-package 'auto-complete)
 (prelude-require-package 'ac-ispell)
 
+(prelude-require-package 'guide-key))
+
 
 
 
