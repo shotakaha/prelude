@@ -10,6 +10,8 @@
 (prelude-require-package 'crosshairs)
 (prelude-require-package 'smart-mode-line)
 (prelude-require-package 'web-mode)
+(prelude-require-package 'auto-complete)
+(prelude-require-package 'ac-ispell)
 
 
 
