@@ -1,8 +1,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ace-jump-buffer.el
-(require 'ace-jump-buffer)
+(use-package ace-jump-buffer)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ace-isearch.el
-(require 'ace-isearch)
-(global-ace-isearch-mode 1)
+(use-package ace-isearch
+  :config
+  (global-ace-isearch-mode 1)
+)

@@ -1,15 +1,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; dash.el --- List API
-(require 'dash)
+(use-package dash)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; s.el --- String API
-(require 's)
+(use-package s)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; f.el --- File/Directory API
-(require 'f)
+(use-package f)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ht.el --- Hashtable API
-(require 'ht)
+(use-package ht)

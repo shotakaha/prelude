@@ -35,7 +35,9 @@
 (require 'dired)
 (add-hook 'dired-initial-position-hook 'dired-k)
 
-(require 'direx-k)
+(use-package direx-k
+  :disabled t
 ;; (global-set-key (kbd "C-\\") 'direx-project:jump-to-project-root-other-window)
 ;; (define-key direx:direx-mode-map (kbd "K") 'direx-k)
+  )
 

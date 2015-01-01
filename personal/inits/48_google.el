@@ -1,6 +1,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; google.el --- Emacs interface to the Google API
-(require 'google)
+(use-package google)
 ;;(setq google-license-key "optional")
 ;;(setq google-referer "my url")
 ;;(google-search-video "rickroll")
@@ -23,8 +23,10 @@
 ;;; in order to comply with Emacs' standards.
 ;;; If that's a problem see `google-this-keybind'.
 ;;; To view all keybindings type "C-c / C-h".
-(require 'google-this)
-(google-this-mode 1)
+(use-package google-this
+  :config
+  (google-this-mode 1)
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; google-translage.el ---
@@ -36,6 +38,6 @@
 ;; (global-set-key (kbd "C-c t") 'google-translate-at-point)
 ;; (global-set-key (kbd "C-c T") 'google-translate-query-translate)
 
-(require 'google-translate)
-(require 'google-translate-smooth-ui)
+(use-package google-translate)
+(use-package google-translate-smooth-ui)
 (global-set-key (kbd "C-c t") 'google-translate-smooth-translate)

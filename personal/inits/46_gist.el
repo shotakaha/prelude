@@ -1,8 +1,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; gist.el
-(require 'gist)
+(use-package gist)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; yagist.el
-(require 'yagist)
+(use-package yagist)
 

@@ -1,11 +1,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; auto-complete
 ;;; auto-complete.el
-(require 'auto-complete-config)
-(ac-config-default)
-(global-auto-complete-mode t)
-;; (define-key ac-complete-mode-map "\C-n" 'ac-next)
-;; (define-key ac-complete-mode-map "\C-p" 'ac-previous)
+(use-package auto-complete-config
+  :config
+  (ac-config-default)
+  (global-auto-complete-mode t)
+  ;; (define-key ac-complete-mode-map "\C-n" 'ac-next)
+  ;; (define-key ac-complete-mode-map "\C-p" 'ac-previous)
+)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
