@@ -12,16 +12,20 @@
 (prelude-require-package 'web-mode)
 (prelude-require-package 'auto-complete)
 (prelude-require-package 'ac-ispell)
-
 (prelude-require-package 'guide-key)
 (prelude-require-package 'migemo)
 (prelude-require-package 'helm-migemo)
 (prelude-require-package 'helm-swoop)
 (prelude-require-package 'ace-isearch)
-
-
-
-
-
-
-
+(prelude-require-package 'comment-dwim-2)
+(prelude-require-package 'dired-k)
+(prelude-require-package 'helm-anything)
+(prelude-require-package 'stripe-buffer)
+(prelude-require-package 'google)
+(prelude-require-package 'google-c-style)
+(prelude-require-package 'google-this)
+(prelude-require-package 'google-translate)
+(prelude-require-package 'git-gutter)
+(prelude-require-package 'yagist)
+(prelude-require-package 'git-commit-training-wheels-mode)
+(prelude-require-package 'ht)
