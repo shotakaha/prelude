@@ -16,7 +16,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; helm-anything
 (use-package helm-anything
-  :disabled t
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -24,6 +23,7 @@
 ;;; http://rubikitch.com/2014/12/19/helm-migemo/
 
 (use-package helm-migemo
+  :disabled t
   :config
   ;; この修正が必要
   (eval-after-load "helm-migemo"
