@@ -1,3 +1,5 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; summarye.el
-(use-package summarye)
+(use-package summarye
+  :disabled t
+)
