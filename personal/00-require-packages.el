@@ -1,3 +1,5 @@
+;;; package --- Summary
+
 (prelude-require-package 'use-package)
 (prelude-require-package 'init-loader)
 (prelude-require-package 'key-chord)
@@ -29,3 +31,6 @@
 (prelude-require-package 'yagist)
 (prelude-require-package 'git-commit-training-wheels-mode)
 (prelude-require-package 'ht)
+
+(provide '00-require-packages)
+;;; 00-require-packages.el ends here
