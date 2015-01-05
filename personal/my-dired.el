@@ -1,3 +1,42 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; stripe-buffer.el
+;;; http://rubikitch.com/2014/11/30/stripe-buffer/
+(prelude-require-package 'stripe-buffer)
+(use-package stripe-buffer
+  :config
+  (add-hook 'dired-mode-hook 'stripe-listify-buffer)
+  (add-hook 'org-mode-hook 'turn-on-stripe-table-mode)
+  )
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; dired-toggle.el
+;;; http://rubikitch.com/2014/09/08/dired-toggle/
+(prelude-require-package 'dired-toggle)
+;; no need for additional setting.
+;; just type M-x dired-toggle
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; dired-details.el
+;;; http://rubikitch.com/2014/09/08/dired-details/
+;;; Commentary
+;;; dired is already loaded by Prelude.
+(prelude-require-package 'dired-details)
+(use-package dired-details
+  :config
+  (dired-details-install)
+  (setq dired-details-hidden-string "")
+  (setq dired-details-hide-link-targets nil)
+
+  (defadvice find-dired-sentinel (after dired-details (proc state) activate)
+    "find-diredでもdired-detailsを使えるようにする"
+    (ignore-errors
+      (with-current-buffer (process-buffer proc)
+        (dired-details-activate))))
+  )
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; dired
 ;;; C-x C-f <directory>, or C-x d to call dired.el
