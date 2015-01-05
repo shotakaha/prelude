@@ -8,7 +8,34 @@
   (add-hook 'org-mode-hook 'turn-on-stripe-table-mode)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; dired-k.el
+;;; http://rubikitch.com/2014/10/19/dired-k/
+;;; https://github.com/syohex/emacs-dired-k
+(prelude-require-package 'dired-k)
+(use-package dired-k
+  :disabled t
+  :config
+  (define-key dired-mode-map (kbd "K") 'dired-k)
 
+  ;; replace revert-buffer with dired-k
+  (define-key dired-mode-map (kbd "g") 'dired-k)
+
+  ;; always open dired with dired-k
+  (add-hook 'dired-initial-position-hook 'dired-k)
+  )
+
+(use-package direx-k
+  :config
+  (global-set-key (kbd "C-\\") 'direx-project:jump-to-project-root-other-wi)
+  (define-key direx:direx-mode-map (kbd "K") 'direx-k)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; direx.el
+;;; http://rubikitch.com/2014/10/18/direx/
+(prelude-require-package 'direx)
+(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; dired-toggle.el
@@ -69,13 +96,3 @@
 ;;; Press <r> in dired buffer. (<Editable Dired> in modeline)
 ;;; Press C-c C-c or C-x C-s to finish. (wdired-finish-edit)
 ;;; Press C-c C-k to abort changes. (wdired-abort-changes)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; dired-k.el
-
-(use-package direx-k
-  :disabled t
-  (add-hook 'dired-initial-position-hook 'dired-k)
-  ;; (global-set-key (kbd "C-\\") 'direx-project:jump-to-project-root-other-window)
-  ;; (define-key direx:direx-mode-map (kbd "K") 'direx-k)
-  )
