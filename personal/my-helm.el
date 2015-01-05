@@ -26,6 +26,16 @@
          source)))
   )
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ace-isearch.el
+;;; http://rubikitch.com/2014/10/08/ace-isearch/
+(prelude-require-package 'ace-isearch)
+(use-package ace-isearch
+  :config
+  (global-ace-isearch-mode 1)
+  )
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; migemo.el
 ;;; http://rubikitch.com/2014/08/20/migemo/
