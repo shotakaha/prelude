@@ -43,28 +43,29 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; key-chord.el
-(require 'key-chord)
-(key-chord-mode 1)
+;; (use-package key-chord
+;;   :config
+;;   (key-chord-mode 1)
+;;   (key-chord-define-global "uu"     'undo)
+;;   (key-chord-define-global ",."     "<>\C-b")
+;;   (key-chord-define-global "kj" 'view-mode)
+;;   ;;(key-chord-define-global "up" 'package-list-packages)
 
-(key-chord-define-global "uu"     'undo)
-(key-chord-define-global ",."     "<>\C-b")
-(key-chord-define-global "kj" 'view-mode)
-;;(key-chord-define-global "up" 'package-list-packages)
+;;   ;; Examples for TWO-key
+;;   ;; (key-chord-define-global ",."     "<>\C-b")
+;;   ;; (key-chord-define-global "hj"     'undo)
+;;   ;; (key-chord-define-global [?h ?j]  'undo)  ; the same
+;;   ;; (key-chord-define-global "jk"     'dabbrev-expand)
+;;   ;; (key-chord-define-global "cv"     'reindent-then-newline-and-indent)
+;;   ;; (key-chord-define-global "4r"     "$")
 
-;;; Examples for TWO-key
-;; (key-chord-define-global ",."     "<>\C-b")
-;; (key-chord-define-global "hj"     'undo)
-;; (key-chord-define-global [?h ?j]  'undo)  ; the same
-;; (key-chord-define-global "jk"     'dabbrev-expand)
-;; (key-chord-define-global "cv"     'reindent-then-newline-and-indent)
-;; (key-chord-define-global "4r"     "$")
+;;   ;; Examples for ONE-key
+;;   ;; (key-chord-define-global "''"     "`'\C-b")
+;;   ;; (key-chord-define-global ",,"     'indent-for-comment)
+;;   ;; (key-chord-define-global "qq"     "the ")
+;;   ;; (key-chord-define-global "QQ"     "The ")
 
-;;; Examples for ONE-key
-;; (key-chord-define-global "''"     "`'\C-b")
-;; (key-chord-define-global ",,"     'indent-for-comment)
-;; (key-chord-define-global "qq"     "the ")
-;; (key-chord-define-global "QQ"     "The ")
-
-;;; Examples for Mode specific chords
-;; (key-chord-define c++-mode-map ";;"  "\C-e;")
-;; (key-chord-define c++-mode-map "{}"  "{\n\n}\C-p\t")
+;;   ;; Examples for Mode specific chords
+;;   ;; (key-chord-define c++-mode-map ";;"  "\C-e;")
+;;   ;; (key-chord-define c++-mode-map "{}"  "{\n\n}\C-p\t")
+;;   )
