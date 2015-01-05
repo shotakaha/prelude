@@ -1,12 +1,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; helm-swoop.el
 ;;; http://rubikitch.com/2014/12/25/helm-swoop/
-;;; 1. migemo の設定
+;;; 1. migemo の設定 (ローマ字で日本語検索できる)
 ;;; 2. helm-migemo の設定
 ;;; 3. helm-swoop の設定
 ;;; 4. ace-search の設定
-
-(prelude-require-packages '(helm-swoop helm-migemo ace-isearch))
+;;; 5. isearch-dabbrev の設定 （検索語の自動補完）
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; migemo.el
@@ -92,3 +91,8 @@
   :config
   (global-ace-isearch-mode 1)
   )
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; isearch-dabbrev.el
+;;; http://rubikitch.com/2014/12/23/isearch-dabbrev/
+(prelude-require-package 'isearch-dabbrev)
+(define-key isearch-mode-map (kbd "<tab>") 'isearch-dabbrev-expand)
