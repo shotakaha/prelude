@@ -15,5 +15,3 @@
 ;;; anything-moccur.el
 ;;; combine "isearch" and "occur"
 ;;(use-package anything-c-moccur)
-
-
