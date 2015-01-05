@@ -1,4 +1,20 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; bind-key.el
+;;; http://rubikitch.com/2014/09/10/bind-key/
+;; Usage :
+;; (define-key dired-mode-map "o" 'dired-omit-mode)
+;; (define-key dired-mode-map "a" 'some-other-mode-map)
+;; ↓
+;; (bind-keys :map dired-mode-map
+;;            ("o" . dired-omit-mode)
+;;            ("a" . some-custom-dired-function))
+
+(bind-keys :map dired-mode-map
+           ("o" . dired-omit-mode)
+           ;;            ("a" . some-custom-dired-function)
+           )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; stripe-buffer.el
 ;;; http://rubikitch.com/2014/11/30/stripe-buffer/
 (prelude-require-package 'stripe-buffer)
