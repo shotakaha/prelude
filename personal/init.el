@@ -66,6 +66,17 @@
   (setq init-loader-byte-compile t)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; uniquify.el
+;;; Easy to recognize same-named file in different directory
+;;; Already set in core/prelude-editor.el
+;;; replace some variables
+(use-package uniquify
+  :config
+  (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+  (setq uniquify-ignore-buffers-re "*[^*]+*")
+)
+
 
 (provide 'init)
 ;;; init.el ends here
