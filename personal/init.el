@@ -24,11 +24,19 @@
 (setq load-prefer-newer t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; generic-x.el
+;;; http://rubikitch.com/2014/08/03/blog/
+;;; http://drunkard-diogenes.blogspot.jp/2014/07/emacs-lisp.html
+(require 'generic-x)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; use-package.el
 ;;; http://rubikitch.com/2014/09/09/use-package/
 ;;; https://github.com/jwiegley/use-package
 ;;; http://qiita.com/kai2nenobu/items/5dfae3767514584f5220
 (require 'use-package)
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; package.el
