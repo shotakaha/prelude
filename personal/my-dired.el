@@ -37,6 +37,12 @@
 (prelude-require-package 'direx)
 (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory)
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; http://rubikitch.com/2014/09/20/dired-async/
+(prelude-require-package 'async)
+(eval-after-load "dired-aux" '(require 'dired-async))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; dired-toggle.el
 ;;; http://rubikitch.com/2014/09/08/dired-toggle/
