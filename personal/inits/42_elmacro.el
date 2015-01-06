@@ -1,6 +1,6 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; elmacro.el
-(use-package elmacro
-  :config
-  (elmacro-mode)
-)
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;;; elmacro.el
+;; (use-package elmacro
+;;   :config
+;;   (elmacro-mode)
+;; )
