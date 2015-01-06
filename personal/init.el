@@ -11,9 +11,14 @@
 ;; Also, I am using "init-loader.el" right now,
 ;; but i will try to depend less upon it.
 
+;;; Code
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Enlarge garbage collection
-(setq gc-cons-threshold (* 128 1024 1024 1024))
+;;; garbage collection
+;;; threshold 128MB
+;;; leave message when gc collected
+(setq gc-cons-threshold (* 128 1024 1024))
+(setq garbage-collection-messages t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; load-theme
