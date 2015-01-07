@@ -14,43 +14,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; org-mode --- M-x org-info でマニュアルを参照可能
 (use-package org
-  :mode (
-         ("\\.txt$" . org-mode)
-         )
+  :mode (("\\.txt$" . org-mode))
   :config
   (progn
     ;; 見出しの余分な * を消す。意外と見やすくなる。
     (setq org-hide-leading-stars t)
-    )
-  )
 
-
-;; ;;; tamura70さんのはてなブログも参照
-;; ;;; http://d.hatena.ne.jp/tamura70/20100203/org
-;; ;;; 拡張子が org のファイルを開いたとき、自動的に org-mode にする
-;; ;;; 拡張子が txt のファイルも org-mode にする
-;; (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-;; (add-to-list 'auto-mode-alist '("\\.txt$" . org-mode))
-
-;; ;;; org-mode での強調表示を可能にする
-;; (add-hook 'org-mode-hook 'turn-on-font-lock)
-
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;; org-remember の設定 --- るびきちブログ
-;; ;;; http://d.hatena.ne.jp/rubikitch/20090121/1232468026
-;; ;;; org-modeがうまく動作しない（特にorg-agenda）ので
-;; ;;; テストとして、~/Documents/org/ にいろいろ作ることにする
-;; ;;; --> ~/Documents/junk/ に変更した
-;; ;;; --> ~/Documents/org/ に戻した。C-c a t でTODO リストを表示する際
-;; ;;;     junk 以下のファイルをすべてバッファに取り込むせいか、
-;; ;;;     emacs がすごく重たくなるため
-;; ;;;
-;; ;;; org-capture の設定 --- るびきちブログ
-;; ;;; http://d.hatena.ne.jp/rubikitch/20100819/org
-;; ;;; org-remember は org-capture になったみたい
+    ;; org-capture の設定
+    ;; http://d.hatena.ne.jp/rubikitch/20090121/1232468026
+    ;; http://d.hatena.ne.jp/rubikitch/20100819/org
 ;; (setq org-startup-truncated nil)
-;; (setq org-return-follows-link t)
+    ;; RET でリンク先へ移動する
+    (setq org-return-follows-link t)
 ;; (setq org-directory "~/Documents/org/")
 ;; (setq org-default-notes-file "agenda.org")
 ;; (setq org-capture-templates
@@ -81,6 +56,12 @@
 ;; ;; ;;          "** TODO %?\n    %i\n    %a\n    %T")
 ;; ;; ;;         ("m" "memo" entry (file (expand-file-name "~/Documents/org/memo.org"))
 ;; ;; ;;          "* %?\n    %i\n    %a\n    %T")))
+
+
+    )
+  )
+
+
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ;;; ひき続きるびきちブログに書いてあったコードリーディングの設定
