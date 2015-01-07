@@ -82,3 +82,18 @@
 
   (add-hook 'view-mode-hook 'view-mode-hook--origami)
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ido-vertical-mode.el
+;;; http://rubikitch.com/2015/01/06/ido-vertical-mode/
+(prelude-require-package 'ido-vertical-mode)
+(use-package ido-vertical-mode
+  :ensure t
+  :config
+  ;; このときidoが使うwindowの高さは大きくした方がいい
+  (setq ido-max-window-height 0.75)
+  ;; あいまいマッチは入れておこう
+  (setq ido-enable-flex-matching t)
+  (ido-mode 1)
+  (ido-vertical-mode 1)
+)
