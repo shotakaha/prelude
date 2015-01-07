@@ -1,3 +1,15 @@
+;;; my-eww.el -- Shota's configuration for EWW
+
+;;; Commentary:
+;;
+;; EWWを使いやすくするための設定たち
+;;
+;; 1. EWWの履歴をhelm/anythingする設定
+;; 2. eww-lnum の設定 → 次の ace-link に乗り換え
+;; 3. ace-link の設定
+
+;;; Code:
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; helm-eww.el
 ;;; EWWの履歴をhelm/anythingする方法
@@ -112,3 +124,6 @@
             (setq skip (next-single-property-change (point) 'help-echo)))
           (nreverse candidates)))))
   )
+
+(provide 'my-eww)
+;;; my-eww.el ends here
