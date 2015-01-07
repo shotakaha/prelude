@@ -56,6 +56,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-loader.el
 (use-package init-loader
+  :disabled t
   :ensure t
   :config
   ;;; always show *init log* after starting emacs
@@ -82,6 +83,9 @@
   (setq uniquify-ignore-buffers-re "*[^*]+*")
 )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; key-bind
+(bind-key "C-h" 'delete-backward-char)
 
 (provide 'init)
 ;;; init.el ends here
