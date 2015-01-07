@@ -1,5 +1,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; helm-eww.el
+;;; EWWの履歴をhelm/anythingする方法
 ;;; http://rubikitch.com/2014/11/26/helm-eww/
 
 (require 'eww)
