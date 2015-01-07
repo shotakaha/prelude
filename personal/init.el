@@ -40,8 +40,8 @@
 ;;; https://github.com/jwiegley/use-package
 ;;; http://qiita.com/kai2nenobu/items/5dfae3767514584f5220
 (require 'use-package)
-
-
+(setq use-package-verbose t)
+(setq use-package-minimum-reported-time 0.001)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; package.el
@@ -56,7 +56,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-loader.el
 (use-package init-loader
-  :disabled t
+  ;; :disabled t
   :ensure t
   :config
   ;;; always show *init log* after starting emacs
