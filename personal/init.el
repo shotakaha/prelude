@@ -87,5 +87,20 @@
 ;;; key-bind
 (bind-key "C-h" 'delete-backward-char)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; C-x 3 C-x o --> C-t
+;;; 画面の移動を簡単に行う方法
+;;; （画面が分割されてない場合は、２分割(C-x 3)する）
+;;; copied from http://d.hatena.ne.jp/rubikitch/20100210/emacs
+(defun other-window-or-split ()
+  (interactive)
+  (when (one-window-p)
+    (split-window-horizontally))
+  (other-window 1))
+;; transpose-char(C-t) は普段使わないのでつぶす
+(bind-key* "C-t" 'other-window-or-split)
+;;(bind-key* "C-u C-t" 'delete-other-window)
+
+
 (provide 'init)
 ;;; init.el ends here
