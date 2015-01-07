@@ -14,6 +14,7 @@
 ;;; helm-eww.el
 ;;; EWWの履歴をhelm/anythingする方法
 ;;; http://rubikitch.com/2014/11/26/helm-eww/
+;;; H, s で履歴の表示
 
 (require 'eww)
 (defvar eww-data)
@@ -44,18 +45,22 @@
                               (prog1 (cons (format "%s (%s) <%s>" (plist-get pl :title) (plist-get pl :url) b)
                                            (cons b pl))
                                 (puthash (plist-get pl :url) t hash)))))))
+
 (defun helm-eww-history-browse (buf-hist)
   (if (bufferp buf-hist)
       (switch-to-buffer buf-hist)
     (switch-to-buffer (car buf-hist))
     (eww-save-history)
     (eww-restore-history (cdr buf-hist))))
+
 (defvar helm-source-eww-history
   '((name . "eww history")
     (candidates . helm-eww-history-candidates)
     (migemo)
     (action . helm-eww-history-browse)))
+
 (defvaralias 'anything-c-source-eww-history 'helm-source-eww-history)
+
 (defun helm-eww-history ()
   (interactive)
   (helm :sources 'helm-source-eww-history
@@ -64,6 +69,17 @@
 (define-key eww-mode-map (kbd "H") 'helm-eww-history)
 (define-key eww-mode-map (kbd "s") 'helm-eww-history)
 
+;; 情報源（helm-source-eww-history）を
+;; M-x helm-for-files からでもアクセスできるようにする
+;; （helm-for-files-preferred-list に入れる）
+(setq helm-for-files-preferred-list
+      '(helm-source-buffers-list
+        helm-source-recentf
+        helm-source-bookmarks
+        helm-source-file-cache
+        helm-source-files-in-current-dir
+        helm-source-eww-history
+        helm-source-locate))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; eww-lnum.el
