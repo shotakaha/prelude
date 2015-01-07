@@ -7,6 +7,7 @@
 ;; Enable view-mode
 (setq view-read-only t)
 (use-package view
+  :config
   ;; less-like
   (define-key view-mode-map (kbd "N") 'View-search-last-regexp-backward)
   (define-key view-mode-map (kbd "?") 'View-search-regexp-backward)
