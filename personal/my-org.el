@@ -120,8 +120,14 @@
   (setq org-capture-templates
         `(("a" "とっさのメモなど" entry
            (file+headline nil "MEMO")
-           "* %U%?\n\na:%a\nf:%f\nF:%F\n"
+           "* %U%?\n\n%a\n%F\n"
            :empty-lines 1)
+
+          ("b" "ブログネタなど" entry
+           (file+headline nil "BLOG")
+           "* %?\nEntered on %U"
+           :empty-lines 1
+           :jump-to-captured 1)
 
           ("m" "会議の議事録など" entry
            (file+datetree "~/Documents/org/minutes.org")
@@ -151,11 +157,6 @@
   ;;         )
   ;;       )
 
-  ;; ;; capture templates
-  ;; (setq org-capture-templates
-  ;;       '(("p" "Project Task" entry (file+headline (expand-file-name "~/Documents/org/project.org") "Inbox") "** TODO %?\n    %i\n    %a\n    %T")
-  ;;         ("m" "memo"         entry (file (expand-file-name "~/Documents/org/memo.org")) "* %?\n    %i\n    %a\n    %T"))
-  ;;       )
 
 
   ;; ひき続きるびきちブログに書いてあったコードリーディングの設定
@@ -187,10 +188,12 @@
   (bind-key "C-c c" 'org-capture)
 
 
+  ;; org-agenda の設定
 
-  ;; TODOの設定 --- tamura70ブログ
+  ;; todoキーワードの設定 --- tamura70ブログ
   ;; http://d.hatena.ne.jp/tamura70/20100207/org
   ;; http://d.hatena.ne.jp/tamura70/20100215/org
+
   ;; TODOの状態の設定
   ;; ! をつけることで、その状態へ変更した日時を記録することが可能
   ;; @ をつけることで、その状態へ変更した時にメモを残すことが可能
@@ -199,7 +202,7 @@
   (setq org-log-done 'time)   ;;; DONEの時刻を記録
   ;; (setq org-log-done 'note)  ;;; DONEの時刻とメモを記録
 
-  ;; TAGの設定 --- tamura70のブログ
+  ;; tagリストの設定 --- tamura70のブログ
   ;; http://d.hatena.ne.jp/tamura70/20100215/org
   ;; TAGリストの一括設定
   ;; orgファイル毎で設定する場合は，ファイル中に以下のように記述する．
