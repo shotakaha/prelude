@@ -220,18 +220,7 @@
              ("M-n" 'org-next-visible-link)
              ("M-p" 'org-previous-visible-link)
              )
-
-
-
-
-
   )
-
-
-
-
-
-
 
 
 ;; ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -257,26 +246,4 @@
 ;; ;; ;; (setq org-todo-keywords
 ;; ;; ;;       '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE(x)" "CANCEL(c)")
 ;; ;; ;;         (sequence "APPT(a)" "|" "DONE(x)" "CANCEL(c)")))
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;; bpe.el --- Blog from Org mode to Blogger
-;; ;;; see https://github.ctayamada/bpe
-;; (use-package bpe
-;;   :disabled t
-;;   :config
-;;   (require 'htmlize nil 'noerror) ; to fontify source code block on your blog.
-;;   (setq bpe:account "shotakaha@gmail.com")
-;;   (setq bpe:blog-name "KumaNote")
-;;   (define-key org-mode-map (kbd "C-c C-p") 'bpe:post-article)
-;;   (define-key org-mode-map (kbd "C-c C-i") 'bpe:insert-template)
-;;   ;; For Japanese, default is $LANG environment variable.
-;;   (setq bpe:lang "ja_JP.UTF-8")
-;; )
-
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;; try weblogger.el
-;; ;;; -> 動かないことが判明
-;; (use-package weblogger
-;;   :disabled t
 ;;   )
