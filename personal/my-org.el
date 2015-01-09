@@ -2,7 +2,13 @@
 
 ;;; Commentary:
 ;;
-;; Configured in modules/prelude-org.el
+;; ある程度は、modules/prelude-org.el でも設定されている。
+;; このファイルでやっていることは、
+;;   1. org-capture の設定
+;;   2. org-agenda の設定（まだ終わっていない）
+;;   3. org-gcal の設定 -> 外部ファイルへ
+;;   4. org-bpe の設定 -> 外部ファイルへ
+;;
 ;; org-capture などで作成するファイルは、
 ;; 基本的に ~/Documents/org/ に保存することにする。
 
@@ -118,26 +124,33 @@
       ))
 
   (setq org-capture-templates
-        `(("a" "とっさのメモなど" entry
+        `(("a" "あっと思ったことを さっとφ(..)メモする" entry
            (file+headline nil "MEMO")
            "* %U%?\n\n%a\n%F\n"
            :empty-lines 1)
 
-          ("b" "ブログネタなど" entry
+          ("b" "ブログのネタなど" entry
            (file+headline nil "BLOG")
            "* %?\nEntered on %U"
            :empty-lines 1
            :jump-to-captured 1)
 
-          ("m" "会議の議事録など" entry
+          ("m" "会議録など" entry
            (file+datetree "~/Documents/org/minutes.org")
            "* %? %T"
            :empty-lines 1
            :jump-to-captured 1)
 
-          ("p" "ぷれーん" plain
-           (file+headline nil "plain")
+          ("p" "ぱっと 読み返したいと思ったとき" plain
+           (file+headline nil "PLAIN")
            "%?"
+           :empty-lines 1
+           :jump-to-captured 1
+           :unnarrowed 1)
+
+          ("t" "とりあえず 仕事を放り込む" entry
+           (file+headline nil "GTD")
+           "** TODO %?\n    %i\n    %a\n    %T"
            :empty-lines 1)
           )
         )
@@ -145,7 +158,7 @@
 
   ;; ;; org-capture-templates 変数の設定
   ;; (setq org-capture-templates
-  ;;       '(("t" "Todo" entry (file+headline nil "Inbox")     "** TODO %?\n    %i\n    %a\n    %t")
+
   ;;         ("b" "Bug"  entry (file+headline nil "Inbox")     "** TODO %?    :bug:\n    %i\n    %a\n    %t")
   ;;         ("i" "Idea" entry (file+headline nil "New Ideas") "** %?\n    %i\n    %a\n    %t")
   ;;
