@@ -9,6 +9,7 @@
 ;; 3. ace-link の設定
 ;; 4. 画像を非表示にする方法
 ;; 5. 辞書（Weblio, Wikipedia）設定（を追加する予定）
+;; 6. ブラウジング時の配色を見やすくなるように設定（うまく動かない）
 
 ;;; Code:
 
@@ -175,6 +176,34 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; 辞書（Weblio, Wikipedia）設定（を追加する予定）
 ;;; http://rubikitch.com/2014/11/20/eww-weblio/
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ブラウジング時の配色を見やすくなるように設定（うまく動かない）
+;;; http://rubikitch.com/2014/11/19/eww-nocolor/
+;;; 変更する : M-x eww-enable-color
+;;; 元に戻す : M-x eww-disable-color
+
+;; うまく動作しなかったので、コメントアウトしておく <2015-01-10 19:20:20>
+;; (defvar eww-disable-colorize t)
+;; (defun shr-colorize-region--disable (orig start end fg &optional bg &rest _)
+;;   (unless eww-disable-colorize
+;;     (funcall orig start end fg)))
+;; (advice-add 'shr-colorize-region :around 'shr-colorize-region--disable)
+;; (advice-add 'eww-colorize-region :around 'shr-colorize-region--disable)
+
+;; (defun eww-disable-color ()
+;;   "ewwで文字色を反映させない"
+;;   (interactive)
+;;   (setq-local eww-disable-colorize t)
+;;   (eww-reload))
+
+;; (defun eww-enable-color ()
+;;   "ewwで文字色を反映させる"
+;;   (interactive)
+;;   (setq-local eww-disable-colorize nil)
+;;   (eww-reload))
+
 
 (provide 'my-eww)
 ;;; my-eww.el ends here
