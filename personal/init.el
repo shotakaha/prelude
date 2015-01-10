@@ -68,7 +68,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-loader.el
 (use-package init-loader
-  ;; :disabled t
+  :disabled t
   :ensure t
   :config
   ;;; always show *init log* after starting emacs
