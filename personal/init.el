@@ -14,6 +14,14 @@
 ;;; Code
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Always start emacs daemon
+;;; emacsclient を使って接続する
+;;; /Applications/Emacs.app/以下のでも、
+;;; /opt/local/bin/emacsclient でもどちらでもよい
+;;; .bashrcに、export EDITOR=emacsclient としておくとよい
+(server-start)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; garbage collection
 ;;; threshold 128MB
 ;;; leave message when gc collected
@@ -22,10 +30,11 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; load-theme
+;;; manoj-dark : 背景:黒、文字:橙
+;;; leuven     : 背景:白、文字:黒、
+;;;              Org-modeの見出しが大きく表示されてGOOD!
 ;; (load-theme 'manoj-dark t)
 (load-theme 'leuven t)
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; load newer file
