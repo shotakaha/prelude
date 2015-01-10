@@ -8,6 +8,7 @@
 ;; 2. eww-lnum の設定 → 次の ace-link に乗り換え
 ;; 3. ace-link の設定
 ;; 4. 画像を非表示にする方法
+;; 5. 辞書（Weblio, Wikipedia）設定（を追加する予定）
 
 ;;; Code:
 
@@ -171,6 +172,9 @@
   (setq-local shr-put-image-function 'shr-put-image-alt))
 (add-hook 'eww-mode-hook 'eww-mode-hook--disable-image)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; 辞書（Weblio, Wikipedia）設定（を追加する予定）
+;;; http://rubikitch.com/2014/11/20/eww-weblio/
 
 (provide 'my-eww)
 ;;; my-eww.el ends here
