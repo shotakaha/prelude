@@ -7,6 +7,7 @@
 ;; 1. EWWの履歴をhelm/anythingする設定
 ;; 2. eww-lnum の設定 → 次の ace-link に乗り換え
 ;; 3. ace-link の設定
+;; 4. 画像を非表示にする方法
 
 ;;; Code:
 
@@ -140,6 +141,36 @@
             (setq skip (next-single-property-change (point) 'help-echo)))
           (nreverse candidates)))))
   )
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; 画像を非表示にする設定
+;;; http://rubikitch.com/2014/11/25/eww-image/
+;;; 非表示 : M-x eww-disable-images
+;;; 再表示 : M-x eww-enable-images
+;;;
+;;; そのうちトグルを作ってもいいかもしれない
+
+(defun eww-disable-images ()
+  "ewwで画像表示させない"
+  (interactive)
+  (setq-local shr-put-image-function 'shr-put-image-alt)
+  (eww-reload))
+
+(defun eww-enable-images ()
+  "ewwで画像表示させる"
+  (interactive)
+  (setq-local shr-put-image-function 'shr-put-image)
+  (eww-reload))
+
+(defun shr-put-image-alt (spec alt &optional flags)
+  (insert alt))
+
+;; デフォルトで非表示にする設定
+(defun eww-mode-hook--disable-image ()
+  (setq-local shr-put-image-function 'shr-put-image-alt))
+(add-hook 'eww-mode-hook 'eww-mode-hook--disable-image)
+
 
 (provide 'my-eww)
 ;;; my-eww.el ends here
