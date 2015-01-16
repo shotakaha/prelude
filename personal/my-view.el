@@ -102,3 +102,38 @@
   (ido-mode 1)
   (ido-vertical-mode 1)
 )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; psession.el
+;;; http://rubikitch.com/2014/08/21/psession/
+;;; https://github.com/thierryvolpiatto/psession
+;;; package.elで入れたので、autoload はしなくていいはず
+;;; セッション情報は、~/.emacs.d/elisp-objects/ に .elcファイルで保存。
+;;; defcustom されている psession-elisp-objects-default-directory を
+;;; 再定義すれば、任意の場所に変更できるはず。
+(prelude-require-package 'psession)
+(psession-mode 1)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; web-mode.el
+;;; http://web-mode.org
+;;; インデントの設定とか、いろいろhookに足してみる
+(use-package web-mode
+  :config
+  (setq web-mode-engines-alist
+        '(("php"    . "\\.phtml\\'")
+          ("blade"  . "\\.blade\\.")))
+
+  (defun my-web-mode-hook ()
+    "Hooks for Web mode."
+    (setq web-mode-markup-indent-offset 2)
+    (setq web-mode-css-indent-offset 2)
+    (setq web-mode-code-indent-offset 2)
+    (setq web-mode-style-padding 1)
+    (setq web-mode-script-padding 1)
+    (setq web-mode-block-padding 0)
+    (setq web-mode-comment-style 2)
+    )
+  (add-hook 'web-mode-hook  'my-web-mode-hook)
+
+  )
