@@ -14,6 +14,14 @@
 ;;; Code
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Always start emacs daemon
+;;; emacsclient を使って接続する
+;;; /Applications/Emacs.app/以下のでも、
+;;; /opt/local/bin/emacsclient でもどちらでもよい
+;;; .bashrcに、export EDITOR=emacsclient としておくとよい
+(server-start)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; garbage collection
 ;;; threshold 128MB
 ;;; leave message when gc collected
@@ -22,10 +30,11 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; load-theme
+;;; manoj-dark : 背景:黒、文字:橙
+;;; leuven     : 背景:白、文字:黒、
+;;;              Org-modeの見出しが大きく表示されてGOOD!
 ;; (load-theme 'manoj-dark t)
 (load-theme 'leuven t)
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; load newer file
@@ -43,8 +52,8 @@
 ;;; https://github.com/jwiegley/use-package
 ;;; http://qiita.com/kai2nenobu/items/5dfae3767514584f5220
 (require 'use-package)
-
-
+(setq use-package-verbose t)
+(setq use-package-minimum-reported-time 0.001)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; package.el
@@ -104,6 +113,10 @@
 (bind-key* "C-t" 'other-window-or-split)
 ;;(bind-key* "C-u C-t" 'delete-other-window)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; twitter
+;;; 簡単ログインの設定
+(setq twittering-use-master-password t)
 
 (provide 'init)
 ;;; init.el ends here

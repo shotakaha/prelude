@@ -7,6 +7,9 @@
 ;; 1. EWWの履歴をhelm/anythingする設定
 ;; 2. eww-lnum の設定 → 次の ace-link に乗り換え
 ;; 3. ace-link の設定
+;; 4. 画像を非表示にする方法
+;; 5. 辞書（Weblio, Wikipedia）設定（を追加する予定）
+;; 6. ブラウジング時の配色を見やすくなるように設定（うまく動かない）
 
 ;;; Code:
 
@@ -140,6 +143,67 @@
             (setq skip (next-single-property-change (point) 'help-echo)))
           (nreverse candidates)))))
   )
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; 画像を非表示にする設定
+;;; http://rubikitch.com/2014/11/25/eww-image/
+;;; 非表示 : M-x eww-disable-images
+;;; 再表示 : M-x eww-enable-images
+;;;
+;;; そのうちトグルを作ってもいいかもしれない
+
+(defun eww-disable-images ()
+  "ewwで画像表示させない"
+  (interactive)
+  (setq-local shr-put-image-function 'shr-put-image-alt)
+  (eww-reload))
+
+(defun eww-enable-images ()
+  "ewwで画像表示させる"
+  (interactive)
+  (setq-local shr-put-image-function 'shr-put-image)
+  (eww-reload))
+
+(defun shr-put-image-alt (spec alt &optional flags)
+  (insert alt))
+
+;; デフォルトで非表示にする設定
+(defun eww-mode-hook--disable-image ()
+  (setq-local shr-put-image-function 'shr-put-image-alt))
+(add-hook 'eww-mode-hook 'eww-mode-hook--disable-image)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; 辞書（Weblio, Wikipedia）設定（を追加する予定）
+;;; http://rubikitch.com/2014/11/20/eww-weblio/
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ブラウジング時の配色を見やすくなるように設定（うまく動かない）
+;;; http://rubikitch.com/2014/11/19/eww-nocolor/
+;;; 変更する : M-x eww-enable-color
+;;; 元に戻す : M-x eww-disable-color
+
+;; うまく動作しなかったので、コメントアウトしておく <2015-01-10 19:20:20>
+;; (defvar eww-disable-colorize t)
+;; (defun shr-colorize-region--disable (orig start end fg &optional bg &rest _)
+;;   (unless eww-disable-colorize
+;;     (funcall orig start end fg)))
+;; (advice-add 'shr-colorize-region :around 'shr-colorize-region--disable)
+;; (advice-add 'eww-colorize-region :around 'shr-colorize-region--disable)
+
+;; (defun eww-disable-color ()
+;;   "ewwで文字色を反映させない"
+;;   (interactive)
+;;   (setq-local eww-disable-colorize t)
+;;   (eww-reload))
+
+;; (defun eww-enable-color ()
+;;   "ewwで文字色を反映させる"
+;;   (interactive)
+;;   (setq-local eww-disable-colorize nil)
+;;   (eww-reload))
+
 
 (provide 'my-eww)
 ;;; my-eww.el ends here
