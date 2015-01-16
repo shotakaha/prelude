@@ -30,6 +30,7 @@
   (setq my-org-capture-demo-file "~/Documents/org/captured-demo.org")
   (setq my-org-codereading-file "~/Documents/org/codereading.org")
   (setq my-org-agenda-directory "~/Documents/org/agenda/")
+  ;;(setq my-org-agenda-directory "~/Documents/org/")
 
   ;; 基本設定
   ;; 見出しの余分な * を消す。意外と見やすくなる。
