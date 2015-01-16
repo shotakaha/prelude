@@ -146,6 +146,7 @@
            (file+headline nil "PLAIN")
            "%?"
            :empty-lines 1
+           :jump-to-captured 1
            :unnarrowed 1)
 
           ("t" "とりあえず 仕事を放り込む" entry
