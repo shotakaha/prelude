@@ -153,7 +153,7 @@
 
           ("t" "とりあえず 仕事を放り込む" entry
            (file+headline nil "GTD")
-           "** TODO %?\n    %i\n    %a\n    Enterd on %U"
+           "** TODO %?\n    %i\n    %a\n    Entered on %T"
            :empty-lines 1)
           )
         )
@@ -232,7 +232,9 @@
   ;; ;; AGENDAの設定 --- tamura70ブログ
   ;; ;; http://d.hatena.ne.jp/tamura70/20100208/org
   ;; ;; アジェンダ表示の対象ファイル
-  (setq org-agenda-files (list my-org-agenda-directory))
+  ;; (setq org-agenda-files (list my-org-agenda-directory))
+  ;; (setq org-agenda-files (list my-org-directory))
+  (setq org-agenda-files (list my-org-directory my-org-agenda-directory))
   ;; アジェンダ表示で下線を用いる
   (add-hook 'org-agenda-mode-hook '(lambda () (hl-line-mode 1)))
   ;; (setq hl-line-face 'underline)
