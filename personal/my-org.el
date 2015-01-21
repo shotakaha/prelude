@@ -8,6 +8,7 @@
 ;;   2. org-agenda の設定（まだ終わっていない）
 ;;   3. org-gcal の設定 -> 外部ファイルへ
 ;;   4. org-bpe の設定 -> 外部ファイルへ
+;;   5. org-ac の設定
 ;;
 ;; org-capture などで作成するファイルは、
 ;; 基本的に ~/Documents/org/ に保存することにする。
@@ -17,6 +18,7 @@
 ;; ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ;; ;;; Configure before loading org mode
 ;; ;; (package-initialize)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; org-mode --- M-x org-info でマニュアルを参照可能
@@ -136,9 +138,9 @@
            :empty-lines 1
            :jump-to-captured 1)
 
-          ("m" "会議録など" entry
+          ("m" "みんなで会議" entry
            (file+datetree "~/Documents/org/minutes.org")
-           "* %? %T"
+           "* %T %?"
            :empty-lines 1
            :jump-to-captured 1)
 
@@ -151,7 +153,7 @@
 
           ("t" "とりあえず 仕事を放り込む" entry
            (file+headline nil "GTD")
-           "** TODO %?\n    %i\n    %a\n    %T"
+           "** TODO %?\n    %i\n    %a\n    Enterd on %U"
            :empty-lines 1)
           )
         )
@@ -264,3 +266,11 @@
 ;; ;; ;;         (sequence "APPT(a)" "|" "DONE(x)" "CANCEL(c)")))
 ;;   )
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; org-ac
+;;; https://github.com/aki2o/org-ac
+(require 'org-ac)
+;; Make config suit for you. About the config item, eval the following sexp.
+;; (customize-group "org-ac")
+(org-ac/config-default)
