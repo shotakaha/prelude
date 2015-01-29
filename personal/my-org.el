@@ -9,6 +9,7 @@
 ;;   3. org-gcal の設定 -> 外部ファイルへ
 ;;   4. org-bpe の設定 -> 外部ファイルへ
 ;;   5. org-ac の設定
+;;   6. org-autolistの設定
 ;;
 ;; org-capture などで作成するファイルは、
 ;; 基本的に ~/Documents/org/ に保存することにする。
@@ -276,3 +277,11 @@
 ;; Make config suit for you. About the config item, eval the following sexp.
 ;; (customize-group "org-ac")
 (org-ac/config-default)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; org-autolist
+;;; https://github.com/calvinwyoung/org-autolist
+(use-package auto-list
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-auto-list-mode)))
+  )
