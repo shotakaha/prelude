@@ -273,10 +273,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; org-ac
 ;;; https://github.com/aki2o/org-ac
-(require 'org-ac)
-;; Make config suit for you. About the config item, eval the following sexp.
-;; (customize-group "org-ac")
-(org-ac/config-default)
+
+(use-package org-ac;
+  :config
+  ;; Make config suit for you. About the config item, eval the following sexp.
+  ;; (customize-group "org-ac")
+  (org-ac/config-default)
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; org-autolist
