@@ -129,7 +129,12 @@
 ;;; defcustom されている psession-elisp-objects-default-directory を
 ;;; 再定義すれば、任意の場所に変更できるはず。
 (prelude-require-package 'psession)
-(psession-mode 1)
+(use-package psession
+  :ensure t
+  :config
+  (psession-mode 1)
+  )
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; web-mode.el
