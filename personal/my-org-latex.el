@@ -1,13 +1,18 @@
+;;; my-org-latex.el --- config for org-latex export
+
+;;; Commentary:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; setting LaTeX for Org
 ;;; Org -> LaTeX file -> YaTeX(pTeX + dvipdfmx)
 ;;; 1. デフォルトクラスを jsarticle に設定（org-latex-classes）
 ;;; 2. パッケージの追加（org-latex-packages-list）
 ;;; 3. コードブロックの装飾（org-latex-listings）
-;;; 4. 上付き文字、下付き文字の設定
+;;; 4. 上付き文字、下付き文字の設定(org-use-sub-superscripts)
 ;;; 5. org-latex-pdf-process の設定をする予定
-
 ;;; 6. 未確認な設定をコメントアウト
+
+;;; Code:
+
 (use-package ox-latex
   :config
   (setq org-latex-default-class "jsarticle")
@@ -58,6 +63,7 @@
 
   (setq org-use-sub-superscripts nil)
   (setq org-export-with-sub-superscripts nil)
+
   ;; (setq org-latex-pdf-process
   ;;       ("ptex2pdf -l -ot -synctex=1 -file-line-error")
 
@@ -67,3 +73,6 @@
   ;; (setq org-file-apps '(("pdf" . "/usr/bin/open -a Preview.app %s")))
 
   )
+
+(provide 'my-org-latex)
+;;; my-org-latex.el ends here
