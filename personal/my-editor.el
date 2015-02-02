@@ -360,3 +360,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; github-browse-file
 ;;; http://rubikitch.com/2014/11/01/github-browse-file/
+;;; https://github.com/osener/github-browse-file
+(prelude-require-package 'github-browse-file)
+(use-package github-browse-file
+  :ensure t
+  :config
+  (setq github-browse-file-show-line-at-point t)
+  )
