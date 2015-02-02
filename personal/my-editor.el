@@ -12,6 +12,7 @@
 ;; 7. symonの設定（予定）
 ;; 8. magitの設定
 ;; 9. mag-menuの設定
+;; 10. github-browse-fileの設定
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; view-mode
@@ -295,3 +296,67 @@
 ;;; mag-menu.el
 ;;; http://rubikitch.com/2014/12/20/mag-menu/
 ;;; https://github.com/chumpage/mag-menu
+(prelude-require-package 'mag-menu)
+(use-package mag-menu
+  :config
+  ;; 単にメッセージを表示するだけのシンプルなメニュー
+  (defun mag-menu-test ()
+    (interactive)
+    (mag-menu
+     '(test
+       (actions
+        ("c" "Commit" mag-menu-test-commit)
+        ("l" "Log" mag-menu-test-log)))))
+  (defun mag-menu-test-commit (options)
+    (message "Commit"))
+  (defun magi-menu-test-log (options)
+    (message "Log"))
+
+  ;; Google検索の例
+  (defun google-menu (query)
+    "Google検索のメニュー"
+    (interactive "sGoogle: ")
+    (mag-menu
+     '(google                             ;任意の名前
+       (actions
+        ("g" "検索！" google-menu-search) ;一番上はRETで実行可能
+        ("u" "URLを見る" google-menu-show-url)
+        ("o" "オプションを見る" google-menu-show-options))
+       (switches
+        ("j" "日本語のみ" "--only-japanese"))
+       (arguments                         ;オプション名は=で終わる
+        ("s" "期間" "--period=" mag-menu-read-generic)
+        ("Q" "検索語" "--query=" mag-menu-read-generic)))
+     `(("--only-japanese")
+       ("--period" . "y5")                ;ここでは=はつけない
+       ("--query" . ,query)))
+    )
+  (defun google-menu-search (options)
+    "Google検索する"
+    (interactive)
+    (browse-url (google-menu-url options))
+    )
+  (defun google-menu-show-url (options)
+    "GoogleのURLを表示する"
+    (interactive)
+    (message "%s" (google-menu-url options))
+    )
+  (defun google-menu-show-options (options)
+    "オプションを表示する"
+    (interactive)
+    (message "%S" options)
+    )
+  (defun google-menu-url (options)
+    "OPTIONSに応じてGooleのURLを求める"
+    (format "http://www.google.co.jp/search?q=%s&hl=ja&as_qdr=%s%s"
+            (url-hexify-string (assoc-default "--query" options))
+            (assoc-default "--period" options)
+            (if (assoc-default "--only-japanese" options)
+                "&lr=lang_ja"
+              ""))
+    )
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; github-browse-file
+;;; http://rubikitch.com/2014/11/01/github-browse-file/
