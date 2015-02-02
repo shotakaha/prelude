@@ -46,17 +46,29 @@
                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                  )
                )
+  (add-to-list 'org-latex-classes
+               '("bxjsarticle"
+                 "\\documentclass[pdflatex,jadriver=standard,12pt]{bxjsarticle}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
+                 )
+               )
 
-  (add-to-list 'org-latex-packages-alist '("" "atbegshi"))
-  (add-to-list 'org-latex-packages-alist "\\AtBeginShipoutFirst{\\special{pdf:tounicode EUC-UCS2}}")
+  ;; hyperrefのしおりの文字化け対策
+  (add-to-list 'org-latex-packages-alist '("" "atbegshi") t)
+  (add-to-list 'org-latex-packages-alist "\\AtBeginShipoutFirst{\\special{pdf:tounicode EUC-UCS2}}" t)
 
-  (add-to-list 'org-latex-packages-alist "\\hypersetup{setpagesize=false}")
-  (add-to-list 'org-latex-packages-alist "\\hypersetup{colorlinks=true}")
-  (add-to-list 'org-latex-packages-alist "\\hypersetup{linkcolor=blue}")
+  ;; hyperrefの設定
+  (add-to-list 'org-latex-packages-alist "\\hypersetup{setpagesize=false}" t)
+  (add-to-list 'org-latex-packages-alist "\\hypersetup{colorlinks=true}" t)
+  (add-to-list 'org-latex-packages-alist "\\hypersetup{linkcolor=blue}" t)
 
-  (add-to-list 'org-latex-packages-alist '("" "listings"))
-  (add-to-list 'org-latex-packages-alist '("" "color"))
-  (add-to-list 'org-latex-packages-alist '("" "fancyvrb"))
+  (add-to-list 'org-latex-packages-alist '("" "listings") t)
+  (add-to-list 'org-latex-packages-alist '("" "color") t)
+  (add-to-list 'org-latex-packages-alist '("" "fancyvrb") t)
 
   ;;(add-to-list 'org-latex-packages-alist '("" "minted")) ;; gives an error while compilling
   (setq org-latex-listings t)
