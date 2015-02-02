@@ -9,6 +9,9 @@
 ;; 4. psessionの設定
 ;; 5. web-modeの設定
 ;; 6. jawordの設定
+;; 7. symonの設定（予定）
+;; 8. magitの設定
+;; 9. mag-menuの設定
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; view-mode
@@ -172,7 +175,6 @@
   (global-jaword-mode t)
   )
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ファイル・バッファの切替
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -263,3 +265,33 @@
   :config
   (global-set-key (kbd "M-y") 'browse-kill-ring)
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; symon.el
+;;; http://rubikitch.com/2015/02/01/symon/
+;;; http://qiita.com/zk_phi/items/9576874a35a2affbefa8
+;;; https://github.com/zk-phi/symon
+(prelude-require-package 'symon)
+;;; あとでMacの設定をする。もしくはアップデートされるまで待つ
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; magit.el
+;;; http://rubikitch.com/2015/01/30/magit-time-format/
+(use-package magit
+  :config
+  (defun magit-format-duration--format-date (duration spec width)
+    (format-time-string "%y-%m-%dT%H:%M:%S"
+                        (seconds-to-time (- (float-time) duration))))
+  (advice-add 'magit-format-duration :override
+              'magit-format-duration--format-date)
+  (defun magit-log-margin-set-timeunit-width--fixed ()
+    (setq magit-log-margin-timeunit-width 12))
+  (advice-add 'magit-log-margin-set-timeunit-width :override
+              'magit-log-margin-set-timeunit-width--fixed)
+  (setq magit-log-margin-spec '(33 nil magit-duration-spec))
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; mag-menu.el
+;;; http://rubikitch.com/2014/12/20/mag-menu/
+;;; https://github.com/chumpage/mag-menu
