@@ -14,7 +14,7 @@
 ;; 9. mag-menuの設定
 ;; 10. github-browse-fileの設定
 ;; 11. helm-cmd-tの設定（予定）
-;; 12. git-gutterの設定
+;; 12. git-gutterの設定（更なる詳細設定はGitHubを確認）
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; view-mode
@@ -402,4 +402,20 @@
 
   ;; Revert current hunk
   (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
+
+  ;; ;; You can change the signs and those faces.
+  ;; (custom-set-variables
+  ;;  '(git-gutter:modified-sign "  ") ;; two space
+  ;;  '(git-gutter:added-sign "++")    ;; multiple character is OK
+  ;;  '(git-gutter:deleted-sign "--"))
+
+  ;; (set-face-background 'git-gutter:modified "purple") ;; background color
+  ;; (set-face-foreground 'git-gutter:added "green")
+  ;; (set-face-foreground 'git-gutter:deleted "red")
+
+  ;; You can change minor-mode name in mode-line to set git-gutter:lighter. Default is " GitGutter"
+  ;; first character should be a space
+  (custom-set-variables
+   '(git-gutter:lighter " GG"))
+
   )
