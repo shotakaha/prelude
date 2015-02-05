@@ -69,3 +69,5 @@
 ;;      (setq time-stamp-format "%04y/%02m/%02d @ %02H:%02M by %u @ %s\"")
 ;;      (setq time-stamp-end "$")
 ;;      (setq time-stamp-line-limit 10))) ; def=8
+
+(setq prelude-theme 'leuven)

@@ -17,6 +17,7 @@
 ;; 12. git-gutterの設定（更なる詳細設定はGitHubを確認）
 ;; 13. visible-markの設定
 ;; 14. github-browse-fileの設定
+;; 15. perspectiveの設定
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; view-mode
@@ -435,4 +436,33 @@
 (use-package github-browse-file
   :config
   (setq github-browse-file-show-line-at-point t)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; perspective
+;;; https://github.com/nex3/perspective-el
+;;; http://rubikitch.com/2015/01/28/perspective/
+
+(use-package perspective;
+  :config
+  (persp-mode 1)
+  ;; モードラインに現在のみのperspective名を表示させるように再定義
+  (defun persp-update-modestring ()
+    (when persp-show-modestring
+      (setq persp-modestring
+            (list (nth 0 persp-modestring-dividers)
+                  (persp-name persp-curr)
+                  (nth 1 persp-modestring-dividers)))))
+
+  (defun persp-register-buffers-on-create ()
+    (interactive)
+    (dolist (bufname (condition-case _
+                         (helm-comp-read
+                          "Buffers: "
+                          (mapcar 'buffer-name (buffer-list))
+                          :must-match t
+                          :marked-candidates t)
+                       (quit nil)))
+      (persp-add-buffer (get-buffer bufname))))
+  (add-hook 'persp-created-hook 'persp-register-buffers-on-create)
   )
