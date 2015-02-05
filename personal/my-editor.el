@@ -15,6 +15,7 @@
 ;; 10. github-browse-fileの設定
 ;; 11. helm-cmd-tの設定（予定）
 ;; 12. git-gutterの設定（更なる詳細設定はGitHubを確認）
+;; 13.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; view-mode
@@ -418,4 +419,14 @@
   (custom-set-variables
    '(git-gutter:lighter " GG"))
 
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; visible-mark.el
+;;; http://rubikitch.com/2015/02/05/visible-mark/
+(use-package visible-mark
+  :config
+  (setq set-mark-command-repeat-pop t)
+  (setq visible-mark-max 10)
+  (global-visible-mark-mode 1)
   )
