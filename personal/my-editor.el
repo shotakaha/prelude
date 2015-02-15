@@ -18,6 +18,7 @@
 ;; 13. visible-markの設定
 ;; 14. github-browse-fileの設定
 ;; 15. perspectiveの設定
+;; 16. auto-completeの設定
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; view-mode
@@ -465,4 +466,12 @@
                        (quit nil)))
       (persp-add-buffer (get-buffer bufname))))
   (add-hook 'persp-created-hook 'persp-register-buffers-on-create)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; auto-complete
+;;; http://rubikitch.com/2014/11/05/auto-complete/
+(use-package auto-complete-config
+  :config
+  (ac-config-default)
   )
