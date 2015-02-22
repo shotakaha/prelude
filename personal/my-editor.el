@@ -17,7 +17,7 @@
 ;; 12. git-gutterの設定（更なる詳細設定はGitHubを確認）
 ;; 13. visible-markの設定
 ;; 14. github-browse-fileの設定
-;; 15. perspectiveの設定
+;; 15. persp-modeの設定
 ;; 16. auto-completeの設定
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -440,21 +440,20 @@
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; perspective
-;;; https://github.com/nex3/perspective-el
-;;; http://rubikitch.com/2015/01/28/perspective/
+;;; persp-mode
+;;; http://rubikitch.com/2015/02/13/persp-mode/
+;;; https://github.com/Bad-ptr/persp-mode.el
 
-(use-package perspective;
+(use-package persp-mode
   :config
+  (with-eval-after-load "persp-mode-autoloads"
+    (setq wg-morph-on nil) ;; switch off animation of restoring window configuration
+    (add-hook 'after-init-hook #'(lambda () (persp-mode 1))))
+  ;; Set prefix key (default)
+  (setq persp-keymap-prefix (kbd "C-c p"))
+  ;; バッファを切り替えたら見えるようにする
+  (setq persp-add-on-switch-or-display t)
   (persp-mode 1)
-  ;; モードラインに現在のみのperspective名を表示させるように再定義
-  (defun persp-update-modestring ()
-    (when persp-show-modestring
-      (setq persp-modestring
-            (list (nth 0 persp-modestring-dividers)
-                  (persp-name persp-curr)
-                  (nth 1 persp-modestring-dividers)))))
-
   (defun persp-register-buffers-on-create ()
     (interactive)
     (dolist (bufname (condition-case _
@@ -465,7 +464,7 @@
                           :marked-candidates t)
                        (quit nil)))
       (persp-add-buffer (get-buffer bufname))))
-  (add-hook 'persp-created-hook 'persp-register-buffers-on-create)
+  (add-hook 'persp-activated-hook 'persp-register-buffers-on-create)
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -475,3 +474,35 @@
   :config
   (ac-config-default)
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(prelude-require-package 'comment-dwim-2)
+(use-package comment-dwim-2
+  :config
+  (bind-key "M-;" 'comment-dwim-2)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ov --- overlay
+;;; https://github.com/ShingoFukuyama/ov.el
+;;; http://rubikitch.com/2015/02/16/ov/
+;;; 句点で改行をoverlayすることで、HTML編集を綺麗にする。
+;;; web-mode に hookしてもいいのかも。
+;; (defvar-local ja-period-newline-overlays nil)
+;; (use-package ov
+;;   :config
+;;   ;; バッファローカル変数を宣言
+;;   ;; defvar + make-variable-buffer-local
+;;   (define-minor-mode ja-period-newline-mode
+;;     "。の後に改行を入れてよみやすくする"
+;;     nil " 。\\n" nil
+;;     (if ja-period-newline-mode
+;;         ;; 有効にしたときは
+;;         (setq ja-period-newline-overlays
+;;               ;; [。]をすべて検索し、改行を付加するオーバーレイを作成する
+;;               (ov-set "。" 'after-string "\n"))
+;;       ;; 無効にしたときは全オーバーレイを削除する
+;;       (mapc 'delete-overlay ja-period-newline-overlays))
+;;     )
+;;   ;; (provide 'mylisp-ja-period-newline)
+;;   )
