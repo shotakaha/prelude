@@ -113,10 +113,5 @@
 (bind-key* "C-t" 'other-window-or-split)
 ;;(bind-key* "C-u C-t" 'delete-other-window)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; twitter
-;;; 簡単ログインの設定
-(setq twittering-use-master-password t)
-
 (provide 'init)
 ;;; init.el ends here
