@@ -19,6 +19,7 @@
 ;; 14. github-browse-fileの設定
 ;; 15. persp-modeの設定
 ;; 16. auto-completeの設定
+;; 17. ignoramousの設定
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; view-mode
@@ -506,3 +507,14 @@
 ;;     )
 ;;   ;; (provide 'mylisp-ja-period-newline)
 ;;   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ignoramous
+;;; https://github.com/rolandwalker/ignoramus
+;;; http://rubikitch.com/2015/02/19/ignoramus/
+(use-package ignoramous
+  :config
+  (require 'dired-x)
+  (require 'ignoramus)
+  (ignoramus-setup)
+)
