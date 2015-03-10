@@ -135,7 +135,7 @@
 
           ("b" "ブログのネタなど" entry
            (file+headline nil "BLOG")
-           "* %?\nEntered on %U"
+           "* %?\n   Entered on %U"
            :empty-lines 1
            :jump-to-captured 1)
 
@@ -154,7 +154,7 @@
 
           ("t" "とりあえず 仕事を放り込む" entry
            (file+headline nil "GTD")
-           "** TODO %?\n    %i\n    %a\n    Entered on %T"
+           "** TODO %?\n   Entered on %T    %i\n    %a\n"
            :empty-lines 1)
           )
         )
@@ -274,7 +274,7 @@
 ;;; org-ac
 ;;; https://github.com/aki2o/org-ac
 
-(use-package org-ac;
+(use-package org-ac
   :config
   ;; Make config suit for you. About the config item, eval the following sexp.
   ;; (customize-group "org-ac")
@@ -284,7 +284,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; org-autolist
 ;;; https://github.com/calvinwyoung/org-autolist
-(use-package auto-list
+(use-package org-autolist
   :config
-  (add-hook 'org-mode-hook (lambda () (org-auto-list-mode)))
+  (add-hook 'org-mode-hook (lambda () (org-autolist-mode)))
   )

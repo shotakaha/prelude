@@ -34,7 +34,7 @@
 ;;; leuven     : 背景:白、文字:黒、
 ;;;              Org-modeの見出しが大きく表示されてGOOD!
 ;; (load-theme 'manoj-dark t)
-(load-theme 'leuven t)
+;; (load-theme 'leuven t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; load newer file

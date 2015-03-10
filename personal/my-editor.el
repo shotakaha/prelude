@@ -15,6 +15,11 @@
 ;; 10. github-browse-fileの設定
 ;; 11. helm-cmd-tの設定（予定）
 ;; 12. git-gutterの設定（更なる詳細設定はGitHubを確認）
+;; 13. visible-markの設定
+;; 14. github-browse-fileの設定
+;; 15. persp-modeの設定
+;; 16. auto-completeの設定
+;; 17. ignoramousの設定
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; view-mode
@@ -230,6 +235,10 @@
 (setq bm-restore-repository-on-load t)
 (use-package bm
   :ensure t
+  :bind (("M-SPC" . bm-toggle)
+         ;; ("M-" . bm-previous)
+         ;; ("M-" . bm-next)
+         )
   :config
   (add-hook 'find-file-hook 'bm-buffer-restore)
   (add-hook 'kill-buffer-hook 'bm-buffer-save)
@@ -237,10 +246,6 @@
   (add-hook 'after-revert-hook 'bm-buffer-restore)
   (add-hook 'vc-before-checkin-hook 'bm-buffer-save)
   (add-hook 'kill-emacs-hook '(lambda nil (bm-buffer-save-all) (bm-repository-save)))
-
-  (global-set-key (kbd "M-SPC") 'bm-toggle)
-  ;; (global-set-key (kbd "M-") 'bm-previous)
-  ;; (global-set-key (kbd "M-") 'bm-next)
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -265,8 +270,8 @@
 ;;; prelude-key-chord.el でバインド済み
 (use-package browse-kill-ring
   :ensure t
-  :config
-  (global-set-key (kbd "M-y") 'browse-kill-ring)
+  :bind(("M-y" . browse-kill-ring)
+        )
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -381,41 +386,135 @@
 (prelude-require-package 'git-gutter)
 (use-package git-gutter
   :ensure t
+  :bind ( ("C-x C-g" . git-gutter:toggle)
+          ("C-x v =" . git-gutter:popup-hunk)
+          ;; Jump to next/previous hunk
+          ("C-x p" . git-gutter:previous-hunk)
+          ("C-x n" . git-gutter:next-hunk)
+          ;; Stage current hunk
+          ("C-x v s" . git-gutter:stage-hunk)
+          ;; Revert current hunk
+          ("C-x v r" . git-gutter:revert-hunk)
+          )
   :config
   ;; If you enable global minor mode
   (global-git-gutter-mode t)
   ;; If you would like to use git-gutter.el and linum-mode
   (git-gutter:linum-setup)
-
   ;; If you enable git-gutter-mode for some modes
   (add-hook 'ruby-mode-hook 'git-gutter-mode)
 
-  (global-set-key (kbd "C-x C-g") 'git-gutter:toggle)
-  (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
+  ;; You can change the signs and those faces.
+  (custom-set-variables
+   '(git-gutter:modified-sign "  ") ;; two space
+   '(git-gutter:added-sign "++")    ;; multiple character is OK
+   '(git-gutter:deleted-sign "--"))
 
-  ;; Jump to next/previous hunk
-  (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
-  (global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
+  (set-face-background 'git-gutter:modified "purple") ;; background color
+  (set-face-foreground 'git-gutter:added "green")
+  (set-face-foreground 'git-gutter:deleted "red")
 
-  ;; Stage current hunk
-  (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
-
-  ;; Revert current hunk
-  (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
-
-  ;; ;; You can change the signs and those faces.
-  ;; (custom-set-variables
-  ;;  '(git-gutter:modified-sign "  ") ;; two space
-  ;;  '(git-gutter:added-sign "++")    ;; multiple character is OK
-  ;;  '(git-gutter:deleted-sign "--"))
-
-  ;; (set-face-background 'git-gutter:modified "purple") ;; background color
-  ;; (set-face-foreground 'git-gutter:added "green")
-  ;; (set-face-foreground 'git-gutter:deleted "red")
-
-  ;; You can change minor-mode name in mode-line to set git-gutter:lighter. Default is " GitGutter"
+  ;; You can change minor-mode-name in mode-line to set git-gutter:lighter. Default is " GitGutter"
   ;; first character should be a space
   (custom-set-variables
    '(git-gutter:lighter " GG"))
-
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; visible-mark.el
+;;; http://rubikitch.com/2015/02/05/visible-mark/
+(use-package visible-mark
+  :config
+  (setq set-mark-command-repeat-pop t)
+  (setq visible-mark-max 10)
+  (global-visible-mark-mode 1)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; github-browse-file
+;;; https://github.com/osener/github-browse-file
+;;; http://ozansener.com/blog/view-the-file-youre-editing-in-emacs-on-github/
+;;; http://rubikitch.com/2014/11/01/github-browse-file/
+(use-package github-browse-file
+  :config
+  (setq github-browse-file-show-line-at-point t)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; persp-mode
+;;; http://rubikitch.com/2015/02/13/persp-mode/
+;;; https://github.com/Bad-ptr/persp-mode.el
+
+(use-package persp-mode
+  :config
+  (with-eval-after-load "persp-mode-autoloads"
+    (setq wg-morph-on nil) ;; switch off animation of restoring window configuration
+    (add-hook 'after-init-hook #'(lambda () (persp-mode 1))))
+  ;; Set prefix key (default)
+  (setq persp-keymap-prefix (kbd "C-c p"))
+  ;; バッファを切り替えたら見えるようにする
+  (setq persp-add-on-switch-or-display t)
+  (persp-mode 1)
+  (defun persp-register-buffers-on-create ()
+    (interactive)
+    (dolist (bufname (condition-case _
+                         (helm-comp-read
+                          "Buffers: "
+                          (mapcar 'buffer-name (buffer-list))
+                          :must-match t
+                          :marked-candidates t)
+                       (quit nil)))
+      (persp-add-buffer (get-buffer bufname))))
+  (add-hook 'persp-activated-hook 'persp-register-buffers-on-create)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; auto-complete
+;;; http://rubikitch.com/2014/11/05/auto-complete/
+(use-package auto-complete-config
+  :config
+  (ac-config-default)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(prelude-require-package 'comment-dwim-2)
+(use-package comment-dwim-2
+  :config
+  (bind-key "M-;" 'comment-dwim-2)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ov --- overlay
+;;; https://github.com/ShingoFukuyama/ov.el
+;;; http://rubikitch.com/2015/02/16/ov/
+;;; 句点で改行をoverlayすることで、HTML編集を綺麗にする。
+;;; web-mode に hookしてもいいのかも。
+;; (defvar-local ja-period-newline-overlays nil)
+;; (use-package ov
+;;   :config
+;;   ;; バッファローカル変数を宣言
+;;   ;; defvar + make-variable-buffer-local
+;;   (define-minor-mode ja-period-newline-mode
+;;     "。の後に改行を入れてよみやすくする"
+;;     nil " 。\\n" nil
+;;     (if ja-period-newline-mode
+;;         ;; 有効にしたときは
+;;         (setq ja-period-newline-overlays
+;;               ;; [。]をすべて検索し、改行を付加するオーバーレイを作成する
+;;               (ov-set "。" 'after-string "\n"))
+;;       ;; 無効にしたときは全オーバーレイを削除する
+;;       (mapc 'delete-overlay ja-period-newline-overlays))
+;;     )
+;;   ;; (provide 'mylisp-ja-period-newline)
+;;   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ignoramous
+;;; https://github.com/rolandwalker/ignoramus
+;;; http://rubikitch.com/2015/02/19/ignoramus/
+(use-package ignoramous
+  :config
+  (require 'dired-x)
+  (require 'ignoramus)
+  (ignoramus-setup)
+)
