@@ -28,15 +28,6 @@
 (setq gc-cons-threshold (* 128 1024 1024))
 (setq garbage-collection-messages t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; load-theme
-;;; manoj-dark : 背景:黒、文字:橙
-;;; leuven     : 背景:白、文字:黒、
-;;;              Org-modeの見出しが大きく表示されてGOOD!
-;; (load-theme 'manoj-dark t)
-(load-theme 'manoj-dark t)
-;; (load-theme 'leuven t)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; load newer file
 (setq load-prefer-newer t)
