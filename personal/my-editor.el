@@ -21,6 +21,8 @@
 ;; 16. auto-completeの設定
 ;; 17. ignoramousの設定
 
+;;; Code:
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; view-mode
 ;;; るびきち : Emacsテクニックバイグル : p.217
@@ -28,6 +30,7 @@
 ;; Open with 'C-x C-r'
 ;; Toggle with 'C-x C-q'
 ;; Enable view-mode
+
 (setq view-read-only t)
 (use-package view
   :config
@@ -87,7 +90,6 @@
 ;;; origami.el
 ;;; http://rubikitch.com/2015/01/03/origami/
 ;;; http://rubikitch.com/2015/01/05/origami-2/
-(prelude-require-package 'origami)
 (use-package origami
   :ensure t
   :config
@@ -119,7 +121,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ido-vertical-mode.el
 ;;; http://rubikitch.com/2015/01/06/ido-vertical-mode/
-(prelude-require-package 'ido-vertical-mode)
 (use-package ido-vertical-mode
   :ensure t
   :config
@@ -139,13 +140,11 @@
 ;;; セッション情報は、~/.emacs.d/elisp-objects/ に .elcファイルで保存。
 ;;; defcustom されている psession-elisp-objects-default-directory を
 ;;; 再定義すれば、任意の場所に変更できるはず。
-(prelude-require-package 'psession)
 (use-package psession
   :ensure t
   :config
   (psession-mode 1)
   )
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; web-mode.el
@@ -176,7 +175,6 @@
 ;;; http://rubikitch.com/2015/01/27/jaword/
 ;;; http://qiita.com/zk_phi/items/b9c90014c434b75e8139
 ;;; https://github.com/zk-phi/jaword
-(prelude-require-package 'jaword)
 (use-package jaword
   :ensure t
   :config
@@ -303,8 +301,8 @@
 ;;; mag-menu.el
 ;;; http://rubikitch.com/2014/12/20/mag-menu/
 ;;; https://github.com/chumpage/mag-menu
-(prelude-require-package 'mag-menu)
 (use-package mag-menu
+  :ensure t
   :config
   ;; 単にメッセージを表示するだけのシンプルなメニュー
   (defun mag-menu-test ()
@@ -368,7 +366,6 @@
 ;;; github-browse-file
 ;;; http://rubikitch.com/2014/11/01/github-browse-file/
 ;;; https://github.com/osener/github-browse-file
-(prelude-require-package 'github-browse-file)
 (use-package github-browse-file
   :ensure t
   :config
@@ -383,7 +380,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; git-gutter
 ;;; https://github.com/syohex/emacs-git-gutter
-(prelude-require-package 'git-gutter)
 (use-package git-gutter
   :ensure t
   :bind ( ("C-x C-g" . git-gutter:toggle)
@@ -424,6 +420,7 @@
 ;;; visible-mark.el
 ;;; http://rubikitch.com/2015/02/05/visible-mark/
 (use-package visible-mark
+  :ensure t
   :config
   (setq set-mark-command-repeat-pop t)
   (setq visible-mark-max 10)
@@ -436,6 +433,7 @@
 ;;; http://ozansener.com/blog/view-the-file-youre-editing-in-emacs-on-github/
 ;;; http://rubikitch.com/2014/11/01/github-browse-file/
 (use-package github-browse-file
+  :ensure t
   :config
   (setq github-browse-file-show-line-at-point t)
   )
@@ -444,8 +442,8 @@
 ;;; persp-mode
 ;;; http://rubikitch.com/2015/02/13/persp-mode/
 ;;; https://github.com/Bad-ptr/persp-mode.el
-
 (use-package persp-mode
+  :ensure t
   :config
   (with-eval-after-load "persp-mode-autoloads"
     (setq wg-morph-on nil) ;; switch off animation of restoring window configuration
@@ -477,8 +475,8 @@
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(prelude-require-package 'comment-dwim-2)
 (use-package comment-dwim-2
+  :ensure t
   :config
   (bind-key "M-;" 'comment-dwim-2)
   )
@@ -512,7 +510,8 @@
 ;;; ignoramous
 ;;; https://github.com/rolandwalker/ignoramus
 ;;; http://rubikitch.com/2015/02/19/ignoramus/
-(use-package ignoramous
+(use-package ignoramus
+  :ensure t
   :config
   (require 'dired-x)
   (require 'ignoramus)
