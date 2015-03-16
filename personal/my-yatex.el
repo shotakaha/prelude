@@ -4,42 +4,44 @@
 ;; ;;; add library path
 (add-to-list 'load-path "~/.emacs.d/site-lisp/yatex/")
 
-;; ;;; YaTeX mode
+(use-package yatex
+  :mode (("\\.tex$" . yatex-mode))
+  :init
+  ;; when init : disable auto line break
+  (add-hook 'yatex-mode-hook '(lambda ()
+                                (setq auto-fill-function nil)))
+  ;; when loaded
+  (add-hook 'yatex-mode-load-hook '(lambda ()
+                                     (YaTeX-define-begend-key "ba" "align")
+                                     (YaTeX-define-begend-key "bs" "subequations")))
+  :config
+  ;; YaTeX mode
+  (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
+  ;; Latex Math Preview
+  (autoload 'latex-math-preview-expression "latex-math-preview" nil t)
+  (autoload 'latex-math-preview-insert-symbol "latex-math-preview" nil t)
+  (autoload 'latex-math-preview-save-image-file "latex-math-preview" nil t)
+  (autoload 'latex-math-preview-beamer-frame "latex-math-preview" nil t)
 
-;; ;;; たぶん、下の書き方でいいはず
-(add-to-list 'auto-mode-alist '("\\.tex$" . yatex-mode))
-(autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
+  ;; typeset and convert to PDF
+  ;;(setq tex-command "~/Library/TeXShop/bin/platex2pdf-utf8")
+  (setq tex-command "ptex2pdf -l -ot -synctex=1 -file-line-error")
+  (setq dviprint-command-format "dvipdfmx %s")
+  (setq dvi2-command "open -a Preview")  ;; use Preview.app
+  (setq bibtex-command "pbibtex")
 
-;; (defvar tex-command)
-;; (defvar dviprint-command-format)
-;; (defvar dvi2-command)
-;; (defvar bibtex-command)
-;; (defvar YaTeX-inhibit-prefix-letter)
-;; (defvar YaTeX-use-AMS-LaTeX)
-;; (defvar YaTeX-skip-default-reader)
+  ;; Change prefix from C-c [t,c,s] --> C-c C-[t,c,s]
+  (setq YaTeX-inhibit-prefix-letter t)
+  ;; use AMS LaTeX
+  (setq YaTeX-use-AMS-LaTeX t)
+  ;; do not use mini-buffer when editing inside {...}
+  (setq YaTeX-skip-default-reader t)
 
-;; ;;(setq tex-command "platex")
+  ;; (global-font-lock-mode t)
+  ;; (setq YaTeX-use-hilit19 t)
+  ;; (setq YaTeX-use-font-lock t)
+)
 
-;; ;;(setq tex-command "~/Library/TeXShop/bin/platex2pdf-utf8") ;; typeset and convert to PDF
-(setq tex-command "ptex2pdf -l -ot -synctex=1 -file-line-error")
-(setq dviprint-command-format "dvipdfmx %s")
-(setq dvi2-command "open -a Preview")  ;; use Preview.app
-(setq bibtex-command "pbibtex")
-
-(setq YaTeX-inhibit-prefix-letter t)   ;; prefix changed C-c --> C-c C-[t, c, s]
-
-;; (global-font-lock-mode t)
-;; (setq YaTeX-use-hilit19 t)
-;; (setq YaTeX-use-font-lock t)
-(add-hook 'yatex-mode-hook   ;; when init
-          '(lambda ()
-             (setq auto-fill-function nil))) ;; disable auto line break
-(add-hook 'yatex-mode-load-hook  ;; when loaded
-          '(lambda ()
-             (YaTeX-define-begend-key "ba" "align")
-             (YaTeX-define-begend-key "bs" "subequations")))
-(setq YaTeX-use-AMS-LaTeX t)  ;; use AMS LaTeX
-(setq YaTeX-skip-default-reader t)  ;; do not use mini-buffer when editing inside {...}
 
 ;; command reference for YaTeX : http://www.yatex.org/info/yatexj.html
 ;; [prefix] = C-c
@@ -61,13 +63,6 @@
 ;;    7. [prefix] a        : accents
 ;;    8. ; (math symbols)  : yatex math mode; ";->" turns into "\rightarrow"
 ;;    9. : (alphabet)      : yatex math mode; greek letters
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Latex Math Preview
-(autoload 'latex-math-preview-expression "latex-math-preview" nil t)
-(autoload 'latex-math-preview-insert-symbol "latex-math-preview" nil t)
-(autoload 'latex-math-preview-save-image-file "latex-math-preview" nil t)
-(autoload 'latex-math-preview-beamer-frame "latex-math-preview" nil t)
 
 ;; (add-hook 'yatex-mode-hook
 ;;           '(lambda ()
