@@ -1,3 +1,23 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Check OS
+(defvar oldemacs-p (<= emacs-major-version 22)) ; <= Emacs22
+(defvar emacs23-p (<= emacs-major-version 23))  ; <= Emacs23
+(defvar emacs24-p (>= emacs-major-version 24))  ; >= Emacs24
+(defvar linux-p (eq system-type 'gnu/linux))    ; for Linux
+(defvar darwin-p (eq system-type 'darwin))      ; for Mac OS X
+(defvar nt-p (eq system-type 'windows-nt))      ; for Windows
+
+(when linux-p
+  (message "OS : GNU/Linux")
+  (setq prelude-theme 'manoj-dark)
+  )
+
+(when darwin-p
+  (message "OS : MacOS X")
+  (setq prelude-theme 'leuven)
+  )
+
+
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ;;; encoding
 ;; (set-language-environment 'Japanese)
@@ -69,5 +89,3 @@
 ;;      (setq time-stamp-format "%04y/%02m/%02d @ %02H:%02M by %u @ %s\"")
 ;;      (setq time-stamp-end "$")
 ;;      (setq time-stamp-line-limit 10))) ; def=8
-
-(setq prelude-theme 'leuven)
