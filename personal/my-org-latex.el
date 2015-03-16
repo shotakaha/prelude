@@ -56,10 +56,21 @@
                  ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
                  )
                )
+  (add-to-list 'org-latex-classes
+               '("beamer"
+                 "\\documentclass[dvipdfmx,12pt]{beamer}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
+                 )
+               )
 
   ;; hyperrefのしおりの文字化け対策
-  (add-to-list 'org-latex-packages-alist '("" "atbegshi") t)
-  (add-to-list 'org-latex-packages-alist "\\AtBeginShipoutFirst{\\special{pdf:tounicode EUC-UCS2}}" t)
+  (add-to-list 'org-latex-packages-alist '("" "pxjahyper") t)
+  ;; (add-to-list 'org-latex-packages-alist '("" "atbegshi") t)
+  ;; (add-to-list 'org-latex-packages-alist "\\AtBeginShipoutFirst{\\special{pdf:tounicode EUC-UCS2}}" t)
 
   ;; hyperrefの設定
   (add-to-list 'org-latex-packages-alist "\\hypersetup{setpagesize=false}" t)
