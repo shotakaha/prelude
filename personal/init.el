@@ -1,6 +1,6 @@
 ;;; my-init.el -- my-init.el
 
-;;; Commentary
+;;; Commentary:
 ;; My init.el that goes with Emacs Prelude.
 ;; First, install and setup Emacs Prelude.
 ;; Then modify elisps in personal/ directory.
@@ -11,7 +11,7 @@
 ;; Also, I am using "init-loader.el" right now,
 ;; but i will try to depend less upon it.
 
-;;; Code
+;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Always start emacs daemon

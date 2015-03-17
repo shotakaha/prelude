@@ -15,6 +15,7 @@
 (when linux-p
   (message "OS : GNU/Linux")
   (setq prelude-theme 'manoj-dark)
+  (setq skk-tut-file "/usr/share/skk/SKK.tut")
   )
 (when darwin-p
   (message "OS : MacOS X")
