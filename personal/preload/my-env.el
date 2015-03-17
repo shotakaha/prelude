@@ -19,6 +19,7 @@
 (when darwin-p
   (message "OS : MacOS X")
   (setq prelude-theme 'leuven)
+  (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
   )
 
 
