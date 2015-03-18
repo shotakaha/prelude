@@ -10,6 +10,7 @@
 ;; 4. 画像を非表示にする方法
 ;; 5. 辞書（Weblio, Wikipedia）設定（を追加する予定）
 ;; 6. ブラウジング時の配色を見やすくなるように設定（うまく動かない）
+;; 7. 複数のewwを開けるようにする
 
 ;;; Code:
 
@@ -204,6 +205,13 @@
 ;;   (setq-local eww-disable-colorize nil)
 ;;   (eww-reload))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; http://ergoemacs.org/emacs/emacs_eww_web_browser.html
+;;; http://futurismo.biz/archives/2950
+(defun eww-mode-hook--rename-buffer ()
+  "Rename eww browser's buffer so sites open in new page."
+  (rename-buffer "eww" t))
+(add-hook 'eww-mode-hook 'eww-mode-hook--rename-buffer)
 
 (provide 'my-eww)
 ;;; my-eww.el ends here
