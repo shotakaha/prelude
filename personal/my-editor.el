@@ -9,7 +9,7 @@
 ;; 4. psessionの設定 --> disabled (2015-03-18)
 ;; 5. web-modeの設定
 ;; 6. jawordの設定
-;; 7. symonの設定（予定）
+;; 7. symonの設定 --> enabled (2015-03-18)
 ;; 8. magitの設定
 ;; 9. mag-menuの設定
 ;; 10. github-browse-fileの設定
@@ -279,8 +279,12 @@
 ;;; http://rubikitch.com/2015/02/01/symon/
 ;;; http://qiita.com/zk_phi/items/9576874a35a2affbefa8
 ;;; https://github.com/zk-phi/symon
-(prelude-require-package 'symon)
-;;; あとでMacの設定をする。もしくはアップデートされるまで待つ
+;;; 2015-03-18 : darwin support されてたのでONにした
+(use-package symon
+  :ensure t
+  :config
+  (symon-mode 1)
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; magit.el
