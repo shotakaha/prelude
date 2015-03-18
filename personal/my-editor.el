@@ -6,7 +6,7 @@
 ;; 1. view-modeの設定（less-like, vi-like なキーバインドの追加）
 ;; 2. origamiの設定
 ;; 3. ido-vertical-modeの設定
-;; 4. psessionの設定
+;; 4. psessionの設定 --> disabled (2015-03-18)
 ;; 5. web-modeの設定
 ;; 6. jawordの設定
 ;; 7. symonの設定（予定）
@@ -140,7 +140,9 @@
 ;;; セッション情報は、~/.emacs.d/elisp-objects/ に .elcファイルで保存。
 ;;; defcustom されている psession-elisp-objects-default-directory を
 ;;; 再定義すれば、任意の場所に変更できるはず。
+;;; 2015-03-18 : persp-modeと被っているので :disabled t した
 (use-package psession
+  :disabled t
   :ensure t
   :config
   (psession-mode 1)
@@ -445,9 +447,9 @@
 (use-package persp-mode
   :ensure t
   :config
-  (with-eval-after-load "persp-mode-autoloads"
-    (setq wg-morph-on nil) ;; switch off animation of restoring window configuration
-    (add-hook 'after-init-hook #'(lambda () (persp-mode 1))))
+  ;; (with-eval-after-load "persp-mode-autoloads"
+  ;;   (setq wg-morph-on nil) ;; switch off animation of restoring window configuration
+  ;;   (add-hook 'after-init-hook #'(lambda () (persp-mode 1))))
   ;; Set prefix key (default)
   (setq persp-keymap-prefix (kbd "C-c p"))
   ;; バッファを切り替えたら見えるようにする
