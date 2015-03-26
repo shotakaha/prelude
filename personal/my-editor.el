@@ -19,7 +19,8 @@
 ;; 14. github-browse-fileの設定
 ;; 15. persp-modeの設定
 ;; 16. auto-completeの設定
-;; 17. ignoramousの設定
+;; 17. ignoramusの設定
+;; 18. smart-mode-line / rich-minorityの設定
 
 ;;; Code:
 
@@ -72,10 +73,8 @@
 
   ;; set view-mode kbd according to major-mode
   ;; カーソル位置の関数定義にジャンプするコマンドをRETに統一
-  (define-overriding-view-mode-map c-mode
-    ("RET" . gtags-find-tag-from-here))
-  (define-overriding-view-mode-map emacs-lisp-mode
-    ("RET" . find-function-at-point))
+  ;; (define-overriding-view-mode-map c-mode          ("RET" . gtags-find-tag-from-here))
+  ;; (define-overriding-view-mode-map emacs-lisp-mode ("RET" . find-function-at-point))
 
   ;; ログファイル（.log）は view-mode 開く
   (setq view-mode-by-default-regexp "\\.log$")
@@ -283,7 +282,7 @@
 (use-package symon
   :ensure t
   :config
-  (symon-mode 1)
+  ;; (symon-mode)
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -493,24 +492,24 @@
 ;;; http://rubikitch.com/2015/02/16/ov/
 ;;; 句点で改行をoverlayすることで、HTML編集を綺麗にする。
 ;;; web-mode に hookしてもいいのかも。
-;; (defvar-local ja-period-newline-overlays nil)
-;; (use-package ov
-;;   :config
-;;   ;; バッファローカル変数を宣言
-;;   ;; defvar + make-variable-buffer-local
-;;   (define-minor-mode ja-period-newline-mode
-;;     "。の後に改行を入れてよみやすくする"
-;;     nil " 。\\n" nil
-;;     (if ja-period-newline-mode
-;;         ;; 有効にしたときは
-;;         (setq ja-period-newline-overlays
-;;               ;; [。]をすべて検索し、改行を付加するオーバーレイを作成する
-;;               (ov-set "。" 'after-string "\n"))
-;;       ;; 無効にしたときは全オーバーレイを削除する
-;;       (mapc 'delete-overlay ja-period-newline-overlays))
-;;     )
-;;   ;; (provide 'mylisp-ja-period-newline)
-;;   )
+(defvar-local ja-period-newline-overlays nil)
+(use-package ov
+  :config
+  ;; バッファローカル変数を宣言
+  ;; defvar + make-variable-buffer-local
+  (define-minor-mode ja-period-newline-mode
+    "。の後に改行を入れてよみやすくする"
+    nil "。\\n" nil
+    (if ja-period-newline-mode
+        ;; 有効にしたときは
+        (setq ja-period-newline-overlays
+              ;; [。]をすべて検索し、改行を付加するオーバーレイを作成する
+              (ov-set "。" 'after-string "\n"))
+      ;; 無効にしたときは全オーバーレイを削除する
+      (mapc 'delete-overlay ja-period-newline-overlays))
+    )
+  ;; (provide 'mylisp-ja-period-newline)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ignoramous
@@ -523,3 +522,29 @@
   (require 'ignoramus)
   (ignoramus-setup)
 )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; smart-mode-line
+;;; https://github.com/Malabarba/smart-mode-line
+(use-package smart-mode-line
+  :ensure t
+  :init
+  (progn
+    (setq sml/theme 'automatic
+          sml/shorten-directory t
+          sml/name-width 16
+          sml/shorten-modes t
+          sml/use-projectile-p 'before-prefixes
+          sml/projectile-replacement-format "%s/"
+          sml/read-only-char "%%")
+    (sml/setup)
+    )
+)
+
+(use-package rich-minority
+  :ensure t
+  :config
+  )
+
+(provide 'my-editor)
+;;; my-editor.el ends here
