@@ -52,8 +52,8 @@
 (use-package package
   :config
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-  (fset 'package-desc-vers 'package--ac-desc-version)
+  ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+  ;; (fset 'package-desc-vers 'package--ac-desc-version)
   (package-initialize)
   )
 
@@ -104,6 +104,10 @@
 ;; transpose-char(C-t) は普段使わないのでつぶす
 (bind-key* "C-t" 'other-window-or-split)
 ;;(bind-key* "C-u C-t" 'delete-other-window)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; passthword
+(setq epa-file-cache-passphrase-for-symmetric-encryption t)
 
 (provide 'init)
 ;;; init.el ends here
