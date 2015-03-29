@@ -1,16 +1,45 @@
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;; yatex.el
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; my-yatex.el --- my YaTeX config
 
 ;; ;;; add library path
-(add-to-list 'load-path "~/.emacs.d/site-lisp/yatex/")
-(require 'yatex)
-(autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
-(setq tex-command "ptex2pdf -l -ot -synctex=1 -file-line-error")
-(setq dviprint-command-format "dvipdfmx %s")
-(setq dvi2-command "open -a Preview")  ;; use Preview.app
-(setq bibtex-command "pbibtex")
-(setq YaTeX-inhibit-prefix-letter t)
-(setq YaTeX-skip-default-reader t)
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/yatex/")
+;; (require 'yatex)
+;; (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
+;; (setq tex-command "ptex2pdf -l -ot -synctex=1 -file-line-error")
+;; (setq dviprint-command-format "dvipdfmx %s")
+;; (setq dvi2-command "open -a Preview")  ;; use Preview.app
+;; (setq bibtex-command "pbibtex")
+;; (setq YaTeX-inhibit-prefix-letter t)
+;; (setq YaTeX-skip-default-reader t)
+
+(use-package yatex
+  :ensure t
+  :mode (("\\.tex$" . yatex-mode))
+  :config
+  ;; automatically selected according to current language
+  ;; (setq YaTeX-japan t)
+  ;; (setq YaTeX-prefix "\C-c")
+
+  ;; change default kanji-code from 2:JIS to 4:UTF-8
+  ;; (setq latex-message-kanji-code 4)
+  ;; (setq YaTeX-kanji-code 4)
+  ;; (setq YaTeX-coding-system 4)
+
+  ;; declared in yatexlib.el
+  (setq YaTeX-inhibit-prefix-letter t)
+  ;; local dictionary is NOT needed
+  (setq YaTeX-nervous nil)
+
+  ;; declared in yatex.el
+  (setq tex-command "ptex2pdf -l -ot -synctex=1 -file-line-error")
+  (setq bibtex-command "pbibtex")
+  (setq dvi2-command "open -a Preview")    ;; use Preview.app
+  ;; (setq tex-pdfview-command "open -a Preview")
+  (setq dviprint-command-format "dvipdfmx %s")
+  (setq YaTeX-skip-default-reader t)
+  (setq YaTeX-simple-messages t)
+  ;; (setq YaTeX-template-file "...")
+  )
 
 ;; (use-package yatex
 ;;   :mode (("\\.tex$" . yatex-mode))
@@ -41,7 +70,6 @@
 ;;   ;; Change prefix from C-c [t,c,s] --> C-c C-[t,c,s]
 ;;   (setq YaTeX-inhibit-prefix-letter t)
 ;;   ;; use AMS LaTeX
-;;   (setq YaTeX-use-AMS-LaTeX t)
 ;;   ;; do not use mini-buffer when editing inside {...}
 ;;   (setq YaTeX-skip-default-reader t)
 
