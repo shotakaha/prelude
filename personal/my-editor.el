@@ -21,6 +21,7 @@
 ;; 16. auto-completeの設定
 ;; 17. ignoramusの設定
 ;; 18. smart-mode-line / rich-minorityの設定
+;; 19. multiple-cursor-modeの設定
 
 ;;; Code:
 
@@ -544,6 +545,19 @@
 (use-package rich-minority
   :ensure t
   :config
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; multiple-cursor-mode
+;;; https://github.com/magnars/multiple-cursors.el
+;;; http://rubikitch.com/2014/11/10/multiple-cursors/
+(use-package multiple-cursors
+  :ensure t
+  :config
+  (bind-key "C-S-c C-S-c" 'mc/edit-lines)
+  (bind-key "C->" 'mc/mark-next-like-this)
+  (bind-key "C-<" 'mc/mark-previous-like-this)
+  (bind-key "C-c C-<" 'mc/mark-all-like-this)
   )
 
 (provide 'my-editor)
