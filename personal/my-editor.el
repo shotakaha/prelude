@@ -292,6 +292,7 @@
 ;;; http://rubikitch.com/2015/01/30/magit-time-format/
 (use-package magit
   :config
+  (setq magit-auto-revert-mode t)
   (defun magit-format-duration--format-date (duration spec width)
     (format-time-string "%y-%m-%dT%H:%M:%S"
                         (seconds-to-time (- (float-time) duration))))
@@ -302,6 +303,7 @@
   (advice-add 'magit-log-margin-set-timeunit-width :override
               'magit-log-margin-set-timeunit-width--fixed)
   (setq magit-log-margin-spec '(33 nil magit-duration-spec))
+
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
