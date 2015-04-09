@@ -19,9 +19,10 @@
 ;; 14. github-browse-fileの設定
 ;; 15. persp-modeの設定
 ;; 16. auto-completeの設定
-;; 17. ignoramusの設定
-;; 18. smart-mode-line / rich-minorityの設定
-;; 19. multiple-cursor-modeの設定
+;; 17. ac-mozcの設定
+;; 18. ignoramusの設定
+;; 19. smart-mode-line / rich-minorityの設定
+;; 20. multiple-cursor-modeの設定
 
 ;;; Code:
 
@@ -481,6 +482,17 @@
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ac-mozc
+;;; https://github.com/igjit/ac-mozc
+(use-package ac-mozc
+  :ensure t
+  :config
+  (bind-keys :map ac-mode-map
+             ("C-c C-SPC" . ac-complete-mozc)
+             )
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package comment-dwim-2
   :ensure t
   :config
@@ -558,7 +570,26 @@
   (bind-key "C->" 'mc/mark-next-like-this)
   (bind-key "C-<" 'mc/mark-previous-like-this)
   (bind-key "C-c C-<" 'mc/mark-all-like-this)
+
+  (defun mc/edit-lines-or-string-rectangle (s e)
+    "C-x r tで同じ桁の場合にmc/edit-lines (C-u M-x mc/mark-all-dwim)"
+    (interactive "r")
+    (if (eq (save-excursion (goto-char s) (current-column))
+            (save-excursion (goto-char e) (current-column)))
+        (call-interactively 'mc/edit-lines)
+      (call-interactively 'string-rectangle)))
+  (bind-key (kbd "C-x r t") 'mc/edit-lines-or-string-rectangle)
+
+  (defun mc/mark-all-dwim-or-mark-sexp (arg)
+    "C-u C-M-SPCでmc/mark-all-dwim, C-u C-u C-M-SPCでC-u M-x mc/mark-all-dwim"
+    (interactive "p")
+    (cl-case arg
+      (16 (mc/mark-all-dwim t))
+      (4 (mc/mark-all-dwim nil))
+      (1 (mark-sexp 1))))
+  (bind-key (kbd "C-M-SPC") 'mc/mark-all-dwim-or-mark-sexp)
   )
+
 
 (provide 'my-editor)
 ;;; my-editor.el ends here
