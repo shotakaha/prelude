@@ -23,6 +23,7 @@
 ;; 18. ignoramusの設定
 ;; 19. smart-mode-line / rich-minorityの設定
 ;; 20. multiple-cursor-modeの設定
+;; 21. id-magagerの導入
 
 ;;; Code:
 
@@ -592,6 +593,13 @@
   (bind-key (kbd "C-M-SPC") 'mc/mark-all-dwim-or-mark-sexp)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; id-manager.el
+;;; https://github.com/kiwanami/emacs-id-manager
+(use-package id-manager
+  :config
+  (setq idm-database-file "~/.emacs.d/idm-db.gpg")
+)
 
 (provide 'my-editor)
 ;;; my-editor.el ends here
