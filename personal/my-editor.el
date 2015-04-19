@@ -24,6 +24,7 @@
 ;; 19. smart-mode-line / rich-minorityの設定
 ;; 20. multiple-cursor-modeの設定
 ;; 21. id-magagerの導入
+;; 22. showkeyの導入
 
 ;;; Code:
 
@@ -601,6 +602,15 @@
   :config
   (setq idm-database-file "~/.emacs.d/idm-db.gpg")
 )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; showkey.el
+;;; http://rubikitch.com/2015/04/19/showkey/
+(use-package showkey
+  :ensure t
+  :config
+  (push '(font . "Ricty-13") showkey-log-frame-alist)
+  )
 
 (provide 'my-editor)
 ;;; my-editor.el ends here
