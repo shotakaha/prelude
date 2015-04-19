@@ -294,6 +294,7 @@
 (use-package magit
   :config
   (setq magit-auto-revert-mode t)
+  (setq magit-last-seen-setup-instructions "1.4.0")
   (defun magit-format-duration--format-date (duration spec width)
     (format-time-string "%y-%m-%dT%H:%M:%S"
                         (seconds-to-time (- (float-time) duration))))
