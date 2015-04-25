@@ -25,6 +25,7 @@
 ;; 20. multiple-cursor-modeの設定
 ;; 21. id-magagerの導入
 ;; 22. showkeyの導入
+;; 23. visual-regexp-steroidsの導入
 
 ;;; Code:
 
@@ -260,9 +261,22 @@
 ;;; visual-regexp : 正規表現置換を対話的に行う
 (use-package visual-regexp
   :ensure t
-  :config
-  (global-set-key (kbd "M-%") 'vr/query-replace)
+  :bind (("M-%" . vr/query-replace))
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; visual-regexp-steroids.el
+;;; http://rubikitch.com/2015/04/20/visual-regexp-steroids/
+(use-package visual-regexp-steroids
+  :ensure t
+  :bind (("M-%" . vr/query-replace)
+         ("C-c m" . vr/mc-mark)
+         ("C-M-r" . vr/isearch-backward)
+         ("C-M-s" . vr/isearch-forward))
+  :config
+  (setq vr/engine 'python)
+  )
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; rectangle-mark-mode : 矩形編集
 ;;; C-x SPC
@@ -544,6 +558,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; smart-mode-line
 ;;; https://github.com/Malabarba/smart-mode-line
+;;; rich-minority
+;;; https://github.com/Malabarba/rich-minority
+
 (use-package smart-mode-line
   :ensure t
   :init
@@ -555,14 +572,10 @@
           sml/use-projectile-p 'before-prefixes
           sml/projectile-replacement-format "%s/"
           sml/read-only-char "%%")
+    (setq rm-whitelist t)
     (sml/setup)
     )
 )
-
-(use-package rich-minority
-  :ensure t
-  :config
-  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; multiple-cursor-mode
@@ -611,6 +624,8 @@
   :config
   (push '(font . "Ricty-13") showkey-log-frame-alist)
   )
+
+
 
 (provide 'my-editor)
 ;;; my-editor.el ends here
