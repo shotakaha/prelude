@@ -2,7 +2,7 @@
 ;;; my-yatex.el --- my YaTeX config
 
 ;; ;;; add library path
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/yatex/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/yatex/")
 ;; (require 'yatex)
 ;; (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
 ;; (setq tex-command "ptex2pdf -l -ot -synctex=1 -file-line-error")
@@ -13,7 +13,7 @@
 ;; (setq YaTeX-skip-default-reader t)
 
 (use-package yatex
-  :ensure t
+  ;; :ensure t
   :mode (("\\.tex$" . yatex-mode))
   :config
   ;; automatically selected according to current language

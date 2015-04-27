@@ -560,6 +560,7 @@
 ;;; https://github.com/Malabarba/smart-mode-line
 ;;; rich-minority
 ;;; https://github.com/Malabarba/rich-minority
+;;; M-x describe-variable minor-mode-list
 
 (use-package smart-mode-line
   :ensure t
@@ -572,7 +573,8 @@
           sml/use-projectile-p 'before-prefixes
           sml/projectile-replacement-format "%s/"
           sml/read-only-char "%%")
-    (setq rm-whitelist t)
+    ;; (setq rm-whitelist t)
+    ;; (setq rm-blacklist (mapconcat 'identity list-of-regexps "\\|"))
     (sml/setup)
     )
 )
@@ -625,6 +627,15 @@
   (push '(font . "Ricty-13") showkey-log-frame-alist)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; crosshaires.el
+(use-package crosshairs
+  :ensure t
+  :config
+  ;; always enabled
+  (crosshairs-mode t)
+  ;; (crosshairs-flash 1)
+  )
 
 
 (provide 'my-editor)
