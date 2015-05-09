@@ -12,10 +12,8 @@
 ;;; http://rubikitch.com/2014/08/20/migemo/
 ;;; First, get cmigemo from http://www.kaoriya.net/software/cmigemo/
 ;;; See http://weblog.ymt2.net/blog/html/2013/08/23/install_migemo_to_emacs_24_3_1.html
-(prelude-require-package 'migemo)
-
 (use-package migemo
-  ;; :disabled t
+  :ensure t
   :config
   (setq migemo-command "/usr/local/bin/cmigemo")
   (setq migemo-options '("-q" "--emacs"))
@@ -32,10 +30,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; helm-migemo.el
 ;;; http://rubikitch.com/2014/12/19/helm-migemo/
-(prelude-require-package 'helm-migemo)
-
 (use-package helm-migemo
-  ;; :disabled t
+  :ensure t
   :config
   ;; この修正が必要
   (eval-after-load "helm-migemo"
@@ -55,8 +51,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; helm-swoop.el
 ;;; http://rubikitch.com/2014/12/25/helm-swoop/
-(prelude-require-package 'helm-swoop)
 (use-package helm-swoop
+  :ensure t
   :config
   ;; isearchからの連携を考えるとC-r/C-sにも割り当て推奨
   (define-key helm-swoop-map (kbd "C-r") 'helm-previous-line)
@@ -85,12 +81,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ace-isearch.el
 ;;; http://rubikitch.com/2014/10/08/ace-isearch/
-(prelude-require-package 'ace-isearch)
 (use-package ace-isearch
-  ;; :disabled t
+  :ensure t
   :config
   (global-ace-isearch-mode 1)
   )
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; isearch-dabbrev.el
 ;;; http://rubikitch.com/2014/12/23/isearch-dabbrev/
