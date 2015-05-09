@@ -53,11 +53,13 @@
 ;;; http://rubikitch.com/2014/12/25/helm-swoop/
 (use-package helm-swoop
   :ensure t
-  :config
+  :init
   ;; isearchからの連携を考えるとC-r/C-sにも割り当て推奨
-  (define-key helm-swoop-map (kbd "C-r") 'helm-previous-line)
-  (define-key helm-swoop-map (kbd "C-s") 'helm-next-line)
-
+  (bind-keys :map helm-swoop-map
+             ("C-r" . helm-previous-line)
+             ("C-s" . helm-next-line)
+             )
+  :config
   ;; 検索結果をcycleしない、お好みで
   (setq helm-swoop-move-to-line-cycle nil)
 
@@ -69,7 +71,7 @@
       (helm-swoop :$source (delete '(migemo) (copy-sequence (helm-c-source-swoop)))
                   :$query $query :$multiline $multiline)))
   ;; C-M-:に割り当て
-  (global-set-key (kbd "C-M-:") 'helm-swoop-nomigemo)
+  (bind-key "C-M-:" 'helm-swoop-nomigemo)
 
   ;; [2014-11-25 Tue]
   (when (featurep 'helm-anything)
@@ -90,5 +92,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; isearch-dabbrev.el
 ;;; http://rubikitch.com/2014/12/23/isearch-dabbrev/
-(prelude-require-package 'isearch-dabbrev)
-(define-key isearch-mode-map (kbd "<tab>") 'isearch-dabbrev-expand)
+(use-package isearch-dabbrev
+  :ensure t
+  :init
+  (bind-keys :map isearch-mode-map
+             ("<tab>" . isearch-dabbrev-expand)
+             )
+  )
