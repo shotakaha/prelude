@@ -22,6 +22,10 @@
 (server-start)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Confirm when Quit Emacs
+(setq confirm-kill-emacs 'y-or-n-p)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; garbage collection
 ;;; threshold 128MB
 ;;; leave message when gc collected
