@@ -14,29 +14,6 @@
 ;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Always start emacs daemon
-;;; emacsclient を使って接続する
-;;; /Applications/Emacs.app/以下のでも、
-;;; /opt/local/bin/emacsclient でもどちらでもよい
-;;; .bashrcに、export EDITOR=emacsclient としておくとよい
-(server-start)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Confirm when Quit Emacs
-(setq confirm-kill-emacs 'y-or-n-p)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; garbage collection
-;;; threshold 128MB
-;;; leave message when gc collected
-(setq gc-cons-threshold (* 128 1024 1024))
-(setq garbage-collection-messages t)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; load newer file
-(setq load-prefer-newer t)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; generic-x.el
 ;;; http://rubikitch.com/2014/08/03/blog/
 ;;; http://drunkard-diogenes.blogspot.jp/2014/07/emacs-lisp.html
@@ -92,11 +69,6 @@
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; key-bind
-(bind-key "C-h" 'delete-backward-char)
-(bind-key "C-x m" 'smex)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; C-x 3 C-x o --> C-t
 ;;; 画面の移動を簡単に行う方法
 ;;; （画面が分割されてない場合は、２分割(C-x 3)する）
@@ -113,6 +85,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; passthword
 (setq epa-file-cache-passphrase-for-symmetric-encryption t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; key-bindings
+(bind-key "C-h" 'delete-backward-char)
+(bind-key "C-x m" 'smex)
 
 (provide 'init)
 ;;; init.el ends here
