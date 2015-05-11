@@ -80,6 +80,8 @@
   (other-window 1))
 ;; transpose-char(C-t) は普段使わないのでつぶす
 (bind-key* "C-t" 'other-window-or-split)
+(bind-key "s-{" 'other-window-or-split)
+(bind-key "s-}" 'other-window-or-split)
 ;;(bind-key* "C-u C-t" 'delete-other-window)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
