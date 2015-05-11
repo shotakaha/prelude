@@ -2,7 +2,7 @@
 ;;; my-yatex.el --- my YaTeX config
 
 ;; ;;; add library path
-(add-to-list 'load-path "~/.emacs.d/site-lisp/yatex/")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/yatex/")
 ;; (require 'yatex)
 ;; (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
 ;; (setq tex-command "ptex2pdf -l -ot -synctex=1 -file-line-error")
@@ -13,12 +13,12 @@
 ;; (setq YaTeX-skip-default-reader t)
 
 (use-package yatex
-  ;; :ensure t
+  :ensure t
   :mode (("\\.tex$" . yatex-mode))
+  :bind (("C-x C-t" . YaTeX-typeset-menu))
   :config
   ;; automatically selected according to current language
   ;; (setq YaTeX-japan t)
-  ;; (setq YaTeX-prefix "\C-c")
 
   ;; change default kanji-code from 2:JIS to 4:UTF-8
   ;; (setq latex-message-kanji-code 4)
@@ -34,7 +34,7 @@
   (setq tex-command "ptex2pdf -l -ot -synctex=1 -file-line-error")
   (setq bibtex-command "pbibtex")
   (setq dvi2-command "open -a Preview")    ;; use Preview.app
-  ;; (setq tex-pdfview-command "open -a Preview")
+  (setq tex-pdfview-command "open -a Preview")
   (setq dviprint-command-format "dvipdfmx %s")
   (setq YaTeX-skip-default-reader t)
   (setq YaTeX-simple-messages t)
