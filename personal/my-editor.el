@@ -651,6 +651,9 @@
   (setq twittering-use-master-password t)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; passthword
+(setq epa-file-cache-passphrase-for-symmetric-encryption t)
 
 (provide 'my-editor)
 ;;; my-editor.el ends here

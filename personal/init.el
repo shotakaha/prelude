@@ -4,12 +4,18 @@
 ;; My init.el that goes with Emacs Prelude.
 ;; First, install and setup Emacs Prelude.
 ;; Then modify elisps in personal/ directory.
-;;
-;; I will use "use-package.el" instead of "require".
-;; Transition is still on away.
-;;
-;; Also, I am using "init-loader.el" right now,
-;; but i will try to depend less upon it.
+
+;;; Configure packages
+;; 0. package : already configured in core/prelude-package.el
+;; 1. generic-x : I don't know why
+;; 2. use-package : replacement for "require"
+;; 3. init-loader : obsolete
+;; More packages are configured in my-editor.el
+
+;;; My function
+;; other-window-or-split
+
+;;; My key-bindings
 
 ;;; Code:
 
@@ -65,14 +71,9 @@
 ;;(bind-key* "C-u C-t" 'delete-other-window)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; passthword
-(setq epa-file-cache-passphrase-for-symmetric-encryption t)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; key-bindings
 (bind-key "C-h" 'delete-backward-char)
 (bind-key "C-x m" 'smex)
-
 
 (provide 'init)
 ;;; init.el ends here
