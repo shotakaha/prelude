@@ -1,4 +1,4 @@
-;;; my-init.el -- my-init.el
+;;; personal/init.el -- My init.el
 
 ;;; Commentary:
 ;; My init.el that goes with Emacs Prelude.
@@ -29,16 +29,6 @@
 (setq use-package-minimum-reported-time 0.001)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; package.el
-(use-package package
-  :config
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-  ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-  ;; (fset 'package-desc-vers 'package--ac-desc-version)
-  (package-initialize)
-  )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-loader.el
 (use-package init-loader
   :disabled t
@@ -58,17 +48,6 @@
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; uniquify.el
-;;; Easy to recognize same-named file in different directory
-;;; Already set in core/prelude-editor.el
-;;; replace some variables
-(use-package uniquify
-  :config
-  (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
-  (setq uniquify-ignore-buffers-re "*[^*]+*")
-)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; C-x 3 C-x o --> C-t
 ;;; 画面の移動を簡単に行う方法
 ;;; （画面が分割されてない場合は、２分割(C-x 3)する）
@@ -80,6 +59,7 @@
   (other-window 1))
 ;; transpose-char(C-t) は普段使わないのでつぶす
 (bind-key* "C-t" 'other-window-or-split)
+(bind-key* "C-c t" 'other-window-or-split)
 (bind-key "s-{" 'other-window-or-split)
 (bind-key "s-}" 'other-window-or-split)
 ;;(bind-key* "C-u C-t" 'delete-other-window)
@@ -92,6 +72,7 @@
 ;;; key-bindings
 (bind-key "C-h" 'delete-backward-char)
 (bind-key "C-x m" 'smex)
+
 
 (provide 'init)
 ;;; init.el ends here
