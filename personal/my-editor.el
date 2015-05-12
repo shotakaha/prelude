@@ -137,6 +137,14 @@
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; uniquify.el
+;;; Easy to recognize same-named file in different directory
+;;; Already set in core/prelude-editor.el
+;;; replace some variables
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+(setq uniquify-ignore-buffers-re "*[^*]+*")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; psession.el
 ;;; http://rubikitch.com/2014/08/21/psession/
 ;;; https://github.com/thierryvolpiatto/psession
@@ -190,9 +198,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ファイル・バッファの切替
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; bs : 手軽にバッファ選択
+;;; bs (default-package)
 ;;; C-x C-b : helm-buffer-list に設定済み
-;; (global-set-key (kbd "C-x C-b") 'bs-show)
+(bind-key "C-x C-b" 'bs-show)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ffap : C-x C-f に機能を追加する
