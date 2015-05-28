@@ -30,6 +30,23 @@
 ;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Default packages
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; bs
+;;; C-x C-b binded to helm-buffer-list in Prelude
+(bind-key "C-x C-b" 'bs-show)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ffap : C-x C-f に機能を追加する
+;;; C-x C-f : helm-find-files に設定済み
+(ffap-bindings)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; uniquify.el
+;;; Easy to recognize same-named file in different directory
+;;; Already loaded in core/prelude-editor.el
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+(setq uniquify-ignore-buffers-re "*[^*]+*")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; view-mode
 ;;; るびきち : Emacsテクニックバイグル : p.217
 ;;; るびきち : Emacsテクニックバイグル : p.218
@@ -89,7 +106,6 @@
   ;; (viewer-aggressive-setup 'force)
   )
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; origami.el
 ;;; http://rubikitch.com/2015/01/03/origami/
@@ -121,7 +137,8 @@
 ;;; ido - ファイル・バッファを選択して開く
 ;;; coreで定義済み
 ;; (ido-mode 1)
-;; (ido-everywhere 1)
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ido-vertical-mode.el
 ;;; http://rubikitch.com/2015/01/06/ido-vertical-mode/
@@ -133,16 +150,9 @@
   ;; あいまいマッチは入れておこう
   (setq ido-enable-flex-matching t)
   (ido-mode 1)
+  (ido-everywhere 1)
   (ido-vertical-mode 1)
 )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; uniquify.el
-;;; Easy to recognize same-named file in different directory
-;;; Already set in core/prelude-editor.el
-;;; replace some variables
-(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
-(setq uniquify-ignore-buffers-re "*[^*]+*")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; psession.el
@@ -194,18 +204,6 @@
   :config
   (global-jaword-mode t)
   )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ファイル・バッファの切替
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; bs (default-package)
-;;; C-x C-b : helm-buffer-list に設定済み
-(bind-key "C-x C-b" 'bs-show)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ffap : C-x C-f に機能を追加する
-;;; C-x C-f : helm-find-files に設定済み
-(ffap-bindings)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; recentf-ext : 最近使ったファイルを開く
