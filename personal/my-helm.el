@@ -55,10 +55,10 @@
   :ensure t
   :init
   ;; isearchからの連携を考えるとC-r/C-sにも割り当て推奨
-  (bind-keys :map helm-swoop-map
-             ("C-r" . helm-previous-line)
-             ("C-s" . helm-next-line)
-             )
+  ;; (bind-keys :map helm-swoop-map
+  ;;            ("C-r" . helm-previous-line)
+  ;;            ("C-s" . helm-next-line)
+  ;;            )
   :config
   ;; 検索結果をcycleしない、お好みで
   (setq helm-swoop-move-to-line-cycle nil)
