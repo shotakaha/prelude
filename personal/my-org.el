@@ -10,6 +10,7 @@
 ;;   4. org-bpe の設定 -> 外部ファイルへ
 ;;   5. org-ac の設定
 ;;   6. org-autolistの設定
+;;   7. org-doingの設定
 ;;
 ;; org-capture などで作成するファイルは、
 ;; 基本的に ~/Documents/org/ に保存することにする。
@@ -287,4 +288,12 @@
 (use-package org-autolist
   :config
   (add-hook 'org-mode-hook (lambda () (org-autolist-mode)))
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; org-doing
+;;; http://rubikitch.com/2015/06/26/org-doing/
+(use-package org-doing
+  :config
+  (setq org-doing-file "~/Documents/org/doing.txt")
   )
