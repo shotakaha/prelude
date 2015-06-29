@@ -653,5 +653,17 @@
 ;;; passthword
 (setq epa-file-cache-passphrase-for-symmetric-encryption t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; stripe-buffer.el
+;;; http://rubikitch.com/2014/11/30/stripe-buffer/
+;;; Set stripes to buffers such as Dired-mode, Org-mode, etc.
+;;; by adding hooks
+(use-package stripe-buffer
+  :ensure t
+  :config
+  (add-hook 'dired-mode-hook 'stripe-listify-buffer)
+  (add-hook 'org-mode-hook 'turn-on-stripe-table-mode)
+  )
+
 (provide 'my-editor)
 ;;; my-editor.el ends here
