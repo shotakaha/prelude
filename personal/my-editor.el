@@ -141,6 +141,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ido-vertical-mode.el
+;;; https://github.com/creichert/ido-vertical-mode.el
 ;;; http://rubikitch.com/2015/01/06/ido-vertical-mode/
 (use-package ido-vertical-mode
   :ensure t
@@ -152,7 +153,9 @@
   (ido-mode 1)
   (ido-everywhere 1)
   (ido-vertical-mode 1)
-)
+  (setq ido-vertical-define-keys 'C-n-and-C-p-only)
+  (setq ido-vertical-show-count t)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; psession.el
