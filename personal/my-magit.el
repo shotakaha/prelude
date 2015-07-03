@@ -13,15 +13,4 @@
          ("C-x M-g" . magit-dispatch-popup))
   :init
   :config
-  ;; (defun magit-format-duration--format-date (duration spec width)
-  ;;   (format-time-string "%y-%m-%dT%H:%M:%S"
-  ;;                       (seconds-to-time (- (float-time) duration))))
-  ;; (advice-add 'magit-format-duration :override
-  ;;             'magit-format-duration--format-date)
-  ;; (defun magit-log-margin-set-timeunit-width--fixed ()
-  ;;   (setq magit-log-margin-timeunit-width 12))
-  ;; (advice-add 'magit-log-margin-set-timeunit-width :override
-  ;;             'magit-log-margin-set-timeunit-width--fixed)
-  ;; (setq magit-log-margin-spec '(33 nil magit-duration-spec))
-
   )
