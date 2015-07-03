@@ -10,7 +10,7 @@
 ;; 5. web-modeの設定
 ;; 6. jawordの設定
 ;; 7. symonの設定 --> enabled (2015-03-18)
-;; 8. magitの設定
+;; 8. magitの設定 --> my-magit.el (2015-07-04)
 ;; 9. mag-menuの設定
 ;; 10. github-browse-fileの設定
 ;; 11. helm-cmd-tの設定（予定）
@@ -312,25 +312,7 @@
   ;; (symon-mode)
 )
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; magit.el
-;;; http://rubikitch.com/2015/01/30/magit-time-format/
-(use-package magit
-  :config
-  (setq magit-auto-revert-mode t)
-  (setq magit-last-seen-setup-instructions "1.4.0")
-  (defun magit-format-duration--format-date (duration spec width)
-    (format-time-string "%y-%m-%dT%H:%M:%S"
-                        (seconds-to-time (- (float-time) duration))))
-  (advice-add 'magit-format-duration :override
-              'magit-format-duration--format-date)
-  (defun magit-log-margin-set-timeunit-width--fixed ()
-    (setq magit-log-margin-timeunit-width 12))
-  (advice-add 'magit-log-margin-set-timeunit-width :override
-              'magit-log-margin-set-timeunit-width--fixed)
-  (setq magit-log-margin-spec '(33 nil magit-duration-spec))
 
-  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; mag-menu.el
