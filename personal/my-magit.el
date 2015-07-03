@@ -8,8 +8,11 @@
 ;;; magit.el
 ;;; http://rubikitch.com/2015/01/30/magit-time-format/
 (use-package magit
+  :ensure t
+  :bind (("C-x g" . magit-status)
+         ("C-x M-g" . magit-dispatch-popup))
+  :init
   :config
-  ;; (setq magit-auto-revert-mode t)
   ;; (setq magit-last-seen-setup-instructions "1.4.0")
   ;; (defun magit-format-duration--format-date (duration spec width)
   ;;   (format-time-string "%y-%m-%dT%H:%M:%S"
