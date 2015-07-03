@@ -30,7 +30,10 @@
 ;;; http://rubikitch.com/2014/09/09/use-package/
 ;;; https://github.com/jwiegley/use-package
 ;;; http://qiita.com/kai2nenobu/items/5dfae3767514584f5220
-(require 'use-package)
+(eval-when-compile
+  (require 'use-package))
+(require 'diminish)    ;; if you use :diminish
+(require 'bind-key)    ;; if you use any :bind variant
 (setq use-package-verbose t)
 (setq use-package-minimum-reported-time 0.001)
 
