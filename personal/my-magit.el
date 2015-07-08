@@ -4,6 +4,8 @@
 
 ;; [2015-07-04] : Magitの設定をmy-editorから移植
 
+;;; Code:
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; magit.el
 ;;; http://rubikitch.com/2015/01/30/magit-time-format/
@@ -14,3 +16,6 @@
   :init
   :config
   )
+
+(provide 'my-magit)
+;;; my-magit.el ends here
