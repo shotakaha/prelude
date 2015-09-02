@@ -28,6 +28,15 @@
 ;; 23. visual-regexp-steroidsの導入
 ;; 24. cbm の導入
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; undo
+;; redo+
+;; undohist
+;; undo-tree
+;; point-undo
+;; goto-chg
+
+
 ;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -629,10 +638,16 @@
   ;; (crosshairs-flash 1)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; 参考にした設定 : http://rakkyoo.net/?p=1444
 (use-package twittering-mode
+
   :config
   ;; 簡単ログインの設定
+  (setq twittering-allow-insecure-server-cert t)
   (setq twittering-use-master-password t)
+  ;; (setq twittering-private-info-file "~/.emacs.d/twittering-mode.gpg")
+  ;; (setq twittering-status-format "%i @%s %S %p: n %T  [%@]%r %R %f%Ln ------------------------------" )
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -651,7 +666,6 @@
   (add-hook 'org-mode-hook 'turn-on-stripe-table-mode)
   )
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; cbm.el
 ;;; https://github.com/akermu/cbm.el
@@ -660,6 +674,31 @@
   :bind (("M-%" . vr/query-replace)
          )
 
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; redo+.el
+(use-package redo+
+  :ensure t
+  :bind (("C-M-/" . redo))
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; undohist.el
+(use-package undohist
+  :ensure t
+  :config
+  (undohist-initialize)
+  (setq undohist-ignored-files '("/tmp" "COMMIT_EDITMSG"))
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; undo-tree.el
+(use-package undo-tree
+  :ensure t
+  :config
+  (setq undo-tree-mode-lighter "")
+  (global-undo-tree-mode 1)
   )
 
 (provide 'my-editor)
