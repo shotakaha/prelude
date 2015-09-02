@@ -26,6 +26,7 @@
 ;; 21. id-magagerの導入
 ;; 22. showkeyの導入
 ;; 23. visual-regexp-steroidsの導入
+;; 24. cbm の導入
 
 ;;; Code:
 
@@ -648,6 +649,17 @@
   :config
   (add-hook 'dired-mode-hook 'stripe-listify-buffer)
   (add-hook 'org-mode-hook 'turn-on-stripe-table-mode)
+  )
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; cbm.el
+;;; https://github.com/akermu/cbm.el
+(use-package cbm
+  :ensure t
+  :bind (("M-%" . vr/query-replace)
+         )
+
   )
 
 (provide 'my-editor)
