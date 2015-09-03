@@ -24,8 +24,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; org-mode --- M-x org-info でマニュアルを参照可能
-(prelude-require-package 'org)
 (use-package org
+  :ensure t
   :mode (("\\.txt$" . org-mode))
   :config
 
