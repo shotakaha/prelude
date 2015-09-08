@@ -37,15 +37,13 @@
   ;;(setq my-org-agenda-directory "~/Documents/org/")
 
   ;; 基本設定
-  ;; 見出しの余分な * を消す。意外と見やすくなる。
+  ;; Hide the first N-1 stars in a headline : nil --> t
   (setq org-hide-leading-stars t)
-  ;; これはなんだろう？
-  ;; (setq org-startup-truncated nil)
-  ;; RET でリンク先へ移動する
+  ;; RET will follow the link : nil --> t
   (setq org-return-follows-link t)
-  ;; 作成したファイルの保存先
+  ;; Directory with org files : "~/org" --> "~/Documents/org"
   (setq org-directory my-org-directory)
-  ;; デフォルトのファイル名
+  ;; Default target for storing notes : "~/.notes" --> "captured.org"
   (setq org-default-notes-file "captured.org")
 
   ;; org-capture の設定
