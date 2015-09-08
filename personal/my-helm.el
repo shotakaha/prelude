@@ -52,6 +52,7 @@
 ;;; helm-swoop.el
 ;;; http://rubikitch.com/2014/12/25/helm-swoop/
 (use-package helm-swoop
+  :disabled t
   :ensure t
   :init
   ;; isearchからの連携を考えるとC-r/C-sにも割り当て推奨
