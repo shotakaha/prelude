@@ -31,6 +31,7 @@
 ;;; helm-migemo.el
 ;;; http://rubikitch.com/2014/12/19/helm-migemo/
 (use-package helm-migemo
+  :disabled t
   :ensure t
   :config
   ;; この修正が必要
