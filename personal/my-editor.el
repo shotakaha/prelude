@@ -26,6 +26,7 @@
 ;; 21. id-magagerの導入
 ;; 22. showkeyの導入
 ;; 23. visual-regexp-steroidsの導入
+;; 24. cbm の導入
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; undo
@@ -666,6 +667,16 @@
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; cbm.el
+;;; https://github.com/akermu/cbm.el
+(use-package cbm
+  :ensure t
+  :bind (("M-%" . vr/query-replace)
+         )
+
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; redo+.el
 (use-package redo+
   :ensure t
@@ -689,8 +700,6 @@
   (setq undo-tree-mode-lighter "")
   (global-undo-tree-mode 1)
   )
-
-
 
 (provide 'my-editor)
 ;;; my-editor.el ends here

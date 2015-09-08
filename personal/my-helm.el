@@ -31,6 +31,7 @@
 ;;; helm-migemo.el
 ;;; http://rubikitch.com/2014/12/19/helm-migemo/
 (use-package helm-migemo
+  :disabled t
   :ensure t
   :config
   ;; この修正が必要
@@ -52,6 +53,7 @@
 ;;; helm-swoop.el
 ;;; http://rubikitch.com/2014/12/25/helm-swoop/
 (use-package helm-swoop
+  :disabled t
   :ensure t
   :init
   ;; isearchからの連携を考えるとC-r/C-sにも割り当て推奨
