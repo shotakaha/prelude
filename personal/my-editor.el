@@ -611,13 +611,7 @@
   (bind-key (kbd "C-M-SPC") 'mc/mark-all-dwim-or-mark-sexp)
   )
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; id-manager.el
-;;; https://github.com/kiwanami/emacs-id-manager
-(use-package id-manager
-  :config
-  (setq idm-database-file "~/.emacs.d/idm-db.gpg")
-)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; showkey.el
@@ -650,9 +644,7 @@
   ;; (setq twittering-status-format "%i @%s %S %p: n %T  [%@]%r %R %f%Ln ------------------------------" )
   )
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; passthword
-(setq epa-file-cache-passphrase-for-symmetric-encryption t)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; stripe-buffer.el
