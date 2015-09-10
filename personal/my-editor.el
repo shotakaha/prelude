@@ -23,7 +23,6 @@
 ;; 18. ignoramusの設定
 ;; 19. smart-mode-line / rich-minorityの設定
 ;; 20. multiple-cursor-modeの設定
-;; 21. id-magagerの導入
 ;; 22. showkeyの導入
 ;; 23. visual-regexp-steroidsの導入
 ;; 24. cbm の導入
