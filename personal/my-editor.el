@@ -94,26 +94,11 @@
 ;;; p.222 - 特定のファイルを view-mode で開く
 
 (use-package viewer
+  :ensure t
   :config
   (viewer-stay-in-setup)
-  ;; set color to mode-line
-  ;; 書き込み不可の場合 : tomato
-  (setq viewer-modeline-color-unwritable "tomato")
-  ;; view-mode の場合 : orange
-  (setq viewer-modeline-color-view "orange")
   (viewer-change-modeline-color-setup)
-
-  ;; set view-mode kbd according to major-mode
-  ;; カーソル位置の関数定義にジャンプするコマンドをRETに統一
-  ;; (define-overriding-view-mode-map c-mode          ("RET" . gtags-find-tag-from-here))
-  ;; (define-overriding-view-mode-map emacs-lisp-mode ("RET" . find-function-at-point))
-
-  ;; ログファイル（.log）は view-mode 開く
-  (setq view-mode-by-default-regexp "\\.log$")
-  ;; すべてファイルを view-mode で開く
-  ;; ただし、文字数の少ないファイルは除く（デフォルト100文字以下）
-  ;; (viewer-aggressive-minimum-size 100)
-  ;; (viewer-aggressive-setup 'force)
+  (viewer-aggressive-setup 'force)
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -685,11 +670,12 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; undohist.el
+;;; undohist-directory : ~/.emacs.d/undohist/
 (use-package undohist
   :ensure t
   :config
+  (setq undohist-ignored-files '("/tmp" "COMMIT_EDITMSG" "elpa"))
   (undohist-initialize)
-  (setq undohist-ignored-files '("/tmp" "COMMIT_EDITMSG"))
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
