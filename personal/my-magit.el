@@ -11,6 +11,7 @@
 ;;; http://rubikitch.com/2015/01/30/magit-time-format/
 (use-package magit
   :ensure t
+  :diminish t
   :bind (("C-x g" . magit-status)
          ("C-x M-g" . magit-dispatch-popup))
   :init
