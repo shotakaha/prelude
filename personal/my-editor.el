@@ -23,7 +23,6 @@
 ;; 18. ignoramusの設定
 ;; 19. smart-mode-line / rich-minorityの設定
 ;; 20. multiple-cursor-modeの設定
-;; 21. id-magagerの導入
 ;; 22. showkeyの導入
 ;; 23. visual-regexp-steroidsの導入
 ;; 24. cbm の導入
@@ -592,13 +591,7 @@
   (bind-key (kbd "C-M-SPC") 'mc/mark-all-dwim-or-mark-sexp)
   )
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; id-manager.el
-;;; https://github.com/kiwanami/emacs-id-manager
-(use-package id-manager
-  :config
-  (setq idm-database-file "~/.emacs.d/idm-db.gpg")
-)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; showkey.el
@@ -631,9 +624,7 @@
   ;; (setq twittering-status-format "%i @%s %S %p: n %T  [%@]%r %R %f%Ln ------------------------------" )
   )
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; passthword
-(setq epa-file-cache-passphrase-for-symmetric-encryption t)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; stripe-buffer.el
