@@ -88,11 +88,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; viewer.el --- improve view-mode
-;;; るびきち : Emacsテクニックバイグル : p.220
-;;; p.220 - view-mode の mode-line に色を付ける
-;;; p.221 - メジャーモードに合わせて view-mode のキーバインドを設定する
-;;; p.222 - 特定のファイルを view-mode で開く
-
+;;; http://emacswiki.org/emacs/viewer.el
 (use-package viewer
   :ensure t
   :config
