@@ -663,7 +663,7 @@
 (use-package undohist
   :ensure t
   :config
-  (setq undohist-ignored-files '("/tmp" "COMMIT_EDITMSG" "elpa"))
+  (setq undohist-ignored-files '("/tmp" "COMMIT_EDITMSG" "TAG_EDITMSG" "elpa"))
   (undohist-initialize)
   )
 
