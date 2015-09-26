@@ -28,6 +28,10 @@
 ;;; load newer file
 (setq load-prefer-newer t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; show line number
+(global-linum-mode 1)
+
 ;;; key-bindings are written in ../init.el using use-package
 
 ;;; preload/init.el ends here
