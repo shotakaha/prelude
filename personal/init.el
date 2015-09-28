@@ -20,12 +20,6 @@
 ;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; generic-x.el
-;;; http://rubikitch.com/2014/08/03/blog/
-;;; http://drunkard-diogenes.blogspot.jp/2014/07/emacs-lisp.html
-(require 'generic-x)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; use-package.el
 ;;; http://rubikitch.com/2014/09/09/use-package/
 ;;; https://github.com/jwiegley/use-package
@@ -38,6 +32,12 @@
 (setq use-package-minimum-reported-time 0.001)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; generic-x.el
+;;; http://rubikitch.com/2014/08/03/blog/
+;;; http://drunkard-diogenes.blogspot.jp/2014/07/emacs-lisp.html
+(use-package generic-x)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; C-x 3 C-x o --> C-t
 ;;; 画面の移動を簡単に行う方法
 ;;; （画面が分割されてない場合は、２分割(C-x 3)する）
@@ -48,10 +48,7 @@
     (split-window-horizontally))
   (other-window 1))
 ;; transpose-char(C-t) は普段使わないのでつぶす
-(bind-key* "C-t" 'other-window-or-split)
-(bind-key* "C-c t" 'other-window-or-split)
-(bind-key "s-{" 'previous-buffer)
-(bind-key "s-}" 'next-buffer)
+
 ;;(bind-key* "C-u C-t" 'delete-other-window)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -59,6 +56,10 @@
 (bind-key "C-h" 'delete-backward-char)
 (bind-key "C-x C-m" 'smex)
 (bind-key "C-x m" 'smex-major-mode-commands)
+(bind-key* "C-t" 'other-window-or-split)
+(bind-key "s-{" 'previous-buffer)
+(bind-key "s-}" 'next-buffer)
+
 
 (provide 'init)
 ;;; init.el ends here
