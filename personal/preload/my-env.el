@@ -1,29 +1,3 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Check OS
-(defvar oldemacs-p (<= emacs-major-version 22)) ; <= Emacs22
-(defvar emacs23-p (<= emacs-major-version 23))  ; <= Emacs23
-(defvar emacs24-p (>= emacs-major-version 24))  ; >= Emacs24
-(defvar linux-p (eq system-type 'gnu/linux))    ; for Linux
-(defvar darwin-p (eq system-type 'darwin))      ; for Mac OS X
-(defvar nt-p (eq system-type 'windows-nt))      ; for Windows
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; load-theme
-;;; manoj-dark : 背景:黒、文字:橙
-;;; leuven     : 背景:白、文字:黒、
-;;;              Org-modeの見出しが大きく表示されてGOOD!
-(when linux-p
-  (message "OS : GNU/Linux")
-  (setq prelude-theme 'manoj-dark)
-  (setq skk-tut-file "/usr/share/skk/SKK.tut")
-  )
-(when darwin-p
-  (message "OS : MacOS X")
-  (setq prelude-theme 'leuven)
-  (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
-  )
-
-
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ;;; encoding
 ;; (set-language-environment 'Japanese)
