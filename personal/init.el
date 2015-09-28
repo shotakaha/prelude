@@ -60,6 +60,5 @@
 (bind-key "s-{" 'previous-buffer)
 (bind-key "s-}" 'next-buffer)
 
-
-(provide 'init)
+(provide 'personal-init)
 ;;; init.el ends here
