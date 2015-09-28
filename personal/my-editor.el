@@ -55,7 +55,20 @@
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 (setq uniquify-ignore-buffers-re "*[^*]+*")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package midnight)
+;;; midnight.el
+;;; しばらく使ってないバッファを削除する
+(use-package midnight
+  :ensure t
+  )
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; which-key.el
+;;; guide-key.elの進化版
+;;; コマンド入力の補助候補をポップアップで表示
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode t)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; view-mode
