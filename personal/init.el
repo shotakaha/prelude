@@ -38,25 +38,6 @@
 (setq use-package-minimum-reported-time 0.001)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-loader.el
-(use-package init-loader
-  :disabled t
-  :ensure t
-  :config
-  ;;; always show *init log* after starting emacs
-  ;; (setq init-loader-show-log-after-init t)
-
-  ;;; show *init log* when there were error
-  (setq init-loader-show-log-after-init 'error-only)
-
-  ;;; set directory for init-loader
-  (init-loader-load "~/.emacs.d/personal/inits/")
-
-  ;;; always byte-compile when loading
-  (setq init-loader-byte-compile t)
-  )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; C-x 3 C-x o --> C-t
 ;;; 画面の移動を簡単に行う方法
 ;;; （画面が分割されてない場合は、２分割(C-x 3)する）
