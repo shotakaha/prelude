@@ -20,7 +20,23 @@
 ;;; http://rubikitch.com/2014/11/26/helm-eww/
 ;;; H, s で履歴の表示
 
-(require 'eww)
+(use-package eww
+  :config
+  (bind-keys :map eww-mode-map
+             ("h" . backward-char)
+             ("j" . next-line)
+             ("k" . previous-line)
+             ("l" . forward-char)
+             ("J" . View-scroll-line-forward)
+             ("K" . View-scroll-line-backward)
+             ("s-[" . eww-back-url)
+             ("s-]" . eww-forward-url)
+             ("s-{" . previous-buffer)
+             ("s-}" . next-buffer)
+             )
+  )
+
+
 (defvar eww-data)
 (defun eww-current-url ()
   (if (boundp 'eww-current-url)

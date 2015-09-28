@@ -69,14 +69,15 @@
 ;; transpose-char(C-t) は普段使わないのでつぶす
 (bind-key* "C-t" 'other-window-or-split)
 (bind-key* "C-c t" 'other-window-or-split)
-(bind-key "s-{" 'other-window-or-split)
-(bind-key "s-}" 'other-window-or-split)
+(bind-key "s-{" 'previous-buffer)
+(bind-key "s-}" 'next-buffer)
 ;;(bind-key* "C-u C-t" 'delete-other-window)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; key-bindings
 (bind-key "C-h" 'delete-backward-char)
-(bind-key "C-x m" 'smex)
+(bind-key "C-x C-m" 'smex)
+(bind-key "C-x m" 'smex-major-mode-commands)
 
 (provide 'init)
 ;;; init.el ends here
