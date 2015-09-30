@@ -24,12 +24,12 @@
   :mode (("\\.txt$" . org-mode))
   :bind (("C-c c" . org-capture)
          )
-  :config
-
+  :init
   ;; 保存先（もっとうまく書けたらいいのになぁ）
   (setq my-org-directory "~/Documents/org/")
   (setq my-org-agenda-directory "~/Documents/org/agenda/")
-
+  (setq org-agenda-files (list my-org-directory my-org-agenda-directory ))
+  :config
   ;; 基本設定
   ;; Hide the first N-1 stars in a headline : nil --> t
   (setq org-hide-leading-stars t)
@@ -68,7 +68,7 @@
 
           ("s" "写真の処理状況ログ" entry
            (file+datetree "~/Documents/org/photolog.org")
-           "** TODO %t %?\n   Entered on %U    %i\n"
+           "** TODO %T %?\n   Entered on %U    %i\n"
            :empty-lines 1
            :unnarrowd 1)
 
@@ -84,7 +84,7 @@
   ;; org-agenda の設定
   ;; 標準の祝日を利用しない
   (setq calendar-holidays nil)
-  (setq org-agenda-files (list my-org-directory my-org-agenda-directory))
+
 
   ;; todoキーワードの設定 --- tamura70ブログ
   ;; http://d.hatena.ne.jp/tamura70/20100207/org
@@ -118,6 +118,7 @@
 ;;; https://github.com/aki2o/org-ac
 
 (use-package org-ac
+  :disabled t
   :config
   ;; Make config suit for you. About the config item, eval the following sexp.
   ;; (customize-group "org-ac")
