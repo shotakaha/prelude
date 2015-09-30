@@ -33,10 +33,7 @@
 
   ;; 保存先（もっとうまく書けたらいいのになぁ）
   (setq my-org-directory "~/Documents/org/")
-  (setq my-org-capture-demo-file "~/Documents/org/captured-demo.org")
-  (setq my-org-codereading-file "~/Documents/org/codereading.org")
   (setq my-org-agenda-directory "~/Documents/org/agenda/")
-  ;;(setq my-org-agenda-directory "~/Documents/org/")
 
   ;; 基本設定
   ;; Hide the first N-1 stars in a headline : nil --> t
