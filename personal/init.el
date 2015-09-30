@@ -59,6 +59,7 @@
 (bind-key* "C-t" 'other-window-or-split)
 (bind-key "s-{" 'previous-buffer)
 (bind-key "s-}" 'next-buffer)
+(bind-key "C-c C-l" 'toggle-truncate-lines)
 
 (provide 'personal-init)
 ;;; init.el ends here

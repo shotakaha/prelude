@@ -492,21 +492,22 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; auto-complete
 ;;; http://rubikitch.com/2014/11/05/auto-complete/
-(use-package auto-complete-config
-  :config
-  (ac-config-default)
-  )
+;; (use-package auto-complete-config
+;;   :disabled t
+;;   :config
+;;   (ac-config-default)
+;;   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ac-mozc
 ;;; https://github.com/igjit/ac-mozc
-(use-package ac-mozc
-  :ensure t
-  :config
-  (bind-keys :map ac-mode-map
-             ("C-c C-SPC" . ac-complete-mozc)
-             )
-  )
+;; (use-package ac-mozc
+;;   :disabled t
+;;   :config
+;;   (bind-keys :map ac-mode-map
+;;              ("C-c C-SPC" . ac-complete-mozc)
+;;              )
+;;   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package comment-dwim-2
