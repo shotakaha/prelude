@@ -140,7 +140,7 @@
 
           ("m" "みんなで会議" entry
            (file+datetree "~/Documents/org/minutes.org")
-           "* %T %?"
+           "* %? %T"
            :empty-lines 1
            :jump-to-captured 1)
 
@@ -153,8 +153,9 @@
 
           ("t" "とりあえず 仕事を放り込む" entry
            (file+headline nil "GTD")
-           "** TODO %?\n   Entered on %T    %i\n    %a\n"
-           :empty-lines 1)
+           "** TODO %T %?\n   Entered on %U    %i\n"
+           :empty-lines 1
+           :unnarrowd 1)
           )
         )
 
