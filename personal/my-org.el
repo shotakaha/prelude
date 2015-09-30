@@ -28,7 +28,7 @@
   ;; 保存先（もっとうまく書けたらいいのになぁ）
   (setq my-org-directory "~/Documents/org/")
   (setq my-org-agenda-directory "~/Documents/org/agenda/")
-  (setq org-agenda-files (list my-org-directory my-org-agenda-directory ))
+  (setq org-agenda-files (list my-org-directory my-org-agenda-directory))
   :config
   ;; 基本設定
   ;; Hide the first N-1 stars in a headline : nil --> t
