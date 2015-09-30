@@ -17,11 +17,6 @@
 
 ;;; Code:
 
-;; ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;; ;;; Configure before loading org mode
-;; ;; (package-initialize)
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; org-mode --- M-x org-info でマニュアルを参照可能
 (use-package org
