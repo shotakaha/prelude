@@ -79,10 +79,10 @@
           )
         )
 
-
-
-
   ;; org-agenda の設定
+  ;; 標準の祝日を利用しない
+  (setq calendar-holidays nil)
+  (setq org-agenda-files (list my-org-directory my-org-agenda-directory))
 
   ;; todoキーワードの設定 --- tamura70ブログ
   ;; http://d.hatena.ne.jp/tamura70/20100207/org
@@ -107,44 +107,8 @@
           ("MAIL" . ?m) ("WRITE" . ?w)
           ("ASK" . ?a)))
 
-  ;; ;; AGENDAの設定 --- tamura70ブログ
-  ;; ;; http://d.hatena.ne.jp/tamura70/20100208/org
-  ;; ;; アジェンダ表示の対象ファイル
-  ;; (setq org-agenda-files (list my-org-agenda-directory))
-  ;; (setq org-agenda-files (list my-org-directory))
-  (setq org-agenda-files (list my-org-directory my-org-agenda-directory))
   ;; アジェンダ表示で下線を用いる
   (add-hook 'org-agenda-mode-hook '(lambda () (hl-line-mode 1)))
-  ;; (setq hl-line-face 'underline)
-  ;; 標準の祝日を利用しない
-  (setq calendar-holidays nil)
-
-
-
-;; ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;; ;;; これ以下の設定は、たぶんるびきちさんの本を見たんだと思う
-;; ;; ;;; その本が手元にないので、とりあえずコメントあうとしておく
-;; ;; ;; (defun org-sert-upheading (arg)
-;; ;; ;;   "Insert upper level headings"
-;; ;; ;;   (interactive "P")
-;; ;; ;;   (org-insert-heading arg)
-;; ;; ;;   (cond ((org-on-heading-p) (org-do-promote))
-;; ;; ;;         ((org-at-item-p) (org-indent-item))))
-;; ;; ;; (defun org-insert-heading-dwim (arg)
-;; ;; ;;   "Insert the same level headings. C-u: upper level, C-u C-u: lower level"
-;; ;; ;;   (interactive "p")
-;; ;;   (case arg
-;; ;; ;;     (4  (org-insert-subheading nil))  ; C-u
-;; ;; ;;     (16 (org-insert-upheading  nil))  ; C-u C-u
-;; ;; ;;     (t  (org-insert-heading nil))))
-;; ;; ;; (define-key org-mode-map (kbd "<C-return>") 'org-insert-heading-dwim)
-
-;; ;; ;; ;;; Setting for todo-template
-;; ;; ;; (setq org-use-fast-todo-selection t)
-;; ;; ;; (setq org-todo-keywords
-;; ;; ;;       '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE(x)" "CANCEL(c)")
-;; ;; ;;         (sequence "APPT(a)" "|" "DONE(x)" "CANCEL(c)")))
-;;   )
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
