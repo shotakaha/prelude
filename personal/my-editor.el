@@ -500,13 +500,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ac-mozc
 ;;; https://github.com/igjit/ac-mozc
-(use-package ac-mozc
-  :ensure t
-  :config
-  (bind-keys :map ac-mode-map
-             ("C-c C-SPC" . ac-complete-mozc)
-             )
-  )
+;; (use-package ac-mozc
+;;   :ensure t
+;;   :config
+;;   (bind-keys :map ac-mode-map
+;;              ("C-c C-SPC" . ac-complete-mozc)
+;;              )
+;;   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package comment-dwim-2
