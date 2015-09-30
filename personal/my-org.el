@@ -49,7 +49,7 @@
 
           ("b" "ブログのネタなど" entry
            (file+headline nil "BLOG")
-           "* %?\n   Entered on %U"
+           "* %T %?\n   Entered on %U"
            :empty-lines 1
            :jump-to-captured 1)
 
@@ -66,9 +66,16 @@
            :jump-to-captured 1
            :unnarrowed 1)
 
+          ("s" "写真の処理状況ログ" entry
+           (file+datetree "~/Documents/org/photolog.org")
+           "** TODO %t %?\n   Entered on %U    %i\n"
+           :empty-lines 1
+           :unnarrowd 1)
+
           ("t" "とりあえず 仕事を放り込む" entry
-           (file+headline nil "GTD")
+           (file+headline "~/Documents/org/gtd.org" "GTD")
            "** TODO %T %?\n   Entered on %U    %i\n"
+           :prepend 1
            :empty-lines 1
            :unnarrowd 1)
           )
