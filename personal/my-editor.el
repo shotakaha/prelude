@@ -43,7 +43,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; bs
 ;;; C-x C-b binded to helm-buffer-list in Prelude
-(bind-key "C-x C-b" 'bs-show)
+;;; (bind-key "C-x C-b" 'bs-show)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ffap : C-x C-f に機能を追加する
 ;;; C-x C-f : helm-find-files に設定済み
