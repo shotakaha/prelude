@@ -27,6 +27,8 @@
 (use-package org
   :ensure t
   :mode (("\\.txt$" . org-mode))
+  :bind (("C-c c" . org-capture)
+         )
   :config
 
   ;; 保存先（もっとうまく書けたらいいのになぁ）
@@ -80,9 +82,7 @@
           )
         )
 
-  (bind-key "C-x C-z" 'org-capture-demo)
-  ;; (bind-key "C-x C-x" 'org-capture-code-reading)
-  (bind-key "C-c c" 'org-capture)
+
 
 
   ;; org-agenda の設定
