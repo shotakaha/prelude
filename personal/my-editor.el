@@ -691,5 +691,14 @@
   (global-undo-tree-mode 1)
   )
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; linum-relative.el
+(use-package linum-relative
+  :ensure t
+  :config
+  (linum-on)
+  )
+
 (provide 'my-editor)
 ;;; my-editor.el ends here
