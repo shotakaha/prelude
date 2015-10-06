@@ -700,5 +700,20 @@
   (linum-on)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; highlight-symbol.el
+(use-package highlight-symbol
+  :ensure t
+  :bind (("M-s M-r" . highlight-symbol-query-replace) )
+  :config
+  ;;; 1秒後自動ハイライトされるようになる
+  (setq highlight-symbol-idle-delay 1.0)
+  ;;; 自動ハイライトをしたいならば
+  (add-hook 'prog-mode-hook 'highlight-symbol-mode)
+  ;;; ソースコードにおいてM-p/M-nでシンボル間を移動
+  (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
+  )
+
+
 (provide 'my-editor)
 ;;; my-editor.el ends here
