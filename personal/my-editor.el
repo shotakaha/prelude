@@ -714,6 +714,14 @@
   (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; sync-recentf.el
+(use-package sync-recentf
+  :ensure t
+  :config
+  (setq recentf-auto-cleanup 60)
+  (recentf-mode 1)
+  )
 
 (provide 'my-editor)
 ;;; my-editor.el ends here
