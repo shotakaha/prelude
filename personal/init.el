@@ -42,10 +42,16 @@
 ;;; 画面の移動を簡単に行う方法
 ;;; （画面が分割されてない場合は、２分割(C-x 3)する）
 ;;; copied from http://d.hatena.ne.jp/rubikitch/20100210/emacs
-(defun other-window-or-split ()
+(defun other-window-or-split-h ()
   (interactive)
   (when (one-window-p)
     (split-window-horizontally))
+  (other-window 1))
+
+(defun other-window-or-split-v ()
+  (interactive)
+  (when (one-window-p)
+    (split-window-vertically))
   (other-window 1))
 ;; transpose-char(C-t) は普段使わないのでつぶす
 
@@ -56,8 +62,8 @@
 (bind-key "C-h" 'delete-backward-char)
 (bind-key "C-x C-m" 'smex)
 (bind-key "C-x m" 'smex-major-mode-commands)
-(bind-key "s-[" 'other-window-or-split)
-(bind-key "s-]" 'other-window-or-split)
+(bind-key "s-[" 'other-window-or-split-v)
+(bind-key "s-]" 'other-window-or-split-h)
 (bind-key "s-{" 'previous-buffer)
 (bind-key "s-}" 'next-buffer)
 (bind-key "C-c C-l" 'toggle-truncate-lines)
