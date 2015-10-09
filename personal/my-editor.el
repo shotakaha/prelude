@@ -723,5 +723,12 @@
   (recentf-mode 1)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ido-select-window
+(use-package ido-select-window
+  :ensure t
+  :bind ("C-x o" . ido-select-window)
+  )
+
 (provide 'my-editor)
 ;;; my-editor.el ends here
