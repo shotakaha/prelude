@@ -15,7 +15,7 @@
 (use-package yatex
   :ensure t
   :mode (("\\.tex$" . yatex-mode))
-  :bind (("C-x C-t" . YaTeX-typeset-menu))
+  :bind (("C-c C-t" . YaTeX-typeset-menu))
   :config
   ;; automatically selected according to current language
   ;; (setq YaTeX-japan t)
