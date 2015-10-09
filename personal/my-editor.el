@@ -512,8 +512,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package comment-dwim-2
   :ensure t
-  :config
-  (bind-key "M-;" 'comment-dwim-2)
+  :bind (("M-;" . comment-dwim-2))
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
