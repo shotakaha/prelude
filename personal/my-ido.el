@@ -43,8 +43,9 @@
 (use-package ido-migemo
   :ensure t
   :config
+  (setq ido-migemo-exclude-command '(smex ido-switch-buffer))
+  (setq ido-migemo-prompt-string "Migemo|")
   (ido-mode 1)
   (ido-migemo-mode 1)
-  (setq ido-migemo-exclude-command '(smex ido-switch-buffer)
-        ido-migemo-prompt-string "Migemo|")
+
   )
