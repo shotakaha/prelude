@@ -5,7 +5,7 @@
 ;;
 ;; 1. view-modeの設定（less-like, vi-like なキーバインドの追加）
 ;; 2. origamiの設定
-;; 3. ido-vertical-modeの設定
+;; 3. ido-vertical-modeの設定 --> my-ido.el (2015-10-10)
 ;; 4. psessionの設定 --> disabled (2015-03-18)
 ;; 5. web-modeの設定
 ;; 6. jawordの設定
@@ -137,30 +137,6 @@
       (origami-view-mode (if view-mode 1 -1))))
 
   (add-hook 'view-mode-hook 'view-mode-hook--origami)
-  )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ido - ファイル・バッファを選択して開く
-;;; coreで定義済み
-;; (ido-mode 1)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ido-vertical-mode.el
-;;; https://github.com/creichert/ido-vertical-mode.el
-;;; http://rubikitch.com/2015/01/06/ido-vertical-mode/
-(use-package ido-vertical-mode
-  :ensure t
-  :config
-  ;; このときidoが使うwindowの高さは大きくした方がいい
-  (setq ido-max-window-height 0.75)
-  ;; あいまいマッチは入れておこう
-  (setq ido-enable-flex-matching t)
-  (ido-mode 1)
-  (ido-everywhere 1)
-  (ido-vertical-mode 1)
-  (setq ido-vertical-define-keys 'C-n-and-C-p-only)
-  (setq ido-vertical-show-count t)
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -682,13 +658,6 @@
   :config
   (setq recentf-auto-cleanup 60)
   (recentf-mode 1)
-  )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ido-select-window
-(use-package ido-select-window
-  :ensure t
-  :bind ("C-x o" . ido-select-window)
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
