@@ -21,8 +21,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; git-gutter
 ;;; https://github.com/syohex/emacs-git-gutter
+;;; なんだかMagitの機能でも、追加／削除の箇所は分かる気がする。
+;;; それに git-gutter/git-gutter+,
+;;; git-gutter-fringe/git-gutter-fringe+ の使い分け方がよく分からないので
+;;; とりあえずdisabled t とパッケージの削除をした
 (use-package git-gutter
-  :ensure t
+  :disabled t
   :bind ( ("C-x C-g" . git-gutter:toggle)
           ("C-x v =" . git-gutter:popup-hunk)
           ;; Jump to next/previous hunk
