@@ -33,3 +33,18 @@
   :ensure t
   :bind ("C-x o" . ido-select-window)
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ido-migemo
+;;; https://github.com/myuhe/ido-migemo.el
+;;; 作者のブログによると Idoの曖昧マッチが犠牲になってるらしい
+;;; でも、それを確かめる以前に、helm-migemoに取られてて使えてない気がする
+;;; helm-migemo は disabled にしてるのになんで？
+(use-package ido-migemo
+  :ensure t
+  :config
+  (ido-mode 1)
+  (ido-migemo-mode 1)
+  (setq ido-migemo-exclude-command '(smex ido-switch-buffer)
+        ido-migemo-prompt-string "Migemo|")
+  )
