@@ -729,5 +729,13 @@
   :bind ("C-x o" . ido-select-window)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; yasnippet
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1)
+  )
+
 (provide 'my-editor)
 ;;; my-editor.el ends here
