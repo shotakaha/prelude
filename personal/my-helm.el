@@ -1,31 +1,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; helm-swoop.el
 ;;; http://rubikitch.com/2014/12/25/helm-swoop/
-;;; 1. migemo の設定 (ローマ字で日本語検索できる)
+;;; 1. migemo の設定 (ローマ字で日本語検索できる) --> my-migemo.el (2015-10-10)
 ;;; 2. helm-migemo の設定
 ;;; 3. helm-swoop の設定
 ;;; 4. ace-search の設定
 ;;; 5. isearch-dabbrev の設定 （検索語の自動補完）
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; migemo.el
-;;; http://rubikitch.com/2014/08/20/migemo/
-;;; First, get cmigemo from http://www.kaoriya.net/software/cmigemo/
-;;; See http://weblog.ymt2.net/blog/html/2013/08/23/install_migemo_to_emacs_24_3_1.html
-(use-package migemo
-  :ensure t
-  :config
-  (setq migemo-command "/usr/local/bin/cmigemo")
-  (setq migemo-options '("-q" "--emacs"))
 
-  ;; Set your installed path
-  (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
-  (setq migemo-user-dictionary nil)
-  (setq migemo-regex-dictionary nil)
-  (setq migemo-coding-system 'utf-8-unix)
-  (load-library "migemo")
-  (migemo-init)
-  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; helm-migemo.el
