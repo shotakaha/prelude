@@ -59,7 +59,10 @@
 ;;; しばらく使ってないバッファを削除する
 (use-package midnight
   :ensure t
+  :config
+  (midnight-delay-set 'midnight-delay "4:30am")
   )
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; which-key.el
 ;;; guide-key.elの進化版
@@ -615,7 +618,7 @@
 (use-package undohist
   :ensure t
   :config
-  (setq undohist-ignored-files '("/tmp" "COMMIT_EDITMSG" "TAG_EDITMSG" "elpa"))
+  (setq undohist-ignored-files '("/tmp" "/EDITMSG" "/elpa"))
   (undohist-initialize)
   )
 
@@ -666,6 +669,14 @@
   :ensure t
   :config
   (yas-global-mode 1)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; quick-preview
+(use-package quick-preview
+  :bind (("C-c q" . quick-preview-at-point))
+  :config
+  (bind-key "SPC" 'quick-preview-at-point dired-mode-map)
   )
 
 (provide 'my-editor)
