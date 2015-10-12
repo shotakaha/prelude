@@ -41,10 +41,11 @@
 ;;; でも、それを確かめる以前に、helm-migemoに取られてて使えてない気がする
 ;;; helm-migemo は disabled にしてるのになんで？
 (use-package ido-migemo
+  :disabled t
   :ensure t
   :config
   (setq ido-migemo-exclude-command '(smex ido-switch-buffer))
-  (setq ido-migemo-prompt-string "Migemo|")
+  (setq ido-migemo-prompt-string "ido-migemo|")
   (ido-mode 1)
   (ido-migemo-mode 1)
 
