@@ -618,7 +618,7 @@
 (use-package undohist
   :ensure t
   :config
-  (setq undohist-ignored-files '("/tmp" "/EDITMSG" "/elpa"))
+  (setq undohist-ignored-files '("/tmp/" "EDITMSG" "/elpa/"))
   (undohist-initialize)
   )
 
