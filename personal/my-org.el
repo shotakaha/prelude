@@ -70,21 +70,20 @@
            (file+datetree "~/Documents/org/photolog.org")
            "** TODO %T %?\n   Entered on %U    %i\n"
            :empty-lines 1
-           :unnarrowd 1)
+           :unnarrowed 1)
 
           ("t" "とりあえず 仕事を放り込む" entry
            (file+headline "~/Documents/org/gtd.org" "GTD")
-           "** TODO %T %?\n   Entered on %U    %i\n"
+           "** TODO %?\n   SCHEDULED: %T\n   Entered on %U    %i\n"
            :prepend 1
            :empty-lines 1
-           :unnarrowd 1)
+           :unnarrowed 1)
           )
         )
 
   ;; org-agenda の設定
   ;; 標準の祝日を利用しない
   (setq calendar-holidays nil)
-
 
   ;; todoキーワードの設定 --- tamura70ブログ
   ;; http://d.hatena.ne.jp/tamura70/20100207/org
