@@ -674,9 +674,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; quick-preview
 (use-package quick-preview
+  :ensure t
   :bind (("C-c q" . quick-preview-at-point))
   :config
   (bind-key "SPC" 'quick-preview-at-point dired-mode-map)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; beacon
+(use-package beacon
+  :ensure t
+  :config
+  (beacon-mode 1)
   )
 
 (provide 'my-editor)
