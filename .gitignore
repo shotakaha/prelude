@@ -21,3 +21,8 @@ session*
 .cask
 tramp
 /var/pcache
+
+# Add by Shota
+persp-confs/
+request/
+undohist/
