@@ -46,6 +46,7 @@
 ;;; http://rubikitch.com/2014/10/18/direx/
 ;;; Yet Another Dired
 (use-package direx
+  :disabled t
   :ensure t
   :bind (("C-x C-j" . direx:jump-to-directory)
          ("C-\\" . direx-project:jump-to-project-root-other-window)
@@ -77,6 +78,7 @@
 ;;; async.el
 ;;; http://rubikitch.com/2014/09/20/dired-async/
 (use-package async
+  :disabled t
   :config
   (eval-after-load "dired-aux" '(require 'dired-async))
   )
@@ -84,13 +86,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; wgrep.el - http://rubikitch.com/2014/09/13/wgrep/
 ;;; ag.el - http://rubikitch.com/2014/09/12/ag/
-(prelude-require-packages '(wgrep ag))
-;;; eでwgrepモードにする
-(setf wgrep-enable-key "e")
-;;; wgrep終了時にバッファを保存
-(setq wgrep-auto-save-buffer t)
-;;; read-only bufferにも変更を適用する
-(setq wgrep-change-readonly-file t)
+;; (prelude-require-packages '(wgrep ag))
+;; ;;; eでwgrepモードにする
+;; (setf wgrep-enable-key "e")
+;; ;;; wgrep終了時にバッファを保存
+;; (setq wgrep-auto-save-buffer t)
+;; ;;; read-only bufferにも変更を適用する
+;; (setq wgrep-change-readonly-file t)
 
 
 
@@ -98,6 +100,7 @@
 ;;; dired-toggle.el
 ;;; http://rubikitch.com/2014/09/08/dired-toggle/
 (use-package dired-toggle
+  :disabled t
   :ensure t
   :config
   ;; no need for additional setting.
@@ -109,8 +112,8 @@
 ;;; http://rubikitch.com/2014/09/08/dired-details/
 ;;; Commentary
 ;;; dired is already loaded by Prelude.
-(prelude-require-package 'dired-details)
 (use-package dired-details
+  :disabled t
   :config
   (dired-details-install)
   (setq dired-details-hidden-string "")
