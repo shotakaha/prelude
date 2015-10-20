@@ -684,8 +684,18 @@
 ;;; beacon
 (use-package beacon
   :ensure t
+  :disabled t
   :config
   (beacon-mode 1)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; vline
+(use-package vline
+  :ensure t
+  :disabled t
+  :config
+  (vline-global-mode 1)
   )
 
 (provide 'my-editor)
