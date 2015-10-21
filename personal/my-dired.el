@@ -46,15 +46,10 @@
 ;;; http://rubikitch.com/2014/10/18/direx/
 ;;; Yet Another Dired
 (use-package direx
-  :disabled t
   :ensure t
   :bind (("C-x C-j" . direx:jump-to-directory)
          ("C-\\" . direx-project:jump-to-project-root-other-window)
          )
-  :config
-  (bind-keys :map direx:direx-mode-map
-             ("K" . direx-k)
-             )
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -62,15 +57,22 @@
 ;;; http://rubikitch.com/2014/10/19/dired-k/
 ;;; https://github.com/syohex/emacs-dired-k
 (use-package dired-k
-  :disabled t
+  :ensure t
+  :bind (:map dired-mode-map
+              ("K" . dired-k)
+              ("g" . dired-k)
+              )
   :config
-  (bind-keys :map dired-mode-map
-             ("K" . dired-k)
-             ("g" . dired-k)
-             )
   ;; always open dired with dired-k
   (add-hook 'dired-initial-position-hook 'dired-k)
   )
+
+(use-package direx-k
+  :bind ("C-\\" . direx-project:jump-to-project-root-other-window)
+  :config
+  ;; (bind-key ("K" . dired-k) direx:direx-mode-map
+  ;;           )
+)
 
 
 
