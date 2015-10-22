@@ -35,16 +35,21 @@
 ;; Press C-c C-c or C-x C-s to finish. (M-x wdired-finish-edit)
 ;; Press C-c C-k to abort changes. (M-x wdired-abort-changes)
 
-(setq dired-isearch-filenames t)
-(bind-keys :map dired-mode-map
-           ("r" . wdired-change-to-wdired-mode)
-           ("o" . dired-omit-mode)
-           )
+(use-package dired
+  :bind (:map dired-mode-map
+              ("r" . wdired-change-to-wdired-mode)
+              ("o" . dired-omit-mode)
+              ("(" . dired-hide-details-mode)
+              (")" . dired-hide-details-mode)
+              )
+  :config
+  (setq dired-isearch-filenames t)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; direx.el
+;;; direx.el --- Yet Another Dired
 ;;; http://rubikitch.com/2014/10/18/direx/
-;;; Yet Another Dired
+;;;
 (use-package direx
   :ensure t
   :bind (("C-x C-j" . direx:jump-to-directory)
@@ -53,7 +58,9 @@
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; dired-k.el
+;;; dired-k.el ---  highlight dired buffer
+;;; for dired, use dired-k
+;;; for direx, use direx-k
 ;;; http://rubikitch.com/2014/10/19/dired-k/
 ;;; https://github.com/syohex/emacs-dired-k
 (use-package dired-k
@@ -66,21 +73,20 @@
   ;; always open dired with dired-k
   (add-hook 'dired-initial-position-hook 'dired-k)
   )
-
 (use-package direx-k
   :bind ("C-\\" . direx-project:jump-to-project-root-other-window)
-  :config
-  ;; (bind-key ("K" . dired-k) direx:direx-mode-map
-  ;;           )
 )
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; dired-toggle.el
+;;; http://rubikitch.com/2014/09/08/dired-toggle/
+(use-package dired-toggle :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; async.el
 ;;; http://rubikitch.com/2014/09/20/dired-async/
 (use-package async
-  :disabled t
+  :ensure t
   :config
   (eval-after-load "dired-aux" '(require 'dired-async))
   )
@@ -95,35 +101,3 @@
 ;; (setq wgrep-auto-save-buffer t)
 ;; ;;; read-only bufferにも変更を適用する
 ;; (setq wgrep-change-readonly-file t)
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; dired-toggle.el
-;;; http://rubikitch.com/2014/09/08/dired-toggle/
-(use-package dired-toggle
-  :disabled t
-  :ensure t
-  :config
-  ;; no need for additional setting.
-  ;; just type M-x dired-toggle
-  )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; dired-details.el
-;;; http://rubikitch.com/2014/09/08/dired-details/
-;;; Commentary
-;;; dired is already loaded by Prelude.
-(use-package dired-details
-  :disabled t
-  :config
-  (dired-details-install)
-  (setq dired-details-hidden-string "")
-  (setq dired-details-hide-link-targets nil)
-
-  (defadvice find-dired-sentinel (after dired-details (proc state) activate)
-    "find-diredでもdired-detailsを使えるようにする"
-    (ignore-errors
-      (with-current-buffer (process-buffer proc)
-        (dired-details-activate))))
-  )
