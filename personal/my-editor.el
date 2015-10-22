@@ -698,5 +698,16 @@
   (vline-global-mode 1)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; shell-pop
+(use-package shell-pop
+  :ensure t
+  :bind* ("C-c t" . shell-pop)
+  :config
+  (setq shell-pop-term-shell "/opt/local/bin/zsh")
+  (setq shell-pop-full-span t)
+  )
+
+
 (provide 'my-editor)
 ;;; my-editor.el ends here
