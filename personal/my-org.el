@@ -23,6 +23,9 @@
   :ensure t
   :mode (("\\.txt$" . org-mode))
   :bind (("C-c c" . org-capture)
+         ("C-c l" . org-store-link)
+         ("C-c a" . org-agenda)
+         ("C-c b" . org-iswitchb)
          )
   :init
   ;; 保存先（もっとうまく書けたらいいのになぁ）
