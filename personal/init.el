@@ -30,6 +30,13 @@
 (require 'bind-key)    ;; if you use any :bind variant
 (setq use-package-verbose t)
 (setq use-package-minimum-reported-time 0.001)
+;;; bind-chord.el
+;;; https://github.com/waymondo/use-package-chords
+(use-package use-package-chords
+  :ensure t
+  :config
+  (key-chord-mode 1)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; generic-x.el
