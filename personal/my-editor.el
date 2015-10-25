@@ -750,6 +750,20 @@
   ;;          )
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; swiper
+(use-package swiper
+  :ensure t
+  :bind (("C-s" . swiper)
+         ("C-r" . swiper)
+         ("C-c C-r" . ivy-resume)
+         ("[f6]" . ivy-resume)
+         )
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  )
+
 
 
 (provide 'my-editor)
