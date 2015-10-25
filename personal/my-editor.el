@@ -708,6 +708,36 @@
   (setq shell-pop-full-span t)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; smartrep
+(bind-key* "C-," 'repeat)
+(use-package smartrep
+  :ensure t
+  :config
+  (smartrep-define-key global-map "C-x"
+    '(("o" . other-window)
+      ("0" . delete-window)
+      ("1" . delete-other-windows)
+      ("2" . split-window-below)
+      ("3" . split-window-right)
+      ("{" . shrink-window-horizontally)
+      ("}" . enlarge-window-horizontally)
+      ("+" . balance-windows)
+      ("^" . enlarge-window)
+      ("-" . shrink-window)
+      )
+    )
+  (smartrep-define-key org-mode-map "C-c"
+    '(("C-n" . org-next-visible-heading)
+      ("C-p" . org-previous-visible-heading)
+      ("C-u" . outline-up-heading)
+      ("C-f" . org-forward-heading-same-level)
+      ("C-b" . org-backward-heading-same-level)
+      )
+    )
+  )
+
+
 
 (provide 'my-editor)
 ;;; my-editor.el ends here
