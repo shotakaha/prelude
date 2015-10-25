@@ -28,20 +28,23 @@
          ("C-c b" . org-iswitchb)
          )
   :init
-  ;; 保存先（もっとうまく書けたらいいのになぁ）
   (setq my-org-directory "~/Documents/org/")
   (setq my-org-agenda-directory "~/Documents/org/agenda/")
-  (setq org-agenda-files (list my-org-directory my-org-agenda-directory))
+  (setq my-org-default-notes-file "captured.org")
   :config
+  (setq org-directory my-org-directory)
+  (setq org-default-notes-file my-org-default-notes-file)
+  (setq org-agenda-files (list my-org-directory my-org-agenda-directory))
+
   ;; 基本設定
   ;; Hide the first N-1 stars in a headline : nil --> t
   (setq org-hide-leading-stars t)
   ;; RET will follow the link : nil --> t
   (setq org-return-follows-link t)
   ;; Directory with org files : "~/org" --> "~/Documents/org"
-  (setq org-directory my-org-directory)
+
   ;; Default target for storing notes : "~/.notes" --> "captured.org"
-  (setq org-default-notes-file "captured.org")
+
 
   ;; org-capture
   (setq org-capture-templates
