@@ -737,6 +737,19 @@
     )
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; avy
+(use-package avy
+  :ensure t
+  :bind (("C-c j" . avy-goto-word-or-subword-1)
+         ("s-." . avy-goto-word-or-subword-1)
+         )
+  ;; :chords (("jj" . avy-goto-word-1)
+  ;;          ("jl" . avy-goto-line)
+  ;;          ("jk" . avy-goto-char)
+  ;;          )
+  )
+
 
 
 (provide 'my-editor)
