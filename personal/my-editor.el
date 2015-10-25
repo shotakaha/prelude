@@ -757,13 +757,24 @@
   :bind (("C-s" . swiper)
          ("C-r" . swiper)
          ("C-c C-r" . ivy-resume)
-         ("[f6]" . ivy-resume)
+         ;; ("[f6]" . ivy-resume)
          )
   :config
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; swoop
+(use-package swoop
+  :ensure t
+  :bind (("C-o" . swoop)
+         ("C-M-o" . swoop-multi)
+         ("M-o" . swoop-pcre-regexp)
+         ("C-S-o" . swoop-back-to-last-position)
+         ("s-6" . swoop-migemo)
+         )
+  )
 
 
 (provide 'my-editor)
