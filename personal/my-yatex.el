@@ -31,11 +31,17 @@
   (setq YaTeX-nervous nil)
 
   ;; declared in yatex.el
-  (setq tex-command "ptex2pdf -l -ot -synctex=1 -file-line-error")
-  (setq bibtex-command "pbibtex")
-  (setq dvi2-command "open -a Preview")    ;; use Preview.app
-  (setq tex-pdfview-command "open -a Preview")
-  (setq dviprint-command-format "dvipdfmx %s")
+  (setq my-tex "ptex2pdf -l -ot -synctex=1 -file-line-error")
+  (setq my-bibtex "pbibtex")
+  (setq my-dvi2 "open -a Preview")
+  (setq my-pdfview "open -a Preview")
+  (setq my-dviprint "dvipdfmx %s")
+
+  (setq tex-command my-tex)
+  (setq bibtex-command my-bibtex)
+  (setq dvi2-command my-dvi2)
+  (setq tex-pdfview-command my-pdfview)
+  (setq dviprint-command-format my-dviprint)
   (setq YaTeX-skip-default-reader t)
   (setq YaTeX-simple-messages t)
   ;; (setq YaTeX-template-file "...")
