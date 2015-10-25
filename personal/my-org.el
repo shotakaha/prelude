@@ -145,3 +145,7 @@
   :config
   (setq org-doing-file "~/Documents/org/doing.txt")
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ox-rst
+(use-package ox-rst :ensure t)
