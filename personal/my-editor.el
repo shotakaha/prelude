@@ -283,6 +283,7 @@
 ;;; core/prelude-editor で定義済み
 ;;; prelude-key-chord.el でバインド済み
 (use-package browse-kill-ring
+  :disabled t
   :ensure t
   :bind(("M-y" . browse-kill-ring)
         )
@@ -307,6 +308,7 @@
 ;;; http://rubikitch.com/2014/12/20/mag-menu/
 ;;; https://github.com/chumpage/mag-menu
 (use-package mag-menu
+  :disabled t
   :ensure t
   :config
   ;; 単にメッセージを表示するだけのシンプルなメニュー
@@ -566,15 +568,12 @@
 (use-package crosshairs
   :ensure t
   :config
-  ;; always enabled
   (crosshairs-mode t)
-  ;; (crosshairs-flash 1)
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; 参考にした設定 : http://rakkyoo.net/?p=1444
 (use-package twittering-mode
-
   :config
   ;; 簡単ログインの設定
   (setq twittering-allow-insecure-server-cert t)
@@ -601,10 +600,10 @@
 ;;; cbm.el
 ;;; https://github.com/akermu/cbm.el
 (use-package cbm
+  :disabled t
   :ensure t
   :bind (("M-%" . vr/query-replace)
          )
-
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
