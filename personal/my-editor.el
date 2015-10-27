@@ -526,12 +526,14 @@
 ;;; http://rubikitch.com/2014/11/10/multiple-cursors/
 (use-package multiple-cursors
   :ensure t
+  :bind (("C-S-c C-S-c" . mc/edit-lines)
+         ("C->" . mc/mark-next-like-this)
+         ("C-<" . mc/mark-previous-like-this)
+         ("C-c C-<" . mc/mark-all-like-this)
+         ("C-x r t" . mc/edit-lines-or-string-rectangle)
+         ("C-M-SPC" . mc/mark-all-dwim-or-mark-sexp)
+         )
   :config
-  (bind-key "C-S-c C-S-c" 'mc/edit-lines)
-  (bind-key "C->" 'mc/mark-next-like-this)
-  (bind-key "C-<" 'mc/mark-previous-like-this)
-  (bind-key "C-c C-<" 'mc/mark-all-like-this)
-
   (defun mc/edit-lines-or-string-rectangle (s e)
     "C-x r tで同じ桁の場合にmc/edit-lines (C-u M-x mc/mark-all-dwim)"
     (interactive "r")
@@ -539,7 +541,6 @@
             (save-excursion (goto-char e) (current-column)))
         (call-interactively 'mc/edit-lines)
       (call-interactively 'string-rectangle)))
-  (bind-key (kbd "C-x r t") 'mc/edit-lines-or-string-rectangle)
 
   (defun mc/mark-all-dwim-or-mark-sexp (arg)
     "C-u C-M-SPCでmc/mark-all-dwim, C-u C-u C-M-SPCでC-u M-x mc/mark-all-dwim"
@@ -548,9 +549,7 @@
       (16 (mc/mark-all-dwim t))
       (4 (mc/mark-all-dwim nil))
       (1 (mark-sexp 1))))
-  (bind-key (kbd "C-M-SPC") 'mc/mark-all-dwim-or-mark-sexp)
   )
-
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
