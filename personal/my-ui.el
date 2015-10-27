@@ -19,9 +19,7 @@
 ;;; https://github.com/Malabarba/rich-minority
 ;;; M-x describe-variable minor-mode-list
 
-
 (use-package smart-mode-line
-  :disabled t
   :ensure t
   :config
   (setq sml/theme 'automatic
@@ -31,10 +29,14 @@
         sml/use-projectile-p 'before-prefixes
         sml/projectile-replacement-format "%s/"
         sml/read-only-char "%%")
-  ;; (setq rm-whitelist t)
-  ;; (setq rm-blacklist (mapconcat 'identity list-of-regexps "\\|"))
   (sml/setup)
 )
+
+(use-package rich-minority
+  :ensure t
+  :config
+  (setq rm-whitelist t)
+  )
 
 (provide 'my-ui)
 ;;; my-ui.el ends here
