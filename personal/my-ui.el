@@ -1,15 +1,24 @@
 ;;; my-ui.el --- My UI configuration
 
+;;; Commentary:
+
+;; smart-mode-line
+;;  - already defined in ../core/prelude-ui.el
+;;  - add extra
+
+;;; Code:
+
 (display-time-mode 1)
 (display-battery-mode 1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; smart-mode-line
+;;; already defined in core/prelude-ui.el
 ;;; https://github.com/Malabarba/smart-mode-line
 ;;; rich-minority
 ;;; https://github.com/Malabarba/rich-minority
 ;;; M-x describe-variable minor-mode-list
-;;; already defined in core/prelude-ui.el
+
 
 (use-package smart-mode-line
   :disabled t
@@ -26,3 +35,6 @@
   ;; (setq rm-blacklist (mapconcat 'identity list-of-regexps "\\|"))
   (sml/setup)
 )
+
+(provide 'my-ui)
+;;; my-ui.el ends here
