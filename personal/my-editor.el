@@ -512,6 +512,7 @@
          ("C-M-SPC" . mc/mark-all-dwim-or-mark-sexp)
          )
   :config
+  (setq mc/list-file (expand-file-name "multiple-cursors" prelude-savefile-dir))
   (defun mc/edit-lines-or-string-rectangle (s e)
     "C-x r tで同じ桁の場合にmc/edit-lines (C-u M-x mc/mark-all-dwim)"
     (interactive "r")
