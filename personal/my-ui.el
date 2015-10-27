@@ -1,3 +1,8 @@
+;;; my-ui.el --- My UI configuration
+
+(display-time-mode 1)
+(display-battery-mode 1)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; smart-mode-line
 ;;; https://github.com/Malabarba/smart-mode-line
@@ -9,19 +14,6 @@
 (use-package smart-mode-line
   :disabled t
   :ensure t
-  ;; :init
-  ;; (progn
-  ;;   (setq sml/theme 'automatic
-  ;;         sml/shorten-directory t
-  ;;         sml/name-width 16
-  ;;         sml/shorten-modes t
-  ;;         sml/use-projectile-p 'before-prefixes
-  ;;         sml/projectile-replacement-format "%s/"
-  ;;         sml/read-only-char "%%")
-  ;;   ;; (setq rm-whitelist t)
-  ;;   ;; (setq rm-blacklist (mapconcat 'identity list-of-regexps "\\|"))
-  ;;   (sml/setup)
-  ;;   )
   :config
   (setq sml/theme 'automatic
         sml/shorten-directory t
