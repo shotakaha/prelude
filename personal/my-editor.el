@@ -530,6 +530,16 @@
       (1 (mark-sexp 1))))
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; phi-search
+;;; multiple-cursors + isearch
+(use-package phi-search
+  :ensure t
+  :bind (("C-s" . phi-search)
+         ("C-r" . phi-search-backward)
+         )
+  )
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; showkey.el
