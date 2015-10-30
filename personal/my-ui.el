@@ -35,7 +35,7 @@
 (use-package rich-minority
   :ensure t
   :config
-  (setq rm-whitelist t)
+  (setq rm-whitelist (mapconcat 'identity list-of-regexps "\\|"))
   )
 
 (provide 'my-ui)
