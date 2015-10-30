@@ -18,6 +18,7 @@
 ;;; rich-minority
 ;;; https://github.com/Malabarba/rich-minority
 ;;; M-x describe-variable minor-mode-list
+;;; M-x describe-variable sml/replacer-regexp-list
 
 (use-package smart-mode-line
   :ensure t
@@ -29,10 +30,12 @@
         sml/use-projectile-p 'before-prefixes
         sml/projectile-replacement-format "%s/"
         sml/read-only-char "%%")
+  ;; (add-to-list 'sml/replacer-regexp-list '("^~/public_html/dokuwiki" ":MyWiki:") t)
   (sml/setup)
 )
 
 (use-package rich-minority
+  :disabled t
   :ensure t
   :config
   (setq rm-whitelist (mapconcat 'identity list-of-regexps "\\|"))
