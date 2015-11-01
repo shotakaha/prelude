@@ -36,7 +36,12 @@
 ;;; /Applications/Emacs.app/以下のでも、
 ;;; /opt/local/bin/emacsclient でもどちらでもよい
 ;;; .bashrcに、export EDITOR=emacsclient としておくとよい
-(server-start)
+;;; server-start の重複防止
+;;; http://syohex.hatenablog.com/entry/20140928/1411874248
+(require 'server)
+(unless (server-running-p)
+  (server-start)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Confirm when Quit Emacs
