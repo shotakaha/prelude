@@ -534,10 +534,39 @@
 ;;; phi-search
 ;;; multiple-cursors + isearch
 (use-package phi-search
+  :disabled t
   :ensure t
   :bind (("C-s" . phi-search)
          ("C-r" . phi-search-backward)
          )
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package phi-search-migemo
+  :disabled t
+  :ensure t
+  :config
+  (bind-key "M-m" 'phi-search-migemo-toggle phi-search-default-map)
+  )
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; http://rubikitch.com/2015/04/05/phi-search-dired/
+(use-package phi-search-dired
+  :disabled t
+  :ensure t
+  :bind (:map dired-mode-map
+              ("C-s" . phi-search-dired)
+              )
+  :config
+  (defun phi-search-dired-restrict-to-matches--show-all ()
+    (with-selected-window (minibuffer-selected-window)
+      (when (re-search-backward " \\.\\./?$" nil t)
+        (forward-line 1)
+        (recenter nil))))
+  (advice-add 'phi-search-dired-restrict-to-matches :after
+              'phi-search-dired-restrict-to-matches--show-all)
+
   )
 
 
