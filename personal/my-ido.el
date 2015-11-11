@@ -41,6 +41,7 @@
 ;;; でも、それを確かめる以前に、helm-migemoに取られてて使えてない気がする
 ;;; helm-migemo は disabled にしてるのになんで？
 (use-package ido-migemo
+  :disabled t
   :ensure t
   :config
   (setq ido-migemo-exclude-command-list '(smex swith-to-buffer ido-switch-buffer ido-describe-bindings persp-switch))
