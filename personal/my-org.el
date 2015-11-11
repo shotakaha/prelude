@@ -37,14 +37,10 @@
   (setq org-agenda-files (list my-org-directory my-org-agenda-directory))
 
   ;; 基本設定
-  ;; Hide the first N-1 stars in a headline : nil --> t
+  ;; #+startup: hidestars / showstars
   (setq org-hide-leading-stars t)
   ;; RET will follow the link : nil --> t
   (setq org-return-follows-link t)
-  ;; Directory with org files : "~/org" --> "~/Documents/org"
-
-  ;; Default target for storing notes : "~/.notes" --> "captured.org"
-
 
   ;; org-capture
   (setq org-capture-templates
@@ -95,7 +91,7 @@
   ;; http://d.hatena.ne.jp/tamura70/20100207/org
   ;; http://d.hatena.ne.jp/tamura70/20100215/org
 
-  ;; TODOの状態の設定
+  ;; TODO状態の設定
   ;; ! をつけることで、その状態へ変更した日時を記録することが可能
   ;; @ をつけることで、その状態へ変更した時にメモを残すことが可能
   (setq org-todo-keywords
@@ -103,16 +99,26 @@
   (setq org-log-done 'time)   ;;; DONEの時刻を記録
   ;; (setq org-log-done 'note)  ;;; DONEの時刻とメモを記録
 
-  ;; tagリストの設定 --- tamura70のブログ
-  ;; http://d.hatena.ne.jp/tamura70/20100215/org
-  ;; TAGリストの一括設定
-  ;; orgファイル毎で設定する場合は，ファイル中に以下のように記述する．
+  ;; TAGリストの設定
   ;; #+TAGS: @OFFICE(o) @HOME(h)
   ;; #+TAGS: SHOPPING(s) MAIL(m) PROJECT(p)
   (setq org-tag-alist
-        '(("@OFFICE" . ?o) ("@HOME" . ?h)
-          ("MAIL" . ?m) ("WRITE" . ?w)
-          ("ASK" . ?a)))
+        '((:startgroup . nil)
+          ("HOME" . ?h) ("OFFICE" . ?o)("IPNSPR" . ?i)("KEKPR" . ?k)
+          (:endgroup . nil)
+          (:newline . nil)
+          (:startgroup . nil)
+          ("TOPICS" . ?t) ("PRESS" . ?p)("HIGHLIGHT" . ?l)("EVENT" . ?e)
+          (:endgroup . nil)
+          (:newline . nil)
+          (:startgroup . nil)
+          ("T2K" . nil) ("BELLE" . nil)("COMET" . nil)
+          (:endgroup . nil)
+          (:newline . nil)
+          (:startgroup . nil)
+          ("READING" . ?r) ("WRITING" . ?w)("ASKING" . ?a)
+          (:endgroup . nil))
+        )
 
   ;; アジェンダ表示で下線を用いる
   (add-hook 'org-agenda-mode-hook '(lambda () (hl-line-mode 1)))
