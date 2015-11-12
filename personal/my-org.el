@@ -30,11 +30,14 @@
   :init
   (setq my-org-directory "~/Documents/org/")
   (setq my-org-agenda-directory "~/Documents/org/agenda/")
+  (setq my-org-gcal-directory "~/Documents/org/gcal/")
   (setq my-org-default-notes-file "captured.org")
   :config
   (setq org-directory my-org-directory)
   (setq org-default-notes-file my-org-default-notes-file)
-  (setq org-agenda-files (list my-org-directory my-org-agenda-directory))
+  (setq org-agenda-files (list my-org-directory
+                               my-org-agenda-directory
+                               my-org-gcal-directory))
 
   ;; 基本設定
   ;; #+startup: hidestars / showstars
