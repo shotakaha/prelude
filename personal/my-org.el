@@ -59,7 +59,7 @@
            :jump-to-captured 1)
 
           ("m" "みんなで会議" entry
-           (file+datetree "~/Documents/org/mtg.org")
+           (file+datetree "~/Documents/org/minutes.org")
            "* %? %T"
            :empty-lines 1
            :jump-to-captured 1)
