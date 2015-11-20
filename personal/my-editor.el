@@ -493,8 +493,7 @@
 (use-package ignoramus
   :ensure t
   :config
-  (require 'dired-x)
-  (require 'ignoramus)
+;;  (require 'dired-x)
   (ignoramus-setup)
 )
 

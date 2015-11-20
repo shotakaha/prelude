@@ -7,11 +7,24 @@
 ;;    - gnupg をインストールする（port install gnupg）
 ;;    - gnutls をインストールする（port install gnutls）
 ;;    - ~/.authinfo.gpg を用意しておく（下記参照）
+;; 2. authinfoの設定
+;;    - gpgファイルにしておく（~/.authinfo.gpg）
+;;    - このファイルを開くのに gnupg が必要
+;;    - 以下の書式で記述する (Gmailを使う場合)
+;;
+;; machine imap.gmail.com login USERNAME@gmail.com password SECRET port 993
+;; machine smtp.gmail.com login USERNAME@gmail.com password SECRET port 587
+;;
+;; imapのポート : 993
+;; smtpのポート : 587
+;; ２段階認証を設定している場合は SECRET の部分はアプリケーション固有パスワード
+;;
 ;; 2. IMAP接続の設定
 ;;
 ;; 読むだけならここまででOK（M-x gnus して確かめる）
 ;;
 ;; 3. SMTPの設定
+;;   - smtp-mail を使ってメールを送信する
 
 ;;; 使い方
 ;; 1. M-x gnus
