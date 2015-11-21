@@ -1,14 +1,16 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # contributor: Shota TAKAHASHI
-# name: emacs-package
+# name: emacs-summary
 # key: sum
 # group : emacs
 # binding: direct-keybinding
 # --
-;;; ${1:Package Name} --- ${2:Short Summary}
+;;; ${1:PackageName}.el --- ${2:ShortSummary}
 
 ;;; Commentary:
-    $0
 
 ;;; Code:
     $0
+
+(provide '$1)
+;;; $1.el ends here
