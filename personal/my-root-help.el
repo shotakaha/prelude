@@ -21,4 +21,8 @@
              ("C-c C-r b" . root-send-buffer-to-root)
              ("C-c C-r f" . root-execute-file)
              )
+
   )
+
+(provide 'my-root-help)
+;;; my-root-help.el ends here
