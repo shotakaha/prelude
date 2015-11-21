@@ -5,7 +5,7 @@
 # group : bootswatch
 # binding: direct-keybinding
 # --
-<div class="panel panel-${1:primary}">
+<div class="panel panel-${1:$$(yas-choose-value '("primary" "success" "warning" "danger" "info"))}">
   <div class="panel-heading">
     <h3 class="panel-title">${2:panel-title}</h3>
   </div>
