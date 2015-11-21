@@ -1,0 +1,33 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-nav-en
+# key: ipns-nav-en
+# binding: direct-keybinding
+# --
+<!-- fixed-navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="${1:../../}english.html">IPNS</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="disabled"><a href="$1about/english.html">About</a></li>
+        <li class="disabled"><a href="$1group/english.html">Researches</a></li>
+        <li><a href="$1articles/english.html">Newsroom</a></li>
+        <li class="disabled"><a href="$1report/english.html">Activity Log</a></li>
+        <li class="disabled"><a href="$1students/english.html">For Students</a></li>
+        <li class="disabled"><a href="$1link/english.html">Links</a></li>
+        <li class="disabled"><a href="$1internal/english.html"><span class="glyphicon glyphicon-lock" aria-hidden="true">Internal</span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="./index.html">日本語</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>

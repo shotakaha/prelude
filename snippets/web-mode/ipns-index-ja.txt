@@ -1,0 +1,59 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-index-ja
+# key: ipns-index-ja
+# binding: direct-keybinding
+# --
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <!-- Add head-ja here -->
+  </head>
+
+  <body>
+
+    <!-- Add navbar-ja here -->
+
+    <!-- main contents -->
+    <article class="container">
+
+      <section>
+        <div class="page-header">
+          <h1>タイトル</h1>
+        </div>
+        <!-- Add pubdate-ja here -->
+        <!-- Add figure here -->
+        写真がメインになる部分
+      </section>
+
+      <section>
+        <p>
+          本文
+        </p>
+      </section>
+
+      <section>
+        <div class="page-header">
+          <h2>関連記事</h2>
+        </div>
+        <!-- Add related-articles-ja here -->
+      </section>
+
+      <section>
+        <div class="page-header">
+          <h2>関連リンク</h2>
+        </div>
+        <!-- Add related-links-ja here -->
+      </section>
+
+      <!-- Add pager here -->
+
+    </article>
+
+    <!-- Add footer-ja here -->
+
+  </body>
+
+  <!-- Add footer-script here -->
+
+</html>

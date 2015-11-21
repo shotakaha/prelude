@@ -1,0 +1,33 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-nav-ja
+# key: ipns-nav-ja
+# binding: direct-keybinding
+# --
+<!-- fixed-navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="${1:../../}index.html">素粒子原子核研究所</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="$1about/index.html">概要</a></li>
+        <li><a href="$1group/index.html">研究紹介</a></li>
+        <li><a href="$1articles/index.html">記事一覧</a></li>
+        <li><a href="$1report/index.html">活動報告</a></li>
+        <li><a href="$1students/index.html">学生の方へ</a></li>
+        <li><a href="$1link/index.html">関連リンク</a></li>
+        <li><a href="$1internal/index.html"><span class="glyphicon glyphicon-lock" aria-hidden="true">内部向け</span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li ${2:class="disabled"}><a href="./english.html">English</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
