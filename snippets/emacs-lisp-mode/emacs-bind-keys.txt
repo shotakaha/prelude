@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
+# name: emacs-bind-keys
+# key: bks
+# group : emacs
+# binding: direct-keybinding
+# --
+(bind-keys ${1::map ${2:c++-mode-map}}
+           ("${3:keybind}" . ${4:command})
+           )

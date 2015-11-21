@@ -1,0 +1,12 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
+# name: emacs-usepackage
+# key: up
+# group : emacs
+# binding: direct-keybinding
+# --
+(use-package ${1:}
+  ${2:ensure t}
+  :config
+  $0
+  )

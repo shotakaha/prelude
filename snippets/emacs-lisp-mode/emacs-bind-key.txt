@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
+# name: emacs-bind-key
+# key: bk
+# group : emacs
+# binding: direct-keybinding
+# --
+(bind-key "${1:c-c x}" '${2:my-ctrl-c-x-command} ${3:keymap})

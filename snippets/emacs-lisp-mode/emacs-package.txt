@@ -1,0 +1,14 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
+# name: emacs-package
+# key: sum
+# group : emacs
+# binding: direct-keybinding
+# --
+;;; ${1:Package Name} --- ${2:Short Summary}
+
+;;; Commentary:
+    $0
+
+;;; Code:
+    $0
