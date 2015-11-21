@@ -1,6 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
 # name: ipns-article-top
-# key: ipns-article-top
+# key: top
+# group: ipns
 # binding: direct-keybinding
 # --
 <section>

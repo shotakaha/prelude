@@ -1,6 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
 # name: ipns-nav-ja
-# key: ipns-nav-ja
+# key: nav-ja
+# group : ipns
 # binding: direct-keybinding
 # --
 <!-- fixed-navigation -->

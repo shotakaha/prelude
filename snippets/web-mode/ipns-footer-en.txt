@@ -1,12 +1,14 @@
 # -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
 # name: ipns-footer-en
-# key: ipns-footer-en
+# key: footer-en
+# group : ipns
 # binding: direct-keybinding
 # --
 <footer class="container-fluid color-inverse">
   <address>
     Institute of Particle and Nuclear Studies (IPNS)<br />
-    High Energy Accelerator Research Organization, KEK<br />
+    High Energy Accelerator Research Organization (KEK)<br />
     Oho 1-1, Tsukuba, Ibaraki, 305-0801
   </address>
   &copy; KEK IPNS

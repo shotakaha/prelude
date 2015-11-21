@@ -1,6 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
 # name: ipns-footer-script
-# key: ipns-footer-script
+# key: footer-script
+# group : ipns
 # binding: direct-keybinding
 # --
 <!-- Bootstrap core JavaScript ================================ -->

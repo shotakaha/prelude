@@ -1,6 +1,7 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # name: ipns-pager
-# key: ipns-pager
+# key: pager
+# group: ipns
 # binding: direct-keybinding
 # --
 <ul class="pager">

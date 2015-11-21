@@ -1,9 +1,11 @@
 # -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
 # name: ipns-pubdate-en
-# key: ipns-pubdate-en
+# key: pubdate-en
+# group : ipns
 # binding: direct-keybinding
 # --
 <p class="my-pubdate">
-  Published on : <time pubdate="1" datetime="$1-$2-$3">${1:2015}-${2:mm}-${3:dd}</time>
-  Modified : <time datetime="$1-$2-$3">$1-$2-$3-</time>
+  Published : <time pubdate="1" datetime="$1-$2-$3">${1:2015}-${2:mm}-${3:dd}</time>
+  Modified : <time datetime="$1-$2-$3">$1-$2-$3</time>
 </p>

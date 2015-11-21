@@ -1,7 +1,10 @@
 # -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
 # name: ipns-list-group-item
-# key: ipns-list-group-item
+# key: list-group-item
+# group : ipns
 # binding: direct-keybinding
+
 # --
 <li>
   <a href="${1:#}"

@@ -1,6 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
 # name: ipns-head-link
-# key: ipns-head-link
+# key: head-link
+# group : ipns
 # binding: direct-keybinding
 # --
 <!-- Plugins -->

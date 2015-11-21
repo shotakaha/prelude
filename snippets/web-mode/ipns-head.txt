@@ -1,6 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
 # name: ipns-head
-# key: ipns-head
+# key: head
+# group : ipns
 # binding: direct-keybinding
 # --
 <head>

@@ -1,6 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
 # name: ipns-related-links-ja
-# key: ipns-related-links-ja
+# key: related-links-ja
+# group : ipns
 # binding: direct-keybinding
 # --
 <div class="row">

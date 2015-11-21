@@ -1,6 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
 # name: ipns-figure
-# key: ipns-figure
+# key: figure
+# group : ipns
 # binding: direct-keybinding
 # --
 <figure>

@@ -1,6 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
 # name: ipns-pubdate-ja
-# key: ipns-pubdate-ja
+# key: pubdate-ja
+# group : ipns
 # binding: direct-keybinding
 # --
 <p class="my-pubdate">
