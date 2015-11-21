@@ -7,12 +7,12 @@
 <html lang="ja">
 
   <head>
-    <!-- Add head-ja here -->
+    <!-- Add ipns-head here -->
   </head>
 
   <body>
 
-    <!-- Add navbar-ja here -->
+    <!-- Add ipns-nav-ja here -->
 
     <!-- main contents -->
     <article class="container">

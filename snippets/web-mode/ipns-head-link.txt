@@ -1,0 +1,11 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-head-link
+# key: ipns-head-link
+# binding: direct-keybinding
+# --
+<!-- Plugins -->
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/readable/bootstrap.min.css" >
+<!-- My Styles -->
+<link rel="stylesheet" href="${1:../../}css/my-style-internal.css" >
+<link rel="stylesheet" href="$1css/my-label-internal.css" >

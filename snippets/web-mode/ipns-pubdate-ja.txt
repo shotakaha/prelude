@@ -1,0 +1,9 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-pubdate-ja
+# key: ipns-pubdate-ja
+# binding: direct-keybinding
+# --
+<p class="my-pubdate">
+  掲載日 : <time pubdate="1" datetime="$1-$2-$3">${1:2015}年${2:mm}月${3:dd}日</time>
+  （修正日 : <time datetime="$1-$2-$3">$1年$2月$3日</time>）
+</p>

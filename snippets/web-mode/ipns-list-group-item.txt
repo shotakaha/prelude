@@ -1,0 +1,12 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-list-group-item
+# key: ipns-list-group-item
+# binding: direct-keybinding
+# --
+<li>
+  <a href="${1:#}"
+     ${2:target="_blank"}
+     class="list-group-item">
+    $0
+  </a>
+</li>

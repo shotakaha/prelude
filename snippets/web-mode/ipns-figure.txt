@@ -1,0 +1,18 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-figure
+# key: ipns-figure
+# binding: direct-keybinding
+# --
+<figure>
+  <img src="${1:#}"
+       alt=""
+       class="img-responsive img-rounded center-block" >
+  <figcaption>
+    <p class="my-copyright">
+      &copy; KEK IPNS
+    </p>
+    <p class="my-caption">
+      ${2}
+    </p>
+  </figcaption>
+</figure>

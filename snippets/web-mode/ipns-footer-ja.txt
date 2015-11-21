@@ -1,0 +1,13 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-footer-ja
+# key: ipns-footer-ja
+# binding: direct-keybinding
+# --
+<!-- footer -->
+<footer class="container-fluid color-inverse">
+  <address>
+    〒305-0801 茨城県つくば市大穂1−1<br />
+    高エネルギー加速器研究機構 素粒子原子核研究所
+  </address>
+  &copy; KEK IPNS
+</footer>

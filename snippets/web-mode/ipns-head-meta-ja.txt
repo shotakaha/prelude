@@ -1,0 +1,11 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-head-meta-ja
+# key: ipns-head-meta-en
+# binding: direct-keybinding
+# --
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="高エネルギー加速器研究機構,KEK" >
+<meta name="keywords" content="素粒子原子核研究所,素核研,IPNS" >
+<meta name="keywords" content="素粒子,原子核,宇宙,加速器" >

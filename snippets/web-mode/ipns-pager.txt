@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-pager
+# key: ipns-pager
+# binding: direct-keybinding
+# --
+<ul class="pager">
+  <li class="previous"><a href="${1:#}">&larr; Older</a></li>
+  <li><a href="#">Top</a></li>
+  <li class="next disabled"><a href="${2:#}">Newer &rarr;</a></li>
+</ul>

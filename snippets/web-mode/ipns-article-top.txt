@@ -1,0 +1,18 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-article-top
+# key: ipns-article-top
+# binding: direct-keybinding
+# --
+<section>
+  <div class="page-header">
+    <h1>${1:タイトル}</h1>
+  </div>
+  <!-- Add ipns-pubdate-ja/en here -->
+  <!-- Add ipns-figure here -->
+</section>
+
+<section>
+  <p>
+    $0
+  </p>
+</section>

@@ -1,0 +1,9 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-head-ogp-ja
+# key: ipns-head-ogp-ja
+# binding: direct-keybinding
+# --
+<meta property="og:url" content="http://www2.kek.jp/ipns/articles/${1:ディレクトリ}/index.html" >
+<meta property="og:title" content="${2:タイトル}" >
+<meta property="og:image" content="http://www2.kek.jp/ipns/articles/$1/fig/${画像ファイル名}" >
+<meta property="og:description" content="${3:簡単な説明}" >

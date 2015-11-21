@@ -1,0 +1,13 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-head
+# key: ipns-head
+# binding: direct-keybinding
+# --
+<head>
+  <!-- Insert ipns-head-meta-ja/en here-->
+  <!-- Insert ipns-head-ogp-ja/en here-->
+  <!-- Insert ipns-head-link here-->
+
+  <meta name="author" content="Shota TAKAHASHI">
+  <title>${1:title}</title>
+</head>
