@@ -1,0 +1,20 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-related-links-ja
+# key: ipns-related-links-ja
+# binding: direct-keybinding
+# --
+<div class="row">
+  <div class="col-sm-12">
+    <ul class="list-unstyled list-group">
+      <li>
+        <a href="${1:#}"
+           ${2:target="_blank"}
+           class="list-group-item" >
+           <span class="label my-label-${6:ipns}">${7:素核研}</span>
+          $0
+        </a>
+      </li>
+      <!-- Add list-group-item to extend -->
+    </ul>
+  </div>
+</div>
