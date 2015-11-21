@@ -693,6 +693,12 @@
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package hippie-exp
+  :config
+  (add-to-list 'hippie-expand-try-functions-list 'yas-hippie-try-expand)
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; quick-preview
 (use-package quick-preview
   :ensure t
