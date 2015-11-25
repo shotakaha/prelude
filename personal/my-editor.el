@@ -181,15 +181,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; recentf-ext : 最近使ったファイルを開く
 ;;; recentf は Preludeで定義済み
-;; 最近のファイル500個を保存する
-(setq recentf-max-saved-items 500)
-;; 最近使ったファイルに加えないファイルを
-;; 正規表現で指定する
-(setq recentf-exclude
-      '("/TAGS$" "/var/tmp/")
-      )
-(use-package recentf-ext
-  :ensure t
+(use-package recentf
+  :config
+  ;; 最近使ったファイルに加えないファイルを正規表現で指定する
+  (setq recentf-exclude '("/TAGS$" "/var/tmp/"))
+  (use-package recentf-ext :ensure t)
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
