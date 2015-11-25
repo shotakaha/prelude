@@ -805,6 +805,12 @@
          )
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; smart-newline
+(use-package smart-newline
+  :ensure t
+  :bind ("C-m" . smart-newline)
+  )
 
 (provide 'my-editor)
 ;;; my-editor.el ends here
