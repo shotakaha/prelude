@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
+# name: href
+# key: href
+# group : dokuwiki
+# binding: direct-keybinding
+# --
+[[.:${1:内部リンク}:start|${2:リンクの説明}]]

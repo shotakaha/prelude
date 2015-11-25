@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
+# name: section title
+# key: sec
+# group : dokuwiki
+# binding: direct-keybinding
+# --
+==== ${1:Section}  ====
+
+$0

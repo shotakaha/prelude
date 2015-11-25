@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
+# name: chapter title
+# key: chap
+# group : dokuwiki
+# binding: direct-keybinding
+# --
+===== ${1:Chapter}  =====
+
+$0
