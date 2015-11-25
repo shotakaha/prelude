@@ -6,7 +6,6 @@
 ;; 1. view-modeの設定（less-like, vi-like なキーバインドの追加）
 ;; 2. origamiの設定
 ;; 3. ido-vertical-modeの設定 --> my-ido.el (2015-10-10)
-;; 4. psessionの設定 --> disabled (2015-03-18)
 ;; 5. web-modeの設定
 ;; 6. jawordの設定
 ;; 7. symonの設定 --> enabled (2015-03-18)
@@ -142,21 +141,7 @@
   (add-hook 'view-mode-hook 'view-mode-hook--origami)
   )
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; psession.el
-;;; http://rubikitch.com/2014/08/21/psession/
-;;; https://github.com/thierryvolpiatto/psession
-;;; package.elで入れたので、autoload はしなくていいはず
-;;; セッション情報は、~/.emacs.d/elisp-objects/ に .elcファイルで保存。
-;;; defcustom されている psession-elisp-objects-default-directory を
-;;; 再定義すれば、任意の場所に変更できるはず。
-;;; 2015-03-18 : persp-modeと被っているので :disabled t した
-(use-package psession
-  :disabled t
-  :ensure t
-  :config
-  (psession-mode 1)
-  )
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; web-mode.el
