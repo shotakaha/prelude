@@ -1,0 +1,14 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
+# name: rst.list-table
+# key: tablist
+# group : rst
+# binding: direct-keybinding
+# --
+.. list-table:: ${1:タイトル}
+   :header-rows: ${2:0}
+   :stub-columns: ${3:0}
+
+   * - $0
+     -
+     -

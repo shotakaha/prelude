@@ -1,0 +1,12 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
+# name: document title
+# key: tit
+# group : rst
+# binding: direct-keybinding
+# --
+==================================================
+${1:Title}
+==================================================
+
+$0

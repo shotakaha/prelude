@@ -1,0 +1,11 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
+# name: chapter title
+# key: chap
+# group : rst
+# binding: direct-keybinding
+# --
+${1:Chapter}
+==================================================
+
+$0

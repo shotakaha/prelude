@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
+# name: rst.href
+# key: href
+# group : rst
+# binding: direct-keybinding
+# --
+\`${1:リンクの説明} <${2:URL}>\`__
