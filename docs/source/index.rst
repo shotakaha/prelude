@@ -6,11 +6,16 @@
 Welcome to My Emacs Prelude's documentation!
 ============================================
 
-Contents:
+Emacs設定の備忘録
 
 .. toctree::
    :maxdepth: 2
 
+   prelude
+   package
+   paradox
+   org
+   gnus
 
 
 Indices and tables
@@ -19,4 +24,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
