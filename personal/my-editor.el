@@ -737,6 +737,8 @@
       ("+" . balance-windows)
       ("^" . enlarge-window)
       ("-" . shrink-window)
+      ("p" . git-gutter:previous-hunk)
+      ("n" . git-gutter:next-hunk)
       )
     )
   (smartrep-define-key org-mode-map "C-c"

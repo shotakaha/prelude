@@ -38,7 +38,7 @@
 ;;; git-gutter-fringe/git-gutter-fringe+ の使い分け方がよく分からないので
 ;;; とりあえずdisabled t とパッケージの削除をした
 (use-package git-gutter
-  :disabled t
+  :ensure t
   :bind ( ("C-x C-g" . git-gutter:toggle)
           ("C-x v =" . git-gutter:popup-hunk)
           ;; Jump to next/previous hunk
