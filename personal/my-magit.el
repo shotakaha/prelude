@@ -19,6 +19,17 @@
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; magit-gitflow.el
+;;; まず gitflow をインストールしておく
+;;; $ port install git-flow
+(use-package magit-gitflow
+  :ensure t
+  :config
+  (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
+  )
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; git-gutter
 ;;; https://github.com/syohex/emacs-git-gutter
 ;;; なんだかMagitの機能でも、追加／削除の箇所は分かる気がする。
