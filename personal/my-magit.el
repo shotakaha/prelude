@@ -22,6 +22,7 @@
 ;;; magit-gitflow.el
 ;;; まず gitflow をインストールしておく
 ;;; $ port install git-flow
+;;; magit-status で C-f すると magit-gitflow が popup する
 (use-package magit-gitflow
   :ensure t
   :config
