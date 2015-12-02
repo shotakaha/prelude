@@ -233,19 +233,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; 編集
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; visual-regexp : 正規表現置換を対話的に行う
-;;; http://rubikitch.com/2014/08/26/visual-regexp/
-(use-package visual-regexp
-  :ensure t
-  :bind (("M-%" . vr/query-replace))
-  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; visual-regexp : 正規表現置換を対話的に行う
+;;; http://rubikitch.com/2014/08/26/visual-regexp/
 ;;; visual-regexp-steroids.el
 ;;; http://rubikitch.com/2015/04/20/visual-regexp-steroids/
 (use-package visual-regexp-steroids
   :ensure t
-  :bind (("M-%" . vr/query-replace)
+  :init
+  (use-package visual-regexp :ensure t)
+  :bind (
+         ("M-%" . vr/query-replace)
          ("C-c m" . vr/mc-mark)
          ("C-M-r" . vr/isearch-backward)
          ("C-M-s" . vr/isearch-forward))
