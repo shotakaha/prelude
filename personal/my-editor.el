@@ -185,8 +185,8 @@
   :config
   ;; 最近使ったファイルに加えないファイルを正規表現で指定する
   (setq recentf-exclude '("/TAGS$" "/var/tmp/"))
-  (use-package recentf-ext :ensure t)
   )
+(use-package recentf-ext :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; カーソル移動
@@ -194,30 +194,30 @@
 ;;; point-undo : カーソルいちを戻す
 (use-package point-undo
   :ensure t
-  :config
-  (global-set-key [f7] 'point-undo)
-  (global-set-key [M-f7] 'point-redo)
+  :bind (([f7] . point-undo)
+         ([M-f7] . point-redo))
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; goto-chg : 編集箇所の履歴をたどる
 (use-package goto-chg
   :ensure t
-  :config
-  (global-set-key [f8] 'goto-last-change)
-  (global-set-key [M-f8] 'goto-last-change-reverse)
+  :bind (([f8] . goto-last-change)
+         ([M-f8] . goto-last-change-reverse))
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; bm : 現在位置をハイライト付きで永続的に記憶させる
-(setq-default bm-buffer-persistence nil)
-(setq bm-restore-repository-on-load t)
+
 (use-package bm
   :ensure t
-  :bind (("M-SPC" . bm-toggle)
-         ;; ("M-" . bm-previous)
-         ;; ("M-" . bm-next)
+  :bind (("S-M-SPC" . bm-toggle)
+         ("M-[" . bm-previous)
+         ("M-]" . bm-next)
          )
+  :init
+  (setq-default bm-buffer-persistence nil)
+  (setq bm-restore-repository-on-load t)
   :config
   (add-hook 'find-file-hook 'bm-buffer-restore)
   (add-hook 'kill-buffer-hook 'bm-buffer-save)
