@@ -212,8 +212,8 @@
 (use-package bm
   :ensure t
   :bind (("S-M-SPC" . bm-toggle)
-         ("M-]" . bm-previous)
-         ("M-[" . bm-next)
+         ("M-[" . bm-previous)
+         ("M-]" . bm-next)
          )
   :init
   (setq-default bm-buffer-persistence nil)
