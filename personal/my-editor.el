@@ -280,6 +280,21 @@
 )
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; zop-to-char
+;;; core/prelude-global-keybindings.el で設定済みだがもう一度
+(use-package zop-to-char
+  :ensure t
+  :bind (("M-z" . zop-up-to-char)
+         ("M-Z" . zop-to-char))
+  )
+
+(use-package zzz-to-char
+  :disabled t
+  :ensure t
+  :bind (("M-z" . zzp-up-to-char)
+         ("M-Z" . zzp-to-char))
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; mag-menu.el
