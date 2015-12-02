@@ -63,16 +63,15 @@
    '(git-gutter:added-sign "++")    ;; multiple character is OK
    '(git-gutter:deleted-sign "--"))
 
-  (set-face-background 'git-gutter:modified "purple") ;; background color
-  (set-face-foreground 'git-gutter:added "green")
-  (set-face-foreground 'git-gutter:deleted "red")
+  (set-face-background 'git-gutter:modified "DarkGreen") ;; background color
+  (set-face-foreground 'git-gutter:added "red")
+  (set-face-foreground 'git-gutter:deleted "blue")
 
   ;; You can change minor-mode-name in mode-line to set git-gutter:lighter. Default is " GitGutter"
   ;; first character should be a space
   (custom-set-variables
    '(git-gutter:lighter " GG"))
   )
-
 
 (provide 'my-magit)
 ;;; my-magit.el ends here

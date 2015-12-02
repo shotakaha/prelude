@@ -643,10 +643,13 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; linum-relative.el
+;;; linum-on だけだと動作しないので、
+;;; linum-relative-global-modeを付けてある
 (use-package linum-relative
   :ensure t
   :config
   (linum-on)
+  (linum-relative-global-mode)
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
