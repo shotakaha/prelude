@@ -185,8 +185,8 @@
   :config
   ;; 最近使ったファイルに加えないファイルを正規表現で指定する
   (setq recentf-exclude '("/TAGS$" "/var/tmp/"))
-  (use-package recentf-ext :ensure t)
   )
+(use-package recentf-ext :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; カーソル移動
