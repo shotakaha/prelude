@@ -194,9 +194,8 @@
 ;;; point-undo : カーソルいちを戻す
 (use-package point-undo
   :ensure t
-  :config
-  (global-set-key [f7] 'point-undo)
-  (global-set-key [M-f7] 'point-redo)
+  :bind (([f7] . point-undo)
+         ([M-f7] . point-redo))
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
