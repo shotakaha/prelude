@@ -217,7 +217,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; bm : 現在位置をハイライト付きで永続的に記憶させる
-
 (use-package bm
   :ensure t
   :bind (("S-M-SPC" . bm-toggle)
@@ -225,14 +224,20 @@
          ("M-]" . bm-next)
          )
   :init
-  (setq-default bm-buffer-persistence nil)
-  (setq bm-restore-repository-on-load t)
+  ;;; マークを保存する
+  (setq-default bm-buffer-persistence t)
+  ;;; 保存先ファイル名
+  (setq bm-repository-file (expand-file-name "bm-repository" prelude-savefile-dir))
   :config
+  ;;; 起動時に設定を読み込み
+  (setq bm-restore-repository-on-load t)
   (add-hook 'find-file-hook 'bm-buffer-restore)
+  (add-hook 'after-revert-hook 'bm-buffer-restore)
+  ;;; 終了時などに保存
   (add-hook 'kill-buffer-hook 'bm-buffer-save)
   (add-hook 'after-save-hook 'bm-buffer-save)
-  (add-hook 'after-revert-hook 'bm-buffer-restore)
   (add-hook 'vc-before-checkin-hook 'bm-buffer-save)
+  ;;; Emacs終了時に保存
   (add-hook 'kill-emacs-hook '(lambda nil (bm-buffer-save-all) (bm-repository-save)))
   )
 
