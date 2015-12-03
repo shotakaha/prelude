@@ -814,5 +814,34 @@
   :bind ("C-m" . smart-newline)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; company
+;;; modules/prelude-company.el で設定済み
+;;; http://qiita.com/syohex/items/8d21d7422f14e9b53b17
+(use-package company
+  :bind ("C-M-i" . company-complete)
+  :config
+  (bind-keys :map company-active-map
+             ("C-n" . company-select-next)
+             ("C-p" . company-select-previous)
+             ("C-s" . company-filter-candidates)
+             ("C-i" . company-complete-selection)
+             )
+  (bind-keys :map company-search-map
+             ("C-n" . company-select-next)
+             ("C-p" . company-select-previous)
+             )
+  (bind-keys :map emacs-lisp-mode-map
+             ("C-M-i" . company-complete)
+             )
+
+  )
+(use-package company-quickhelp
+  :ensure t
+  (company-quickhelp-mode +1)
+  )
+
+
+
 (provide 'my-editor)
 ;;; my-editor.el ends here
