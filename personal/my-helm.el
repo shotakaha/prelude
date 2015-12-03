@@ -34,34 +34,59 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; helm-swoop.el
 ;;; http://rubikitch.com/2014/12/25/helm-swoop/
+;;; https://github.com/ShingoFukuyama/helm-swoop
 (use-package helm-swoop
-  :disabled t
   :ensure t
-  :init
-  ;; isearchからの連携を考えるとC-r/C-sにも割り当て推奨
-  ;; (bind-keys :map helm-swoop-map
-  ;;            ("C-r" . helm-previous-line)
-  ;;            ("C-s" . helm-next-line)
-  ;;            )
+  :bind (("M-i" . helm-swoop)
+         ("M-I" . helm-swoop-back-to-last-point)
+         ("C-c M-i" . helm-multi-swoop)
+         ("C-x M-i" . helm-multi-swoop-all)
+         )
   :config
-  ;; 検索結果をcycleしない、お好みで
-  (setq helm-swoop-move-to-line-cycle nil)
+  (bind-keys :map isearch-mode-map
+             ("M-i" . helm-swoop-from-isearch)
+             )
+  (bind-keys :map helm-swoop-map
+             ("M-i" . helm-multi-swoop-all-from-helm-swoop)
+             ("M-m" . helm-multi-swoop-current-mode-from-helm-swoop)
+             ("C-r" . helm-previous-line)
+             ("C-s" . helm-next-line)
+             )
+  (bind-keys :map helm-multi-swoop-map
+             ("C-r" . helm-previous-line)
+             ("C-s" . helm-next-line)
+             )
 
-  (cl-defun helm-swoop-nomigemo (&key $query ($multiline current-prefix-arg))
-    "シンボル検索用Migemo無効版helm-swoop"
-    (interactive)
-    (let ((helm-swoop-pre-input-function
-           (lambda () (format "\\_<%s\\_> " (thing-at-point 'symbol)))))
-      (helm-swoop :$source (delete '(migemo) (copy-sequence (helm-c-source-swoop)))
-                  :$query $query :$multiline $multiline)))
-  ;; C-M-:に割り当て
-  (bind-key "C-M-:" 'helm-swoop-nomigemo)
+  ;; Save buffer when helm-multi-swoop-edit complete
+  (setq helm-multi-swoop-edit-save t)
+  ;; If this value is t, split window inside the current window
+  (setq helm-swoop-split-with-multiple-windows nil)
+  ;; Split direcion. 'split-window-vertically or 'split-window-horizontally
+  (setq helm-swoop-split-direction 'split-window-vertically)
+  ;; If nil, you can slightly boost invoke speed in exchange for text color
+  (setq helm-swoop-speed-or-color nil)
+  ;; ;; Go to the opposite side of line from the end or beginning of line
+  (setq helm-swoop-move-to-line-cycle t)
+  ;; Optional face for line numbers
+  ;; Face name is `helm-swoop-line-number-face`
+  (setq helm-swoop-use-line-number-face t)
 
-  ;; [2014-11-25 Tue]
-  (when (featurep 'helm-anything)
-    (defadvice helm-resume (around helm-swoop-resume activate)
-      "helm-anything-resumeで復元できないのでその場合に限定して無効化"
-      ad-do-it))
+  ;; Match/Search methods (Fuzzy matching, Migemo)
+  ;; If you do not preferr fuzzy, remove it from the list below
+  (defvar helm-c-source-swoop-match-functions
+    '(helm-mm-exact-match
+      helm-mm-match
+      helm-fuzzy-match
+      helm-mm-3-migemo-match))
+  (setq helm-c-source-swoop-search-functions
+        '(helm-mm-exact-search
+          helm-mm-search
+          helm-candidates-in-buffer-search-default-fn
+          helm-fuzzy-search
+          helm-mm-3-migemo-search))
+
+  ;; In addition of above, you need to enable migemo mode if you'd like to
+  (helm-migemo-mode 1)
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
