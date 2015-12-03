@@ -89,6 +89,24 @@
   (helm-migemo-mode 1)
   )
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; helm-bm
+;;; https://github.com/yasuyk/helm-bm
+;;; http://rubikitch.com/2014/11/22/helm-bm/
+(use-package helm-bm
+  :ensure t
+  :bind (("S-M-SPC" . bm-toggle-or-helm))
+  :config
+
+  (defun bm-toggle-or-helm ()
+    "2回連続で起動したらhelm-bmを実行させる"
+    (interactive)
+    (bm-toggle)
+    (when (eq last-command 'bm-toggle-or-helm)
+      (helm-bm)))
+  )
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ace-isearch.el
 ;;; http://rubikitch.com/2014/10/08/ace-isearch/
