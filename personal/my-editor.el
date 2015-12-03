@@ -164,7 +164,16 @@
     (setq web-mode-comment-style 2)
     )
   (add-hook 'web-mode-hook  'my-web-mode-hook)
+  )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ac-html-csswatcher / ac-html-bootstrap
+;;; https://github.com/osv/ac-html-csswatcher
+;;; https://github.com/osv/ac-html-bootstrap
+(use-package ac-html-csswatcher
+  :ensure t
+  :config
+  (company-web-csswatcher-setup)
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
