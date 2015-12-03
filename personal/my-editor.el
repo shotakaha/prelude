@@ -847,10 +847,9 @@
   )
 (use-package company-quickhelp
   :ensure t
+  :config
   (company-quickhelp-mode +1)
   )
-
-
 
 (provide 'my-editor)
 ;;; my-editor.el ends here
