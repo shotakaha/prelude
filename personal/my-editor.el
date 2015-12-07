@@ -171,6 +171,7 @@
 ;;; https://github.com/osv/ac-html-csswatcher
 ;;; https://github.com/osv/ac-html-bootstrap
 (use-package ac-html-csswatcher
+  :disabled t
   :ensure t
   :config
   (company-web-csswatcher-setup)
@@ -915,8 +916,8 @@
              ("C-c `"  . wrap-with-back-quotes)
              )
 
-  (add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode)
-  (add-hook 'markdown-mode-hook 'turn-on-smartparens-strict-mode)
+  ;; (add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode)
+  ;; (add-hook 'markdown-mode-hook 'turn-on-smartparens-strict-mode)
   )
 
 
