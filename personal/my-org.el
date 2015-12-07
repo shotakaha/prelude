@@ -44,6 +44,7 @@
   (setq org-hide-leading-stars t)
   ;; RET will follow the link : nil --> t
   (setq org-return-follows-link t)
+  (setq org-use-speed-commands t)
 
   ;; org-capture
   (setq org-capture-templates
