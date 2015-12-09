@@ -14,7 +14,9 @@
 ;;; helm-c-yasnippet
 (use-package helm-c-yasnippet
   :ensure t
-  :bind ("C-c y" . helm-yas-complete)
+  :bind (:map yas-minor-mode-map
+              ("C-x i y" . helm-yas-complete)
+              )
   :config
   (setq helm-yas-space-match-any-greedy t)
   )
