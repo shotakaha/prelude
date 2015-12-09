@@ -7,7 +7,14 @@
 ;;; 4. ace-search の設定
 ;;; 5. isearch-dabbrev の設定 （検索語の自動補完）
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; helm-c-yasnippet
+(use-package helm-c-yasnippet
+  :ensure t
+  :bind ("C-c y" . helm-yas-complete)
+  :config
+  (setq helm-yas-space-match-any-greedy t)
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; helm-migemo.el
