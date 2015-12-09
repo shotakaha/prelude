@@ -92,14 +92,14 @@
 ;; 情報源（helm-source-eww-history）を
 ;; M-x helm-for-files からでもアクセスできるようにする
 ;; （helm-for-files-preferred-list に入れる）
-(setq helm-for-files-preferred-list
-      '(helm-source-buffers-list
-        helm-source-recentf
-        helm-source-bookmarks
-        helm-source-file-cache
-        helm-source-files-in-current-dir
-        helm-source-eww-history
-        helm-source-locate))
+;; (setq helm-for-files-preferred-list
+;;       '(helm-source-buffers-list
+;;         helm-source-recentf
+;;         helm-source-bookmarks
+;;         helm-source-file-cache
+;;         helm-source-files-in-current-dir
+;;         helm-source-eww-history
+;;         helm-source-locate))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; eww-lnum.el

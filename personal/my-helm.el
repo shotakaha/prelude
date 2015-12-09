@@ -7,14 +7,8 @@
 ;;; 4. ace-search の設定
 ;;; 5. isearch-dabbrev の設定 （検索語の自動補完）
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; helm
-(use-package helm
-  :config
-  (helm-migemo-mode +1)
-  )
-
+(add-to-list 'helm-for-files-preferred-list
+             'helm-source-bookmark-set t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; helm-c-yasnippet
