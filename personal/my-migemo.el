@@ -42,5 +42,7 @@
   (migemo-init)
   )
 
+(helm-migemo-mode +1)
+
 (provide 'my-migemo)
 ;;; my-migemo.el ends here
