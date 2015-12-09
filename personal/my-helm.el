@@ -7,6 +7,15 @@
 ;;; 4. ace-search の設定
 ;;; 5. isearch-dabbrev の設定 （検索語の自動補完）
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; helm
+(use-package helm
+  :config
+  (helm-migemo-mode +1)
+  )
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; helm-c-yasnippet
 (use-package helm-c-yasnippet
@@ -19,6 +28,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; helm-migemo.el
 ;;; http://rubikitch.com/2014/12/19/helm-migemo/
+;;; この設定は不要らしい(disabled t)
+;;; http://syohex.hatenablog.com/entry/2015/10/10/171926
 (use-package helm-migemo
   :disabled t
   :ensure t
