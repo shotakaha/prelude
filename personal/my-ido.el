@@ -7,6 +7,10 @@
 ;;; Prelude では以下のファイルであるていど設定済み
 ;;; ../modules/prelude-ido.el (ido, ido-ubiquitous, flx-ido)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ido-hacks
+(use-package ido-hacks :ensure t)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ido-vertical-mode.el
