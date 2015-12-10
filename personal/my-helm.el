@@ -141,3 +141,13 @@
              ("<tab>" . isearch-dabbrev-expand)
              )
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; helm-ag
+(use-package helm-ag
+  :ensure t
+  :bind (("M-g ." . helm-ag)
+         ("M-g ," . helm-ag-pop-stack)
+         ("C-M-s" . helm-ag-this-file)
+         )
+  )
