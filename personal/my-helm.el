@@ -151,3 +151,11 @@
          ("C-M-s" . helm-ag-this-file)
          )
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; helm-google
+(use-package helm-google
+  :ensure t
+  :config
+  ;; (setq browse-url-browser-function 'eww-browse-url)
+  )
