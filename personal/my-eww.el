@@ -117,7 +117,6 @@
 ;;; http://rubikitch.com/2015/01/07/ace-link-2/
 ;;; 次のパッケージに対応 : EWW, org-mode, info, help
 ;;; 2ストロークでリンクをたどれるようになる
-(prelude-require-package 'ace-link)
 
 ;; デフォルトの設定(参考)
 ;; (defun ace-link-setup-default ()
@@ -131,6 +130,7 @@
 ;;   (define-key eww-mode-map "o" 'ace-link-eww))
 
 (use-package ace-link
+  :disabled t
   :ensure t
   :config
   (ace-link-setup-default)
