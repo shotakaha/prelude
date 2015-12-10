@@ -86,8 +86,10 @@
   (helm :sources 'helm-source-eww-history
         :buffer "*helm eww*"))
 
-(define-key eww-mode-map (kbd "H") 'helm-eww-history)
-(define-key eww-mode-map (kbd "s") 'helm-eww-history)
+(bind-keys :map eww-mode-map
+           ("H" . helm-eww-history)
+           ("s" . helm-eww-history)
+           )
 
 ;; 情報源（helm-source-eww-history）を
 ;; M-x helm-for-files からでもアクセスできるようにする
