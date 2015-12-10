@@ -86,20 +86,17 @@
   (helm :sources 'helm-source-eww-history
         :buffer "*helm eww*"))
 
-(define-key eww-mode-map (kbd "H") 'helm-eww-history)
-(define-key eww-mode-map (kbd "s") 'helm-eww-history)
+(bind-keys :map eww-mode-map
+           ("H" . helm-eww-history)
+           ("s" . helm-eww-history)
+           )
 
 ;; 情報源（helm-source-eww-history）を
 ;; M-x helm-for-files からでもアクセスできるようにする
 ;; （helm-for-files-preferred-list に入れる）
-;; (setq helm-for-files-preferred-list
-;;       '(helm-source-buffers-list
-;;         helm-source-recentf
-;;         helm-source-bookmarks
-;;         helm-source-file-cache
-;;         helm-source-files-in-current-dir
-;;         helm-source-eww-history
-;;         helm-source-locate))
+;; (add-to-list 'helm-for-files-preferred-list
+;;         'helm-source-eww-history)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; eww-lnum.el
@@ -120,7 +117,6 @@
 ;;; http://rubikitch.com/2015/01/07/ace-link-2/
 ;;; 次のパッケージに対応 : EWW, org-mode, info, help
 ;;; 2ストロークでリンクをたどれるようになる
-(prelude-require-package 'ace-link)
 
 ;; デフォルトの設定(参考)
 ;; (defun ace-link-setup-default ()
@@ -134,6 +130,7 @@
 ;;   (define-key eww-mode-map "o" 'ace-link-eww))
 
 (use-package ace-link
+  :disabled t
   :ensure t
   :config
   (ace-link-setup-default)

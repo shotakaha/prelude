@@ -141,3 +141,21 @@
              ("<tab>" . isearch-dabbrev-expand)
              )
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; helm-ag
+(use-package helm-ag
+  :ensure t
+  :bind (("M-g ." . helm-ag)
+         ("M-g ," . helm-ag-pop-stack)
+         ("C-M-s" . helm-ag-this-file)
+         )
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; helm-google
+(use-package helm-google
+  :ensure t
+  :config
+  ;; (setq browse-url-browser-function 'eww-browse-url)
+  )
