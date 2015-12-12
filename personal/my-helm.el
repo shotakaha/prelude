@@ -57,9 +57,11 @@
          ("C-x M-i" . helm-multi-swoop-all)
          )
   :config
+  ;; isearch中にhelm-swoopに移行
   (bind-keys :map isearch-mode-map
              ("M-i" . helm-swoop-from-isearch)
              )
+  ;; helm-swoop中にhelm-multi-swoop-allに移行
   (bind-keys :map helm-swoop-map
              ("M-i" . helm-multi-swoop-all-from-helm-swoop)
              ("M-m" . helm-multi-swoop-current-mode-from-helm-swoop)
@@ -78,7 +80,7 @@
   ;; Split direcion. 'split-window-vertically or 'split-window-horizontally
   (setq helm-swoop-split-direction 'split-window-vertically)
   ;; If nil, you can slightly boost invoke speed in exchange for text color
-  (setq helm-swoop-speed-or-color nil)
+  (setq helm-swoop-speed-or-color t)
   ;; ;; Go to the opposite side of line from the end or beginning of line
   (setq helm-swoop-move-to-line-cycle t)
   ;; Optional face for line numbers
