@@ -857,6 +857,12 @@
   (company-quickhelp-mode +1)
   )
 
+(use-package path-headerline-mode
+  :ensure t
+  :config
+  (path-headerline-mode +1)
+)
+             
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; smartparens
 ;;; https://github.com/Fuco1/smartparens
@@ -919,6 +925,7 @@
   ;; (add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode)
   ;; (add-hook 'markdown-mode-hook 'turn-on-smartparens-strict-mode)
   )
+
 
 
 
