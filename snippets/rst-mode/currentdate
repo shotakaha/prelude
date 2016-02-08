@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: currentdate
+# key: d
+# binding: direct-keybinding
+# --
+# `(insert (format-time-string "%Y-%m-%d"))`
+$0
