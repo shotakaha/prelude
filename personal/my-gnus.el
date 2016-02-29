@@ -85,3 +85,5 @@
         ((header "cc" "shotakah@post.kek.jp")
          (address "shotakah@post.kek.jp"))
         ))
+
+(setq gnus-summary-line-format  "%U%R%z |%d| %I%(%[%4L: %-23,23f%]%) %s\n")
