@@ -5,7 +5,7 @@
 # binding: direct-keybinding
 # --
 <ul class="pager">
-  <li class="previous"><a href="${1:#}">&larr; Older</a></li>
+  <li class="previous"><a href="${1:#}"><i class="fa fa-arrow-circle-left"></i> Older</a></li>
   <li><a href="#">Top</a></li>
-  <li class="next disabled"><a href="${2:#}">Newer &rarr;</a></li>
+  <li class="next disabled"><a href="${2:#}">Newer <i class="fa fa-arrow-circle-right"></i></a></li>
 </ul>
