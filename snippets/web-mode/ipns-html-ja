@@ -1,0 +1,155 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-html-ja
+# key: ipnshtmlja
+# binding: direct-keybinding
+# --
+
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Insert ipns-head-meta-ja/en here-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="高エネルギー加速器研究機構,KEK" >
+    <meta name="keywords" content="素粒子原子核研究所,素核研,IPNS" >
+    <meta name="keywords" content="素粒子,原子核,宇宙,加速器" >
+
+    <!-- Insert ipns-head-ogp-ja/en here-->
+    <meta property="og:title" content="ブレークスルー賞記念講演会開催" >
+    <meta property="og:type" content="article" >
+    <meta property="og:url" content="http://www2.kek.jp/ipns/articles/neutrino-breakthrough-prize/index.html" >
+    <meta property="og:image" content="http://www2.kek.jp/ipns/articles/neutrino-breakthrough-prize/fig/IMG_7345.jpg" >
+    <meta property="og:description" content="" >
+
+    <!-- Insert ipns-head-link here-->
+    <!-- Plugins -->
+    <!-- Bootswatch CDNs-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/readable/bootstrap.min.css" rel="stylesheet" integrity="sha256-1ROOYEu5qE1d8KD4rRwaA0SiMa6HgZbi8wfdUq2Y4KY= sha512-OF8N9v4J29doCMzg5g0dJ6uz/bnqOaMGz1XFy15YomHPsHAhg52BKTqqi6n7n/Fid2V9CZu2SkyEwivsoUTH7Q==" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+    <!-- My Styles -->
+    <link rel="stylesheet" href="../../css/my-style-internal.css" >
+    <link rel="stylesheet" href="../../css/my-label-internal.css" >
+
+    <meta name="author" content="Shota TAKAHASHI">
+    <title>ブレークスルー賞記念講演会開催</title>
+  </head>
+
+  <body>
+
+    <!-- fixed-navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html"><i class="fa fa-1x fa-home"></i> 素核研</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../articles/index.html"><i class="fa fa-1x fa-newspaper-o"></i> ニュース</a></li>
+            <li><a href="../../group/index.html"><i class="fa fa-1x fa-search"></i> 研究紹介</a></li>
+            <li><a href="../../report/index.html"><i class="fa fa-1x fa-files-o"></i> 活動報告</a></li>
+            <li><a href="../../students/index.html"><i class="fa fa-1x fa-graduation-cap"></i> 教育</a></li>
+            <li><a href="../../link/index.html"><i class="fa fa-1x fa-paperclip"></i> 関連リンク</a></li>
+            <li><a href="../../internal/index.html"><i class="fa fa-1x fa-lock"></i> 内部向け</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="./english.html"><i class="fa fa-1x fa-language"></i> English</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <article class="container">
+
+      <section>
+        <div class="page-header">
+          <h1>ブレークスルー賞記念講演会を開催</h1>
+          <p class="my-pubdate">
+            掲載日 : <time pubdate="1" datetime="2016-01-29">2016年1月29日</time>
+          </p>
+
+          <figure>
+            <img src="./fig/IMG_7345.jpg"
+                 class="img-responsive img-rounded center-block" >
+            <figcaption>
+              <p class="my-copyright">
+              </p>
+              <div class="my-caption">
+                <p>
+                </p>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+
+      </section>
+
+      <section>
+        <p>
+          K2K実験とT2K実験のブレークスルー賞受賞を記念した講演会と祝賀会が開催され、約170名が参加しました。
+          いばらき量子ビーム研究センターにて、「K2K/T2K実験前夜（Eve of K2K/T2K ）」と題し、西川公一郎博士が講演。
+          1980年代後半にカミオカンデ実験で観測された大気ニュートリノ異常の話から
+          1990年代のスーパーカミオカンデ実験の建設開始やK2K実験のプロポーザル、
+          そして2000年代のT2K実験のプロポーザルとJ-PARC建設までに繋がる一連のニュートリノ振動研究の歴史を中心とした内容で、
+          当時を知る共同研究者はもちろん、当時を全く知らない若手研究者にとっても貴重な機会となりました。
+        </p>
+        <p>
+          西川博士は、講演の最後に、
+          「known unknown（知っているけど、よく分かってないこと）」や
+          「unknown unknown（だれにも知られてなくて、分かってないこと）」に取り組め、
+          というメッセージを若手研究者に伝えていました。
+        </p>
+        <p>
+          祝賀会は久慈サンピア日立で開催され、
+          梶田隆章教授（東京大学宇宙線研究所）によるスーパーカミオカンデ実験の解説、
+          デーブ教授（Dave；オックスフォード大学）によるSNO実験の解説、
+          小林隆教授（素核研）によるT2K実験の解説があり、
+          それぞれの解説の最後には若手研究者に対するメッセージが伝えられました。
+        </p>
+        <p>
+          ブレークスルー賞授賞式の様子の写真スライド
+          若手に対して、新しいこと・思いついたことには果敢にチャレンジせよ、メッセージ。
+          励みになった。
+        </p>
+
+      </section>
+
+
+      <ul class="pager">
+        <li class="previous"><a href="../belle-10000-visitors/index.html">&larr; Previous</a></li>
+        <li><a href="#">Top</a></li>
+        <li class="next disabled"><a href="#">Next &rarr;</a></li>
+      </ul>
+
+    </article>
+
+    <!-- footer -->
+    <footer class="container-fluid color-inverse">
+      <address>
+        〒305-0801 茨城県つくば市大穂1−1<br />
+        高エネルギー加速器研究機構 素粒子原子核研究所
+      </address>
+      &copy; KEK IPNS
+    </footer>
+
+    <!-- Piwik -->
+    <script src="../../js/piwik.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A=="
+            crossorigin="anonymous">
+    </script>
+
+  </body>
+
+</html>

@@ -75,5 +75,7 @@
 (bind-key "s-}" 'next-buffer)
 (bind-key "M-l" 'toggle-truncate-lines)
 
+(set-frame-parameter nil 'fullscreen 'maximized)
+
 (provide 'personal-init)
 ;;; init.el ends here

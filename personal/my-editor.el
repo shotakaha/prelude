@@ -862,7 +862,7 @@
   :config
   (path-headerline-mode +1)
 )
-             
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; smartparens
 ;;; https://github.com/Fuco1/smartparens
