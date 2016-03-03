@@ -38,7 +38,7 @@
 (use-package dired
   :bind (:map dired-mode-map
               ("r" . wdired-change-to-wdired-mode)
-              ("o" . dired-omit-mode)
+              ("l" . dired-omit-mode)
               ("(" . dired-hide-details-mode)
               (")" . dired-hide-details-mode)
               )
@@ -51,6 +51,7 @@
 ;;; http://rubikitch.com/2014/10/18/direx/
 ;;;
 (use-package direx
+  :disabled t
   :ensure t
   :bind (("C-x C-j" . direx:jump-to-directory)
          ("C-\\" . direx-project:jump-to-project-root-other-window)
@@ -73,14 +74,16 @@
   ;; always open dired with dired-k
   (add-hook 'dired-initial-position-hook 'dired-k)
   )
+
 (use-package direx-k
+  :disabled t
   :bind ("C-\\" . direx-project:jump-to-project-root-other-window)
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; dired-toggle.el
 ;;; http://rubikitch.com/2014/09/08/dired-toggle/
-(use-package dired-toggle :ensure t)
+(use-package dired-toggle :disabled t :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; async.el
