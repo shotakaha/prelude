@@ -19,3 +19,11 @@ Summary バッファの表示
 .. code-block:: emacs
 
    (setq gnus-summary-line-format  "%U%R%z |%d| %I%(%[%4L: %-23,23f%]%) %s\n")
+
+
+チートシート（？）
+==================================================
+
+* `Gnus 5.11 Reference Card <https://www.gnu.org/software/emacs/refcards/pdf/gnus-refcard.pdf>`__
+* 6ページもあってチートシートといえないか
+も
