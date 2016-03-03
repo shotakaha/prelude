@@ -48,38 +48,38 @@
 
   ;; org-capture
   (setq org-capture-templates
-        `(("a" "あっと思ったことを さっとφ(..)メモする" entry
-           (file+headline nil "MEMO")
+        `(("a" "あっと思ったことを さっとφ(..)メモする [CAPTURED]" entry
+           (file+headline nil "CAPTURED")
            "* %U%?\n\n%a\n%F\n"
            :empty-lines 1)
 
-          ("b" "ブログのネタなど" entry
+          ("b" "ブログのネタなど [BLOG]" entry
            (file+headline nil "BLOG")
            "* %T %?\n   Entered on %U"
            :empty-lines 1
            :jump-to-captured 1)
 
-          ("m" "みんなで会議" entry
-           (file+datetree "~/Documents/org/minutes.org")
+          ("m" "みんなで会議 [MINUTES]" entry
+           (file+datetree nil "MINUTES")
            "* %? %T"
            :empty-lines 1
            :jump-to-captured 1)
 
-          ("p" "ぱっと 読み返したいと思ったとき" plain
+          ("p" "ぱっと 読み返したいと思ったとき [PLAIN]" plain
            (file+headline nil "PLAIN")
            "%?"
            :empty-lines 1
            :jump-to-captured 1
            :unnarrowed 1)
 
-          ("s" "写真の処理状況ログ" entry
+          ("s" "写真の処理状況ログ (-> photolog.org)" entry
            (file+datetree "~/Documents/org/photolog.org")
            "** TODO %T %?\n   Entered on %U    %i\n"
            :empty-lines 1
            :unnarrowed 1)
 
-          ("t" "とりあえず 仕事を放り込む" entry
-           (file+headline "~/Documents/org/gtd.org" "GTD")
+          ("t" "とりあえず 仕事を放り込む [GTD]" entry
+           (file+headline nil "GTD")
            "** TODO %?\n   SCHEDULED: %T\n   Entered on %U    %i\n"
            :prepend 1
            :empty-lines 1
