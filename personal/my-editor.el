@@ -420,6 +420,7 @@
 ;;; http://rubikitch.com/2015/02/13/persp-mode/
 ;;; https://github.com/Bad-ptr/persp-mode.el
 (use-package persp-mode
+  :disabled t
   :ensure t
   :config
   ;; (with-eval-after-load "persp-mode-autoloads"
