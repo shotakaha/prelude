@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: math directive
+# key: math
+# group: sphinx
+# --
+.. math::
+   :nowrap:
+
+   \begin{align}
+   $1
+   \end{align}

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: fraction
+# key: frac
+# group: sphinx
+# --
+\frac{ ${1:numerator} }{ ${2:denominator} } $0

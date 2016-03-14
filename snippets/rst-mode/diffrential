@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: diffrential
+# key: dif
+# group: sphinx
+# --
+\mathrm{d}

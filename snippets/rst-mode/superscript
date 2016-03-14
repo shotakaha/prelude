@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: superscript
+# key: ^
+# group: sphinx
+# --
+^{$1} $0
