@@ -26,3 +26,6 @@ tramp
 persp-confs/
 request/
 undohist/
+anaconda-mode
+persp-confs
+docs/build
