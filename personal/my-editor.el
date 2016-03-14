@@ -825,6 +825,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; smart-newline
 (use-package smart-newline
+  :disabled t
   :ensure t
   :bind ("C-m" . smart-newline)
   )
