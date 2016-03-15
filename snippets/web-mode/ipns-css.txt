@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: ipns-css
+# key: css
+# group:ipns
+# --
+<!-- Bootstrap & Font-Awesome-->
+<link rel="stylesheet" href="${1:../..}/css/readable/bootstrap.min.css">
+<link rel="stylesheet" href="$1/css/font-awsome/css/font-awesome.min.css">
+<!-- My Styles -->
+<link rel="stylesheet" href="$1/css/ipnsweb.css" >

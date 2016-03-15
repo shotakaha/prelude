@@ -1,0 +1,51 @@
+# -*- mode: snippet -*-
+# name: ipns-article
+# key: article
+# group: ipns
+# --
+<!DOCTYPE html>
+<html lang="ja">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="高エネルギー加速器研究機構,KEK" >
+    <meta name="keywords" content="素粒子原子核研究所,素核研,IPNS" >
+    <meta name="keywords" content="素粒子,原子核,宇宙,加速器" >
+
+    <!-- Call ogp -->
+    <!-- Call css -->
+    <title>堺井義秀教授らが2016年折戸周治賞を受賞</title>
+    <meta name="author" content="Shota TAKAHASHI">
+  </head>
+
+  <body>
+
+    <!-- Call nav -->
+    <article>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+          <!-- Main Contents -->
+          <section>
+            <div class="section-header">
+              <h1></h1>
+            </div>
+            <figure class="section-figure">
+              <img src="#"
+                   class="img-responsive img-rounded center-block" >
+              <figcaption>
+              </figcaption>
+            </figure>
+            <hr>
+            <div class="section-content">
+            </div>
+          </section>
+
+          <!-- Additionals -->
+
+        </div>
+      </div>
+    </article>
+  </body>
+</html>

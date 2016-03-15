@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ipns-head-prefix
+# key: headprefix
+# group: ipns
+# --
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">

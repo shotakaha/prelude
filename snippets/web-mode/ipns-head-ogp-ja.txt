@@ -1,11 +1,15 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # contributor: Shota TAKAHASHI
 # name: ipns-head-ogp-ja
-# key: head-ogp-ja
+# key: ogp
 # group : ipns
 # binding: direct-keybinding
 # --
 <meta property="og:url" content="http://www2.kek.jp/ipns/articles/${1:ディレクトリ}/index.html" >
+<meta property="og:type" content="article" >
 <meta property="og:title" content="${2:タイトル}" >
 <meta property="og:image" content="http://www2.kek.jp/ipns/articles/$1/fig/${4:画像ファイル名}" >
 <meta property="og:description" content="${3:簡単な説明}" >
+<meta name="twitter:card" content="summary" >
+<!-- Use canonical URL -->
+<link rel="canonical" href="https://www2.kek.jp/ipns/articles/$1/index.html">

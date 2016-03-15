@@ -1,7 +1,7 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # contributor: Shota TAKAHASHI
 # name: ipns-nav-ja
-# key: nav-ja
+# key: nav
 # group : ipns
 # binding: direct-keybinding
 # --
@@ -15,20 +15,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="${1:../../}index.html">素粒子原子核研究所</a>
+      <a class="navbar-brand" href="${1:../../}index.html"><i class="fa fa-1x fa-home"></i> 素核研</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="$1about/index.html">概要</a></li>
-        <li><a href="$1group/index.html">研究紹介</a></li>
-        <li><a href="$1articles/index.html">記事一覧</a></li>
-        <li><a href="$1report/index.html">活動報告</a></li>
-        <li><a href="$1students/index.html">学生の方へ</a></li>
-        <li><a href="$1link/index.html">関連リンク</a></li>
-        <li><a href="$1internal/index.html"><span class="glyphicon glyphicon-lock" aria-hidden="true">内部向け</span></a></li>
+        <li><a href="$1articles/index.html"><i class="fa fa-1x fa-newspaper-o"></i> ニュース</a></li>
+        <li><a href="$1group/index.html"><i class="fa fa-1x fa-search"></i> 研究紹介</a></li>
+        <li><a href="$1report/index.html"><i class="fa fa-1x fa-files-o"></i> 活動報告</a></li>
+        <li><a href="$1students/index.html"><i class="fa fa-1x fa-graduation-cap"></i> 教育</a></li>
+        <li><a href="$1link/index.html"><i class="fa fa-1x fa-paperclip"></i> 関連リンク</a></li>
+        <li><a href="$1event/cafe/index.html"><i class="fa fa-1x fa-coffee"></i> イベント</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li ${2:class="disabled"}><a href="./english.html">English</a></li>
+        <li><a href="$1internal/index.html"><i class="fa fa-1x fa-lock"></i> 内部向け</a></li>
+        <li ${2:class="disabled"} ><a href="./english.html"><i class="fa fa-1x fa-language"></i> English</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
