@@ -866,6 +866,11 @@
   (path-headerline-mode +1)
 )
 
+(use-package powerline
+  :config
+  (powerline-center-theme)
+  )
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; smartparens
 ;;; https://github.com/Fuco1/smartparens
@@ -928,8 +933,6 @@
   ;; (add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode)
   ;; (add-hook 'markdown-mode-hook 'turn-on-smartparens-strict-mode)
   )
-
-
 
 
 (provide 'my-editor)
