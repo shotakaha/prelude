@@ -598,6 +598,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; 参考にした設定 : http://rakkyoo.net/?p=1444
 (use-package twittering-mode
+  :ensure t
   :config
   ;; 簡単ログインの設定
   (setq twittering-allow-insecure-server-cert t)
