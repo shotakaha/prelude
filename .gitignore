@@ -29,3 +29,5 @@ undohist/
 anaconda-mode
 persp-confs
 docs/build
+/idm-db.gpg
+/passthword.gpg
