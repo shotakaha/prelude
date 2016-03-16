@@ -58,6 +58,10 @@
 ;;; load newer file
 (setq load-prefer-newer t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; always truncate lines (toggle with M-l)
+(set-default 'truncate-lines t)
+
 ;;; key-bindings are written in ../init.el using use-package
 
 (provide 'preload-init)
