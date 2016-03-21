@@ -1,7 +1,7 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # contributor: Shota TAKAHASHI
 # name: ipns-footer-ja
-# key: footer-ja
+# key: footer
 # group: ipns
 # binding: direct-keybinding
 # --

@@ -1,0 +1,13 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-pager-ja
+# key: pager
+# group: ipns
+# binding: direct-keybinding
+# --
+<!-- pager -->
+<hr>
+<ul class="pager">
+  <li class="previous"><a href="${1:#}"><i class="fa fa-arrow-circle-left"></i> 前の記事</a></li>
+  <li><a href="../index.html"><i class="fa fa-list"></i> 記事一覧</a></li>
+  <li class="next disabled"><a href="#">次の記事 <i class="fa fa-arrow-circle-right"></i></a></li>
+</ul>

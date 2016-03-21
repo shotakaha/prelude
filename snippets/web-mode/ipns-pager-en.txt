@@ -1,0 +1,13 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ipns-pager-en
+# key: pager
+# group: ipns
+# binding: direct-keybinding
+# --
+<!-- pager -->
+<hr>
+<ul class="pager">
+  <li class="previous"><a href="${1:#}"><i class="fa fa-arrow-circle-left"></i> Previous Page</a></li>
+  <li><a href="../english.html"><i class="fa fa-list"></i> Back to Newsroom</a></li>
+  <li class="next disabled"><a href="#">Next Page <i class="fa fa-arrow-circle-right"></i></a></li>
+</ul>
