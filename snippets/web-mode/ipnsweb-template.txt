@@ -1,0 +1,46 @@
+# -*- mode: snippet -*-
+# name: ipnsweb-template
+# key: template
+# --
+<!DOCTYPE html>
+<html lang="ja">
+<!-- Call C-x i i ipns-head-meta-ja -->
+<!-- Call C-x i i ipns-head-ogp-ja -->
+<!-- Call C-x i i css -->
+
+<body>
+
+<!-- nav -->
+
+<article>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <section>
+        <h1></h1>
+        <time></time>
+        <figure>
+        </figure>
+      </section>
+      <section>
+        <h2>解説</h2>
+        <p>
+          ぶらぶら
+        </p>
+      </section>
+      <section>
+        <h2>関連記事</h2>
+        <p>
+          ぶらぶら
+        </p>
+      </section>
+      <section>
+        <h2>関連リンク</h2>
+        <p>
+          ぶらぶら
+        </p>
+      </section>
+    </div>
+  </div>
+</article>
+</body>
+</html>
