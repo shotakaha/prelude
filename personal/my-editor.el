@@ -935,6 +935,17 @@
   ;; (add-hook 'markdown-mode-hook 'turn-on-smartparens-strict-mode)
   )
 
+(use-package selected
+  :ensure t
+  :commands selected-minor-mode
+  :bind (:map selected-keymap
+              ("q" . selected-off)
+              ("u" . upcase-region)
+              ("d" . downcase-region)
+              ("w" . count-words-region)
+              ("m" . apply-macro-to-region-lines))
+  )
+
 
 (provide 'my-editor)
 ;;; my-editor.el ends here
