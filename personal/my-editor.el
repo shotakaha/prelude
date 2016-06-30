@@ -750,7 +750,7 @@
   :config
   (setq shell-pop-term-shell "/opt/local/bin/zsh")
   (setq shell-pop-full-span t)
-  (setq shell-pop-window-size 40)
+  (setq shell-pop-window-size 20)
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -945,7 +945,6 @@
               ("w" . count-words-region)
               ("m" . apply-macro-to-region-lines))
   )
-
 
 (provide 'my-editor)
 ;;; my-editor.el ends here
