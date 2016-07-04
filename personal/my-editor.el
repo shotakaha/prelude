@@ -946,5 +946,12 @@
               ("m" . apply-macro-to-region-lines))
   )
 
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1)
+  )
+
+
 (provide 'my-editor)
 ;;; my-editor.el ends here
