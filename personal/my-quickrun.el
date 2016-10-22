@@ -30,7 +30,14 @@
                         '((:command . "make")
                           (:exec    . ("make alpha-i18n"))
                           (:default-directory . "~/repos/kuma/ipns-hugo/")))
-
+  (quickrun-add-command "ipns-hugo/docs"
+                        '((:command . "make")
+                          (:exec    . ("make html"))
+                          (:default-directory . "~/repos/kuma/ipns-hugo/docs/")))
+  (quickrun-add-command "kumawatch/docs"
+                        '((:command . "make")
+                          (:exec    . ("make html"))
+                          (:default-directory . "~/repos/kuma/kumawatch/docs/")))
   )
 
 (provide 'my-quickrun)
