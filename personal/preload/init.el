@@ -63,6 +63,12 @@
 ;;; always truncate lines (toggle with M-l)
 (set-default 'truncate-lines t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; display date & time in 24hrs format
+(setq display-time-day-and-date t)
+(setq display-time-24hr-format t)
+(display-time)
+
 ;;; key-bindings are written in ../init.el using use-package
 
 (provide 'preload-init)
