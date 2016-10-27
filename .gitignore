@@ -21,6 +21,8 @@ session*
 .cask
 tramp
 /var/pcache
+.emacs.desktop
+.emacs.desktop.lock
 
 # Add by Shota
 persp-confs/
