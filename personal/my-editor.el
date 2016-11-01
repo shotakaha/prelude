@@ -80,8 +80,9 @@
 ;; Toggle with 'C-x C-q'
 ;; Enable view-mode
 
-(setq view-read-only t)
 (use-package view
+  :init
+  (setq view-read-only t)
   :config
   (bind-keys :map view-mode-map
              ;; less-like
