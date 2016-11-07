@@ -19,6 +19,7 @@
 ;;; manoj-dark : 背景:黒、文字:橙
 ;;; leuven     : 背景:白、文字:黒、
 ;;;              Org-modeの見出しが大きく表示されてGOOD!
+;;; material(-light)   : Google Material Design Based
 (when linux-p
   (message "OS : GNU/Linux")
   (setq prelude-theme 'manoj-dark)
@@ -26,7 +27,8 @@
   )
 (when darwin-p
   (message "OS : MacOS X")
-  (setq prelude-theme 'leuven)
+  ;; (setq prelude-theme 'leuven)
+  (setq prelude-theme 'material)
 ;;;  (setq prelude-theme 'manoj-dark)
   (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
   )
