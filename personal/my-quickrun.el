@@ -30,6 +30,10 @@
                         '((:command . "make")
                           (:exec    . ("make alpha-i18n"))
                           (:default-directory . "~/repos/kuma/ipns-hugo/")))
+  (quickrun-add-command "ipns-hugo/local-i18n"
+                        '((:command . "make")
+                          (:exec    . ("make local-i18n"))
+                          (:default-directory . "~/repos/kuma/ipns-hugo/")))
   (quickrun-add-command "ipns-hugo/docs"
                         '((:command . "make")
                           (:exec    . ("make html"))
