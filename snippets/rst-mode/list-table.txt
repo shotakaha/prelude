@@ -1,9 +1,10 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # contributor: Shota TAKAHASHI
 # name: rst.list-table
-# key: tablist
+# key: table
 # group : rst
 # binding: direct-keybinding
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
 # --
 .. list-table:: ${1:タイトル}
    :header-rows: ${2:0}
