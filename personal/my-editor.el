@@ -184,6 +184,7 @@
 ;;; http://qiita.com/zk_phi/items/b9c90014c434b75e8139
 ;;; https://github.com/zk-phi/jaword
 (use-package jaword
+  :disabled t
   :ensure t
   :config
   (global-jaword-mode t)
