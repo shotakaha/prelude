@@ -1,7 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
+# contributor: Shota TAKAHASHI
 # name: currentdate
-# key: d
+# key: date
+# group : rst
 # binding: direct-keybinding
 # --
-# `(insert (format-time-string "%Y-%m-%d"))`
-$0
+`(format-time-string "%Y-%m-%d")`$0
