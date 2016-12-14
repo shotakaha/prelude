@@ -33,8 +33,8 @@
   (setq my-org-gcal-directory "~/Documents/org/gcal/")
   (setq my-org-default-notes-file "captured.org")
   :config
-  (setq org-directory my-org-directory)
-  (setq org-default-notes-file my-org-default-notes-file)
+  (setq org-directory "~/Documents/org/")
+  (setq org-default-notes-file (concat org-directory "captured.org"))
   (setq org-agenda-files (list my-org-directory
                                my-org-agenda-directory
                                my-org-gcal-directory))
