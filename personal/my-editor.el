@@ -957,9 +957,9 @@
 (use-package dashboard
   :ensure t
   :config
-  (setq dashboard-items '((recents . 5)
-                          (bookmarks . 5)
-                          (projects . 5)))
+  (setq dashboard-items '((projects . 10)
+                          (recents . 5)
+                          (bookmarks . 5)))
   (dashboard-setup-startup-hook)
   )
 
