@@ -31,7 +31,7 @@
   (setq YaTeX-nervous nil)
 
   ;; declared in yatex.el
-  (setq my-tex "ptex2pdf -l -ot -synctex=1 -file-line-error")
+  (setq my-tex "ptex2pdf -l")
   (setq my-bibtex "pbibtex")
   (setq my-dvi2 "open -a Preview")
   (setq my-pdfview "open -a Preview")
