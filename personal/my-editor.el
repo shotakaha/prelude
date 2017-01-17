@@ -963,5 +963,9 @@
   (dashboard-setup-startup-hook)
   )
 
+(use-package zoom-window
+  :bind (("C-x 1" . zoom-window-zoom))
+  )
+
 (provide 'my-editor)
 ;;; my-editor.el ends here
