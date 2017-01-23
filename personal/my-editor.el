@@ -964,6 +964,7 @@
   )
 
 (use-package zoom-window
+  :ensure t
   :bind (("C-x 1" . zoom-window-zoom))
   )
 
