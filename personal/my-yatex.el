@@ -31,7 +31,7 @@
   (setq YaTeX-nervous nil)
 
   ;; variables are declared in yatex.el
-  (setq tex-command "ptex2pdf -l")
+  (setq tex-command "ptex2pdf -l -u")
   (setq bibtex-command "pbibtex")
   (setq dvi2-command "open -a Preview")
   (setq tex-pdfview-command "open -a Preview")
