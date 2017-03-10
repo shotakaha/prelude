@@ -968,5 +968,9 @@
   :bind (("C-x 1" . zoom-window-zoom))
   )
 
+(use-package reveal-in-osx-finder
+  :ensure t
+  )
+
 (provide 'my-editor)
 ;;; my-editor.el ends here
