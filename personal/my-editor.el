@@ -48,6 +48,10 @@
 ;;; C-x C-f : helm-find-files に設定済み
 (ffap-bindings)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; mouse-wheel
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 2) ((control))))
+(setq mouse-wheel-progressive-speed nil)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; uniquify.el
 ;;; Easy to recognize same-named file in different directory
 ;;; Already loaded in core/prelude-editor.el
